@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ClaseBase.Sector">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABQAAEAQAABAAAAAAAAAAAAAAAACABAAAgAAAA=</HashCode>
+      <FileName>Sector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClaseBase.TipoVehiculo">
+    <Position X="5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAABAAAAAABAAAAAAAAAAAAAAABAAAEIAA=</HashCode>
+      <FileName>TipoVehiculo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClaseBase.Cliente">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gIAAAAAAAAAAAQAAAIEAAAAAAAAAAAAAAAwAAIAMAAA=</HashCode>
+      <FileName>Cliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClaseBase.Ticket">
+    <Position X="9" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iEAAAQBAAAAAACAAAAAEAAAABAAAAAAgAQJAIIkCYAE=</HashCode>
+      <FileName>Ticket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClaseBase.Usuario">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACBAAAAgAAAAAAAAAAAAABAAgAAQAIAAAAAABgAAQAY=</HashCode>
+      <FileName>Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
