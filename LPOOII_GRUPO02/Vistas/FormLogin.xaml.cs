@@ -42,14 +42,19 @@ namespace Vistas
 
             // Validar las credenciales hardcoded
             if (usuario == "admin" && password == "admin")
-            {
-              
+            { 
                 MessageBox.Show("Bienvenido, Administrador!");
+                App.UserGlobal = "Administrador";
+                FormMain fMain = new FormMain();
+                fMain.Show();
             }
             else if (usuario == "operador" && password == "operador")
             {
               
                 MessageBox.Show("Bienvenido, Operador!");
+                App.UserGlobal = "Operador";
+                FormMain fMain = new FormMain();
+                fMain.Show();
             }
             else
             {

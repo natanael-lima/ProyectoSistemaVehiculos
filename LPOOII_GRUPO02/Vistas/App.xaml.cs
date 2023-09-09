@@ -7,10 +7,13 @@ using System.Windows;
 
 namespace Vistas
 {
+    
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application
     {
+        // Variable utilizada para guardar el rol del empleado, la utilizo en FromMain
+        public static string UserGlobal { get; set; }
     }
 }
