@@ -1,0 +1,32 @@
+﻿<Window x:Class="Vistas.FormMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FormMain" Height="356" Width="606">
+           
+    <Border>
+        <Border.Background>
+            <ImageBrush ImageSource="/recursos/fondo3.jpg" Stretch="UniformToFill" TileMode="None" />
+        </Border.Background>
+        <Grid>
+            <!-- Mostrar el rol del usuario
+            <Grid>
+                <TextBlock Text="Rol:" Margin="0,228,474,-1" Foreground="White" FontSize="14" FontWeight="Bold" Background="#48000000" Name="txtBlockRol"></TextBlock>
+            </Grid>
+            -->
+            <!--Menu item-->
+            <StackPanel VerticalAlignment="Top">
+                <Menu Height="28" HorizontalAlignment="Left" Name="menu1" VerticalAlignment="Top" Width="594" FontSize="15" IsEnabled="True" FontWeight="Bold" AllowDrop="False" Background="#FF8989BC" Foreground="White">
+                    <MenuItem Header="Gestion Sectores" Name="itemSec" Margin="3"/>
+                    <MenuItem Header="Tipos Vehiculos" Name="itemVehic" />
+                    <MenuItem Header="Gestion Clientes" Name="itemCli">
+                        <MenuItem Header="Nuevo Cliente" />
+                        <MenuItem Header="Editar Cliente" />
+                        <MenuItem Header="Eliminar Cliente" />
+                    </MenuItem>
+                    <MenuItem Header="Gestion Estacionamiento" Name="itemEst" />
+                </Menu>
+            </StackPanel>
+        </Grid>
+    </Border>
+    
+</Window>
