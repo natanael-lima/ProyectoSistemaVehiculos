@@ -96,7 +96,7 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Grid Grid.Column="0">
-                            <Button Name="btnE1" Content="E1" Height="43" HorizontalAlignment="Center" Margin="15,14,40,15" VerticalAlignment="Center" Width="107" />
+                            <Button Name="btnE1" Content="E1" Height="43" HorizontalAlignment="Center" Margin="15,14,40,15" VerticalAlignment="Center" Width="107" Click="btnE1_Click" Background="Green" />
                         </Grid>
                         <Grid Grid.Column="1">
                             <Button Name="btnE6" Content="E6" Height="43" HorizontalAlignment="Center" Margin="40,15,14,15" VerticalAlignment="Center" Width="107" />
