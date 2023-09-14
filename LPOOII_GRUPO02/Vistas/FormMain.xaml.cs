@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Vistas
 {
@@ -18,9 +19,29 @@ namespace Vistas
     /// </summary>
     public partial class FormMain : Window
     {
+        private DispatcherTimer timer;
+
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            // Actualiza el TextBlock con la fecha y hora actual
+            txtFechaHora.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+        }
         public FormMain()
         {
             InitializeComponent();
+
+            // Crea el DispatcherTimer
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1); // Intervalo de 1 segundo
+            timer.Tick += Timer_Tick;
+
+            // Inicia el timer
+            timer.Start();
+
+            // Llama al evento Tick una vez para mostrar la fecha y hora actual de inmediato
+            Timer_Tick(null, null);
+
             //MessageBox.Show("Rol: " + App.UserGlobal);
             //txtBlockRol.Text = txtBlockRol.Text + " "+ App.UserGlobal;
             if (App.UserGlobal == "Administrador")
@@ -28,11 +49,39 @@ namespace Vistas
                 itemCli.IsEnabled = false;
                 itemEst.IsEnabled = false;
             }
-            else 
+            else
             {
                 itemSec.IsEnabled = false;
                 itemVehic.IsEnabled = false;
             }
+        }
+
+
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void itemSec_Click(object sender, RoutedEventArgs e)
+        {
+            Estacionamiento estacionamiento = new Estacionamiento();
+            estacionamiento.Show();
+            this.Hide();
+        }
+
+        private void itemVehic_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void itemCli_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void itemEst_Click(object sender, RoutedEventArgs e)
@@ -41,6 +90,16 @@ namespace Vistas
             estacionamiento.Show();
             this.Hide();
         }
+
+        private void btnCerrarSesion_Click(object sender, RoutedEventArgs e)
+        {
+            FormLogin login = new FormLogin();
+            login.Show();
+            this.Close();
+        }
+
+ 
+
 
         
 

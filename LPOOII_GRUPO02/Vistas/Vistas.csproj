@@ -115,22 +115,13 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="recursos\actualizar.png" />
-    <Resource Include="recursos\autos.png" />
     <Resource Include="recursos\buscar.png" />
-    <Resource Include="recursos\clientes.png" />
     <Resource Include="recursos\editar.png" />
     <Resource Include="recursos\eliminar.png" />
     <Resource Include="recursos\fondo1.jpg" />
     <Resource Include="recursos\fondo2.jpg" />
     <Resource Include="recursos\fondo3.jpg" />
     <Resource Include="recursos\icons8-más-20.png" />
-    <Resource Include="recursos\reportes.png" />
-    <Resource Include="recursos\ticket.png" />
-    <Resource Include="recursos\usuarios.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="recursos\icons-cerrar-ventana.png" />
-    <Resource Include="recursos\icons-minimizar.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="recursos\logotipo-white.png" />
@@ -138,6 +129,17 @@
   <ItemGroup>
     <Resource Include="recursos\llave.png" />
     <Resource Include="recursos\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="recursos\menu-auto.png" />
+    <Resource Include="recursos\menu-clientes.png" />
+    <Resource Include="recursos\menu-estacionamiento.png" />
+    <Resource Include="recursos\menu-estadistica.png" />
+    <Resource Include="recursos\menu-salir.png" />
+    <Resource Include="recursos\menu-sector.png" />
+    <Resource Include="recursos\menu-usuario.png" />
+    <Resource Include="recursos\user-login.png" />
+    <Resource Include="recursos\user-login2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
