@@ -26,7 +26,7 @@
                                                   Margin="8,0,0,0" />
                                 <!--// Text //-->
                                 <ContentPresenter ContentSource="Header"
-                                                  TextBlock.Foreground="#FFFFFF"
+                                                  
                                                   TextBlock.FontFamily="Calibri"
                                                   TextBlock.FontSize="18"
                                                   HorizontalAlignment="Left"
@@ -88,18 +88,18 @@
 
                     <!--Menu Buttons-->
                     <Menu Background="Transparent" Margin="0,50,0,0">
-                        <MenuItem Header="Sectores" Name="itemSec" Height="35" Width="200"  Style="{StaticResource Main_MenuItem}" Click="itemSec_Click">
+                        <MenuItem Header="Sectores" Name="itemSec" Height="35" Width="200"  Style="{StaticResource Main_MenuItem}" Foreground="White" Click="itemSec_Click">
                             <MenuItem.Icon>
                                 <Image Source="./recursos/menu-sector.png" Stretch="Uniform"/>
                             </MenuItem.Icon>
 
                         </MenuItem>
-                        <MenuItem Header="Vehiculos" Name="itemVehic" Height="35" Width="200" Style="{StaticResource Main_MenuItem}" Click="itemVehic_Click">
+                        <MenuItem Header="Vehiculos" Name="itemVehic" Height="35" Width="200" Style="{StaticResource Main_MenuItem}" Foreground="White" Click="itemVehic_Click">
                             <MenuItem.Icon>
                                 <Image Source="./recursos/menu-auto.png" Stretch="Uniform"/>
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem Header="Clientes" Name="itemCli" Height="35" Width="200" Style="{StaticResource Main_MenuItem}" Click="itemCli_Click">
+                        <MenuItem Header="Clientes" Name="itemCli" Height="35" Width="200" Style="{StaticResource Main_MenuItem}" Foreground="White" Click="itemCli_Click">
                             <MenuItem.Icon>
                                 <Image Source="./recursos/menu-clientes.png" Stretch="Uniform"/>
                             </MenuItem.Icon>
@@ -108,12 +108,12 @@
                                     <MenuItem Header="Editar Cliente" />
                                     <MenuItem Header="Eliminar Cliente" />-->
                         </MenuItem>
-                        <MenuItem Header="Estacionamiento" Name="itemEst" Height="35" Width="200" Style="{StaticResource Main_MenuItem}" Click="itemEst_Click">
+                        <MenuItem Header="Estacionamiento" Name="itemEst" Height="35" Width="200" Style="{StaticResource Main_MenuItem}" Foreground="White" Click="itemEst_Click">
                             <MenuItem.Icon>
                                 <Image Source="./recursos/menu-estacionamiento.png" Stretch="Uniform"/>
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem Header="Cerrar Sesion" Name="btnCerrarSesion" Height="35" Width="200" Margin="0,340,0,0" Style="{StaticResource Main_MenuItem}" Click="btnCerrarSesion_Click">
+                        <MenuItem Header="Cerrar Sesion" Name="btnCerrarSesion" Height="35" Width="200" Margin="0,340,0,0" Style="{StaticResource Main_MenuItem}" Foreground="White" Click="btnCerrarSesion_Click">
                             <MenuItem.Icon>
                                 <Image Source="./recursos/menu-salir.png" Stretch="Uniform"/>
                             </MenuItem.Icon>
@@ -251,8 +251,8 @@
                                     Margin="0,0,10,0">
 
                             <TextBlock Text="Lionel Andres Messi"
-                                       Foreground="DarkGray"
-                                       FontFamily="Montserrat"
+                                       Foreground="Gainsboro"
+                                       FontFamily="Calibri"
                                        FontSize="12"
                                        VerticalAlignment="Center"/>
                             <Ellipse Height="35" Width="35"

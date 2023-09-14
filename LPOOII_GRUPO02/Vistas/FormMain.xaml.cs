@@ -48,11 +48,15 @@ namespace Vistas
             {
                 itemCli.IsEnabled = false;
                 itemEst.IsEnabled = false;
+                itemEst.Foreground = Brushes.Gray;
+                itemCli.Foreground = Brushes.Gray;
             }
             else
             {
                 itemSec.IsEnabled = false;
                 itemVehic.IsEnabled = false;
+                itemSec.Foreground = Brushes.Gray;
+                itemVehic.Foreground = Brushes.Gray;
             }
         }
 
