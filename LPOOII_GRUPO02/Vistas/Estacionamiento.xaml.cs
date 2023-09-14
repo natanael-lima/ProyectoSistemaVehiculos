@@ -18,7 +18,6 @@ namespace Vistas
     public partial class Estacionamiento : Window
     {
         private Brush[] colores = { Brushes.Red,Brushes.Green,Brushes.Gray};
-       
         private bool sectorDisponible = true;
 
         public Estacionamiento()
@@ -47,31 +46,27 @@ namespace Vistas
             menuPrincipal.Show();
             this.Close();
         }
-
-       private void btnE1_Click(object sender, RoutedEventArgs e)
+        //Actualizacion de Botones
+       private void actualizarEstadoSector(Button boton)
        {
-           
-           Button boton = (Button)sender;
-           SolidColorBrush color = boton.Background as SolidColorBrush;
-          
-           if(color != null && color.Color == Colors.Green)
+           SolidColorBrush colorBoton = boton.Background as SolidColorBrush;
+
+           if (colorBoton != null && colorBoton.Color == Colors.Green)
            {
                sectorDisponible = true;
-               actualizarEstadoSector(boton);
+               actualizarColorSector(boton);
            }
            else
            {
                sectorDisponible = false;
-               actualizarEstadoSector(boton);
+               actualizarColorSector(boton);
            }
-           
        }
 
-        private void actualizarEstadoSector(Button boton)
+       private void actualizarColorSector(Button boton)
        {
-           if(sectorDisponible)
+           if (sectorDisponible)
            {
-
                MessageBoxResult resp = MessageBox.Show("Registrar Entrada", "Sector Disponible", MessageBoxButton.YesNo);
                if (resp == MessageBoxResult.Yes)
                {
@@ -84,8 +79,70 @@ namespace Vistas
                if (resp == MessageBoxResult.Yes)
                {
                    boton.Background = colores[1];//verde
-               } 
+               }
            }
        }
+
+        //Botones E
+       private void btnE1_Click(object sender, RoutedEventArgs e)
+       {          
+           Button boton = (Button)sender;
+           actualizarEstadoSector(boton);
+       }
+
+       private void btnE2_Click(object sender, RoutedEventArgs e)
+       {
+           Button boton = (Button)sender;
+           actualizarEstadoSector(boton);
+       }
+
+       private void btnE3_Click(object sender, RoutedEventArgs e)
+       {
+           Button boton = (Button)sender;
+           actualizarEstadoSector(boton);
+       }
+
+       private void btnE4_Click(object sender, RoutedEventArgs e)
+       {
+           MessageBox.Show("Sector Deshabilitado", "Advertencia", MessageBoxButton.OK);
+       }
+
+       private void btnE5_Click(object sender, RoutedEventArgs e)
+       {
+           Button boton = (Button)sender;
+           actualizarEstadoSector(boton);
+       }
+
+       private void btnE6_Click(object sender, RoutedEventArgs e)
+       {
+           Button boton = (Button)sender;
+           actualizarEstadoSector(boton);
+       }
+
+       private void btnE7_Click(object sender, RoutedEventArgs e)
+       {
+           Button boton = (Button)sender;
+           actualizarEstadoSector(boton);
+       }
+
+       private void btnE8_Click(object sender, RoutedEventArgs e)
+       {
+           Button boton = (Button)sender;
+           actualizarEstadoSector(boton);
+       }
+
+       private void btnE9_Click(object sender, RoutedEventArgs e)
+       {
+           Button boton = (Button)sender;
+           actualizarEstadoSector(boton);
+       }
+
+       private void btnE10_Click(object sender, RoutedEventArgs e)
+       {
+           Button boton = (Button)sender;
+           actualizarEstadoSector(boton);
+       }
+
+       
     }
 }

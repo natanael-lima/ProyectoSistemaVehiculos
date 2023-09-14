@@ -99,7 +99,7 @@
                             <Button Name="btnE1" Content="E1" Height="43" HorizontalAlignment="Center" Margin="15,14,40,15" VerticalAlignment="Center" Width="107" Click="btnE1_Click" Background="Green" />
                         </Grid>
                         <Grid Grid.Column="1">
-                            <Button Name="btnE6" Content="E6" Height="43" HorizontalAlignment="Center" Margin="40,15,14,15" VerticalAlignment="Center" Width="107" />
+                            <Button Name="btnE6" Content="E6" Height="43" HorizontalAlignment="Center" Margin="40,15,14,15" VerticalAlignment="Center" Width="107" Background="Green" Click="btnE6_Click" />
                         </Grid>
                     </Grid>
                     <Grid Grid.Row="1">
@@ -108,10 +108,10 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Grid Grid.Column="0">
-                            <Button Name="btnE2" Content="E2" Height="43" HorizontalAlignment="Center" Margin="15,14,40,15" VerticalAlignment="Center" Width="107" />
+                            <Button Name="btnE2" Content="E2" Height="43" HorizontalAlignment="Center" Margin="15,14,40,15" VerticalAlignment="Center" Width="107" Background="Green" Click="btnE2_Click" />
                         </Grid>
                         <Grid Grid.Column="1">
-                            <Button Name="btnE7" Content="E7" Height="43" HorizontalAlignment="Center" Margin="40,15,14,15" VerticalAlignment="Center" Width="107" />
+                            <Button Name="btnE7" Content="E7" Height="43" HorizontalAlignment="Center" Margin="40,15,14,15" VerticalAlignment="Center" Width="107" Background="Red" Click="btnE7_Click" />
                         </Grid>
                     </Grid>
                     <Grid Grid.Row="2">
@@ -120,10 +120,10 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Grid Grid.Column="0">
-                            <Button Name="btnE3" Content="E3" Height="43" HorizontalAlignment="Center" Margin="15,14,40,15" VerticalAlignment="Center" Width="107" />
+                            <Button Name="btnE3" Content="E3" Height="43" HorizontalAlignment="Center" Margin="15,14,40,15" VerticalAlignment="Center" Width="107" Background="Green" Click="btnE3_Click" />
                         </Grid>
                         <Grid Grid.Column="1">
-                            <Button Name="btnE8" Content="E8" Height="43" HorizontalAlignment="Center" Margin="40,15,14,15" VerticalAlignment="Center" Width="107" />
+                            <Button Name="btnE8" Content="E8" Height="43" HorizontalAlignment="Center" Margin="40,15,14,15" VerticalAlignment="Center" Width="107" Background="Green" Click="btnE8_Click" />
                         </Grid>
                     </Grid>
                     <Grid Grid.Row="3">
@@ -132,10 +132,10 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Grid Grid.Column="0">
-                            <Button Name="btnE4" Content="E4" Height="43" HorizontalAlignment="Center" Margin="15,14,40,15" VerticalAlignment="Center" Width="107" />
+                            <Button Name="btnE4" Content="E4" Height="43" HorizontalAlignment="Center" Margin="15,14,40,15" VerticalAlignment="Center" Width="107" Background="Gray" Click="btnE4_Click" />
                         </Grid>
                         <Grid Grid.Column="1">
-                            <Button Name="btnE9" Content="E9" Height="43" HorizontalAlignment="Center" Margin="40,15,14,15" VerticalAlignment="Center" Width="107" />
+                            <Button Name="btnE9" Content="E9" Height="43" HorizontalAlignment="Center" Margin="40,15,14,15" VerticalAlignment="Center" Width="107" Background="Green" Click="btnE9_Click" />
                         </Grid>
                     </Grid>
                     <Grid Grid.Row="4">
@@ -144,10 +144,10 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Grid Grid.Column="0">
-                            <Button Name="btnE5" Content="E5" Height="43" HorizontalAlignment="Center" Margin="15,14,40,15" VerticalAlignment="Center" Width="107" />
+                            <Button Name="btnE5" Content="E5" Height="43" HorizontalAlignment="Center" Margin="15,14,40,15" VerticalAlignment="Center" Width="107" Background="Green" Click="btnE5_Click" />
                         </Grid>
                         <Grid Grid.Column="1">
-                            <Button Name="btnE10" Content="E10" Height="43" HorizontalAlignment="Center" Margin="40,15,14,15" VerticalAlignment="Center" Width="107" />
+                            <Button Name="btnE10" Content="E10" Height="43" HorizontalAlignment="Center" Margin="40,15,14,15" VerticalAlignment="Center" Width="107" Background="Green" Click="btnE10_Click" />
                         </Grid>
                     </Grid>
                 </Grid>
@@ -160,16 +160,16 @@
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0">
                         <Label Name="lblOcupado" Content="Ocupado" Foreground="DarkGray" FontSize="16" VerticalAlignment="Center" Margin="15,4,0,6" />
-                        <Rectangle Name="rect1" Height="20" Margin="134,12,162,6"  Stroke="#FFC3354B" VerticalAlignment="Center" Width="28" Fill="#FFC3354B" />
+                        <Rectangle Name="rect1" Height="20" Margin="134,12,162,6"  Stroke="#FFC3354B" VerticalAlignment="Center" Width="28" Fill="Red" />
                     </Grid>
                     <Grid Grid.Row="1">
                         <Label Name="lblDisponible" Content="Disponible" Foreground="DarkGray" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Center" Margin="15,4,0,6" />
-                        <Rectangle Name="rect2" Height="20" Margin="134,12,162,6"  Stroke="#FF8CA236" VerticalAlignment="Center" Width="28" Fill="#FF8CA236" />
+                        <Rectangle Name="rect2" Height="20" Margin="134,12,162,6"  Stroke="#FF8CA236" VerticalAlignment="Center" Width="28" Fill="Green" />
                         <Button Name="btnSalir" Content="Salir" Height="33" VerticalAlignment="Center" Width="84" Margin="216,5,24,1" Click="btnSalir_Click" />
                     </Grid>
                     <Grid Grid.Row="2">
                         <Label Name="lblDeshabilitado" Content="Deshabilitado" Foreground="DarkGray" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Center" Margin="15,4,0,6" />
-                        <Rectangle Name="rect3" Height="20" Margin="134,12,162,6"  Stroke="#FFB1B1B1" VerticalAlignment="Center" Width="28" Fill="#FFB1B1B1" />
+                        <Rectangle Name="rect3" Height="20" Margin="134,12,162,6"  Stroke="#FFB1B1B1" VerticalAlignment="Center" Width="28" Fill="Gray" />
                     </Grid>
                     <Grid Grid.Row="3"></Grid>   
                 </Grid>
