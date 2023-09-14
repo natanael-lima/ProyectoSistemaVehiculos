@@ -23,7 +23,7 @@
                         <MenuItem Header="Editar Cliente" />
                         <MenuItem Header="Eliminar Cliente" />
                     </MenuItem>
-                    <MenuItem Header="Gestion Estacionamiento" Name="itemEst" />
+                    <MenuItem Header="Gestion Estacionamiento" Name="itemEst" Click="itemEst_Click" />
                 </Menu>
             </StackPanel>
         </Grid>

@@ -35,6 +35,13 @@ namespace Vistas
             }
         }
 
+        private void itemEst_Click(object sender, RoutedEventArgs e)
+        {
+            Estacionamiento estacionamiento = new Estacionamiento();
+            estacionamiento.Show();
+            this.Hide();
+        }
+
         
 
     }

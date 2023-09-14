@@ -45,16 +45,14 @@ namespace Vistas
             { 
                 MessageBox.Show("Bienvenido, Administrador!");
                 App.UserGlobal = "Administrador";
-                FormMain fMain = new FormMain();
-                fMain.Show();
+                irMenuPrincipal();
             }
             else if (usuario == "operador" && password == "operador")
             {
               
                 MessageBox.Show("Bienvenido, Operador!");
                 App.UserGlobal = "Operador";
-                FormMain fMain = new FormMain();
-                fMain.Show();
+                irMenuPrincipal();
             }
             else
             {
@@ -63,5 +61,10 @@ namespace Vistas
             }
         }
 
+        private void irMenuPrincipal(){
+            FormMain fMain = new FormMain();
+            fMain.Show();
+            this.Close();
+        }
     }
 }
