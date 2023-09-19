@@ -31,7 +31,6 @@ namespace ClaseBase
 
         public TipoVehiculo()
         {
-            throw new System.NotImplementedException();
         }
     }
 }

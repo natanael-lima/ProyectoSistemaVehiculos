@@ -35,9 +35,9 @@ namespace ClaseBase
             get { return cli_Nombre; }
             set { cli_Nombre = value; }
         }
-        private int cli_Telefono;
+        private string cli_Telefono;
 
-        public int Cli_Telefono
+        public string Cli_Telefono
         {
             get { return cli_Telefono; }
             set { cli_Telefono = value; }
@@ -45,7 +45,6 @@ namespace ClaseBase
 
         public Cliente()
         {
-            throw new System.NotImplementedException();
         }
     }
 }

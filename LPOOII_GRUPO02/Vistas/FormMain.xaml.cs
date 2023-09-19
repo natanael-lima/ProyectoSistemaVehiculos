@@ -80,12 +80,16 @@ namespace Vistas
 
         private void itemVehic_Click(object sender, RoutedEventArgs e)
         {
-
+            FormVehiculo fVehiculo = new FormVehiculo();
+            fVehiculo.Show();
+            this.Close();
         }
 
         private void itemCli_Click(object sender, RoutedEventArgs e)
         {
-
+            FormCliente fCliente = new FormCliente();
+            fCliente.Show();
+            this.Close();
         }
 
         private void itemEst_Click(object sender, RoutedEventArgs e)
