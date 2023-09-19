@@ -59,6 +59,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="FormCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FormLogin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -70,11 +74,18 @@
     <Compile Include="Estacionamiento.xaml.cs">
       <DependentUpon>Estacionamiento.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FormCliente.xaml.cs">
+      <DependentUpon>FormCliente.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.xaml.cs">
       <DependentUpon>FormLogin.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="FormMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormVehiculo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -86,6 +97,9 @@
   <ItemGroup>
     <Compile Include="FormMain.xaml.cs">
       <DependentUpon>FormMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormVehiculo.xaml.cs">
+      <DependentUpon>FormVehiculo.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -140,6 +154,12 @@
     <Resource Include="recursos\menu-usuario.png" />
     <Resource Include="recursos\user-login.png" />
     <Resource Include="recursos\user-login2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClaseBase\ClaseBase.csproj">
+      <Project>{E82B26AC-6713-4DA8-9914-39AB673680C4}</Project>
+      <Name>ClaseBase</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
