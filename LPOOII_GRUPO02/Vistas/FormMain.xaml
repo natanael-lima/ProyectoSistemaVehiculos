@@ -270,7 +270,9 @@
                     <!--Contenido / Child views-->
                     <ContentControl x:Name="contenedorVentanaHija"
                                     Grid.Row="2"
-                                    Margin="25"/>
+                                    Margin="25">
+                        <Image Source="./recursos/logotipo-white.png" Height="268" Width="323" />
+                    </ContentControl>
                 </Grid>
 
 
