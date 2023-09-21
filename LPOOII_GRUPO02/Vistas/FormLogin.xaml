@@ -7,15 +7,14 @@
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True">
-    <!--Borde Ventana Login-->
+    <!--Borde Ventana Principal Login-->
     <Border CornerRadius="15">
+        <!--Imagen para el fondo del Login-->
         <Border.Background>
-            <ImageBrush ImageSource="/recursos/fondo1.jpg"
-                        Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="/recursos/fondo1.jpg" Stretch="UniformToFill"/>
         </Border.Background>
-        <!--Efecto Gradiante-->
-        <Border CornerRadius="15"
-                Opacity="0.92">
+        <!--Efecto Gradiante y Borde Overlay-->
+        <Border CornerRadius="15" Opacity="0.92">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
                     <GradientStop Color="#18161F" Offset="0"/>
@@ -25,17 +24,20 @@
                 
             <Grid>
                 <Grid.RowDefinitions>
+                    <!--Header Contenedor-->
                     <RowDefinition Height="30"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <!--Grid para Header-->
+                <!--Grid para Header Contenedor-->
                 <Grid Grid.Row="0">
+                    <!--Columnas Botones Header-->
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition Width="25"/>
                         <ColumnDefinition Width="25"/>
                         <ColumnDefinition Width="8"/>
                     </Grid.ColumnDefinitions>
+                    <!--Titulo Ventana Header-->
                     <TextBlock Text="Iniciar Sesion"
                                Foreground="DarkGray"
                                FontSize="10"
@@ -53,6 +55,7 @@
                             Cursor="Hand"
                             Grid.Column="1"
                             Click="btnMinimize_Click">
+                            <!--Efecto Boton-->
                             <Button.Style>
                                 <Style TargetType="Button">
                                 <Setter Property="Background" Value="#F7F7F7"/>
@@ -63,17 +66,17 @@
                                      </Style.Triggers>
                                 </Style>
                             </Button.Style>
-                        
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="18" Height="18"
-                                        CornerRadius="3"
-                                        Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
+                             <!--Contenedor Boton-->
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="18" Height="18"
+                                            CornerRadius="3"
+                                            Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center"
+                                                              HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
                     </Button>
                     <!--Cerrar Login-->
                     <Button x:Name="btnClose"                          
@@ -85,33 +88,35 @@
                             Cursor="Hand"
                             Grid.Column="2"
                             Click="btnClose_Click">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="#F7F7F7"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#F7BFBE"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="18" Height="18"
-                                        CornerRadius="3"
-                                        Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
+                            <!--Efecto Boton-->
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#F7F7F7"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#F7BFBE"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <!--Contenedor Boton-->
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="18" Height="18"
+                                            CornerRadius="3"
+                                            Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                          HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
                 </Grid>
-                
+                <!--Contenedor Contenido Principal-->
                 <StackPanel Width="200"
                             Grid.Row="2"
                             Orientation="Vertical"
-                             Margin="0,35,0,0">
+                            Margin="0,35,0,0">
                     <Image Source="/recursos/logotipo-white.png"
                            Width="100" Height="85"/>
                     <TextBlock Text="GRUPO 02"
@@ -146,11 +151,12 @@
                              VerticalContentAlignment="Center"
                              Margin="0,5,0,0"
                              Padding="20,0,0,0">
-                        <TextBox.Background>
-                            <ImageBrush ImageSource="/recursos/user.png"
-                                        Stretch="None"
-                                        AlignmentX="Left"/>
-                        </TextBox.Background>
+                            <!--Icon Text-->
+                            <TextBox.Background>
+                                <ImageBrush ImageSource="/recursos/user.png"
+                                            Stretch="None"
+                                            AlignmentX="Left"/>
+                            </TextBox.Background>
                     </TextBox>
 
                     <TextBlock Text="Password"
@@ -171,14 +177,15 @@
                              VerticalContentAlignment="Center"
                              Margin="0,5,0,0"
                              Padding="20,0,0,0">
-                        <PasswordBox.Background>
-                            <ImageBrush ImageSource="/recursos/llave.png"
-                                        Stretch="None"
-                                        AlignmentX="Left"/>
-                            </PasswordBox.Background>
+                            <!--Icon Text-->
+                            <PasswordBox.Background>
+                                <ImageBrush ImageSource="/recursos/llave.png"
+                                            Stretch="None"
+                                            AlignmentX="Left"/>
+                             </PasswordBox.Background>
                     </PasswordBox>
 
-                    <Button x:Name="btnLogin"                          
+                    <Button x:Name="btnLogin"                        
                             BorderThickness="0"
                             Content="INICIAR SESION"
                             Foreground="White"
@@ -187,32 +194,31 @@
                             Cursor="Hand"                           
                             Margin="0,10,0,0"
                             Click="btnLogin_Click">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="#D2B24C"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#D2B222"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="150" Height="35"
-                                        CornerRadius="10"
-                                        Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
+                            <!--Efecto Boton-->
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#D2B24C"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#D2B222"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <!--Contenedor Boton-->
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="150" Height="35"
+                                            CornerRadius="10"
+                                            Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                          HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
                     </Button>
-                    
-                    
                 </StackPanel>
               </Grid>
-            
         </Border>
     </Border>
 </Window>
