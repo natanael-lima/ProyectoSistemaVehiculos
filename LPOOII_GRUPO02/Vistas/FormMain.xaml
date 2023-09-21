@@ -7,6 +7,7 @@
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True">
+    <!--Recursos que se usan en el Menu-->
     <Window.Resources>
         <Style x:Key="Main_MenuItem"
                TargetType="MenuItem">
@@ -26,7 +27,6 @@
                                                   Margin="8,0,0,0" />
                                 <!--// Text //-->
                                 <ContentPresenter ContentSource="Header"
-                                                  
                                                   TextBlock.FontFamily="Calibri"
                                                   TextBlock.FontSize="18"
                                                   HorizontalAlignment="Left"
@@ -50,11 +50,11 @@
     </Window.Resources>
 
 
-
+    <!--Borde Ventana Principal Main-->
     <Border CornerRadius="10"                    
             BorderThickness="0">
-
         <Grid>
+            <!--Division de Contenedores-->
             <Grid.ColumnDefinitions>
                 <!--Navigation menu-->
                 <ColumnDefinition Width="200"/>
@@ -63,19 +63,18 @@
             </Grid.ColumnDefinitions>
             <!--Navigation Menu-->
             <Border CornerRadius="10,0,0,10" Grid.Column="0">
-                <Border.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0.7">
-                        <GradientStop Color="#18161F" Offset="0"/>
-                        <GradientStop Color="#18161F" Offset="1"/>
-                    </LinearGradientBrush>
-                </Border.Background>
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0.7">
+                            <GradientStop Color="#18161F" Offset="0"/>
+                            <GradientStop Color="#18161F" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                <!--Contenido Menu-->
                 <StackPanel>
-
                     <!--Logo-->
                     <StackPanel Orientation="Horizontal"
                                 Height="60"
                                 Margin="15,25,0,40">
-
                         <Image Source="./recursos/logotipo-white.png" Height="50"/>
                         <TextBlock Text="GRUPO 2"
                                    Foreground="White"
@@ -85,63 +84,61 @@
                                    VerticalAlignment="Center"
                                    Margin="10,0,0,0"/>
                     </StackPanel>
-
-                    <!--Menu Buttons-->
-                    <Menu Background="Transparent" Margin="0,50,0,0">
-                        <MenuItem Header="Sectores" Name="itemSec" Height="35" Width="200"  Style="{StaticResource Main_MenuItem}" Foreground="White" Click="itemSec_Click">
-                            <MenuItem.Icon>
-                                <Image Source="./recursos/menu-sector.png" Stretch="Uniform"/>
-                            </MenuItem.Icon>
-
-                        </MenuItem>
-                        <MenuItem Header="Vehiculos" Name="itemVehic" Height="35" Width="200" Style="{StaticResource Main_MenuItem}" Foreground="White" Click="itemVehic_Click">
-                            <MenuItem.Icon>
-                                <Image Source="./recursos/menu-auto.png" Stretch="Uniform"/>
-                            </MenuItem.Icon>
-                        </MenuItem>
-                        <MenuItem Header="Clientes" Name="itemCli" Height="35" Width="200" Style="{StaticResource Main_MenuItem}" Foreground="White" Click="itemCli_Click">
-                            <MenuItem.Icon>
-                                <Image Source="./recursos/menu-clientes.png" Stretch="Uniform"/>
-                            </MenuItem.Icon>
-                            <!--
-                                    <MenuItem Header="Nuevo Cliente" />
-                                    <MenuItem Header="Editar Cliente" />
-                                    <MenuItem Header="Eliminar Cliente" />-->
-                        </MenuItem>
-                        <MenuItem Header="Estacionamiento" Name="itemEst" Height="35" Width="200" Style="{StaticResource Main_MenuItem}" Foreground="White" Click="itemEst_Click">
-                            <MenuItem.Icon>
-                                <Image Source="./recursos/menu-estacionamiento.png" Stretch="Uniform"/>
-                            </MenuItem.Icon>
-                        </MenuItem>
-                        <MenuItem Header="Cerrar Sesion" Name="btnCerrarSesion" Height="35" Width="200" Margin="0,340,0,0" Style="{StaticResource Main_MenuItem}" Foreground="White" Click="btnCerrarSesion_Click">
-                            <MenuItem.Icon>
-                                <Image Source="./recursos/menu-salir.png" Stretch="Uniform"/>
-                            </MenuItem.Icon>
-                        </MenuItem>
-                    </Menu>
-                </StackPanel>
-
+                        <!--Menu Butones-->
+                        <Menu Background="Transparent" Margin="0,50,0,0">
+                            <!--Butones-->
+                            <MenuItem Header="Sectores" Name="itemSec" Height="35" Width="200"  Style="{StaticResource Main_MenuItem}" Foreground="White" Click="itemSec_Click">
+                                <MenuItem.Icon>
+                                    <Image Source="./recursos/menu-sector.png" Stretch="Uniform"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="Vehiculos" Name="itemVehic" Height="35" Width="200" Style="{StaticResource Main_MenuItem}" Foreground="White" Click="itemVehic_Click">
+                                <MenuItem.Icon>
+                                    <Image Source="./recursos/menu-auto.png" Stretch="Uniform"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="Clientes" Name="itemCli" Height="35" Width="200" Style="{StaticResource Main_MenuItem}" Foreground="White" Click="itemCli_Click">
+                                <MenuItem.Icon>
+                                    <Image Source="./recursos/menu-clientes.png" Stretch="Uniform"/>
+                                </MenuItem.Icon>
+                                <!--
+                                        <MenuItem Header="Nuevo Cliente" />
+                                        <MenuItem Header="Editar Cliente" />
+                                        <MenuItem Header="Eliminar Cliente" />-->
+                            </MenuItem>
+                            <MenuItem Header="Estacionamiento" Name="itemEst" Height="35" Width="200" Style="{StaticResource Main_MenuItem}" Foreground="White" Click="itemEst_Click">
+                                <MenuItem.Icon>
+                                    <Image Source="./recursos/menu-estacionamiento.png" Stretch="Uniform"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="Cerrar Sesion" Name="btnCerrarSesion" Height="35" Width="200" Margin="0,340,0,0" Style="{StaticResource Main_MenuItem}" Foreground="White" Click="btnCerrarSesion_Click">
+                                <MenuItem.Icon>
+                                    <Image Source="./recursos/menu-salir.png" Stretch="Uniform"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </Menu>
+                    </StackPanel>
             </Border>
             <!--Main Section-->
             <Border CornerRadius="0,10,10,0"
                     Grid.Column="1">
-
-                <Border.Background>
-                    <LinearGradientBrush StartPoint="1,0" EndPoint="0,2">
-                        <GradientStop Color="#18161F" Offset="0"/>
-                        <GradientStop Color="#09070B" Offset="1"/>
-                    </LinearGradientBrush>
-                </Border.Background>
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="1,0" EndPoint="0,2">
+                            <GradientStop Color="#18161F" Offset="0"/>
+                            <GradientStop Color="#09070B" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
                 <Grid>
+                    <!--Division Main Section-->
                     <Grid.RowDefinitions>
-                        <!--Control bar-->
+                        <!--Header Control Bar-->
                         <RowDefinition Height="25"/>
-                        <!--Header-->
+                        <!--Header User-->
                         <RowDefinition Height="35"/>
                         <!--Contenido-->
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <!--Control bar-->
+                    <!--Header Control Bar-->
                     <Grid Grid.Row="0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
@@ -156,7 +153,6 @@
                                Grid.Column="0"
                                VerticalAlignment="Center"
                                Margin="15,0,0,0" HorizontalAlignment="Center" />
-
                         <!--Minimizar Login-->
                         <Button x:Name="btnMinimize"
                             BorderThickness="0"
@@ -167,6 +163,7 @@
                             Cursor="Hand"
                             Grid.Column="1"
                             Click="btnMinimize_Click">
+                            <!--Efecto Boton-->
                             <Button.Style>
                                 <Style TargetType="Button">
                                     <Setter Property="Background" Value="#F7F7F7"/>
@@ -177,7 +174,7 @@
                                     </Style.Triggers>
                                 </Style>
                             </Button.Style>
-
+                            <!--Contenedor Boton-->
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Border Width="18" Height="18"
@@ -199,6 +196,7 @@
                             Cursor="Hand"
                             Grid.Column="2"
                             Click="btnClose_Click">
+                            <!--Efecto Boton-->
                             <Button.Style>
                                 <Style TargetType="Button">
                                     <Setter Property="Background" Value="#F7F7F7"/>
@@ -209,6 +207,7 @@
                                     </Style.Triggers>
                                 </Style>
                             </Button.Style>
+                            <!--Contenedor Boton-->
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
                                     <Border Width="18" Height="18"
@@ -221,16 +220,15 @@
                             </Button.Template>
                         </Button>
                     </Grid>
-                    <!--Header / Caption-->
+                    <!--Header User / Adicional-->
                     <Grid Grid.Row="1">
+                        <!--Dividir en 2 Columnas-->
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-
-                        <!--Caption-->
-                        <!--
-                        <StackPanel Grid.Column="0"
+                        <!--Adicional-->
+                        <!--<StackPanel Grid.Column="0"
                                     Orientation="Horizontal"
                                     VerticalAlignment="Center">
 
@@ -242,14 +240,12 @@
                                        VerticalAlignment="Center"/>
                         
                         </StackPanel>-->
-
                         <!--User options-->
                         <StackPanel Grid.Column="1"
                                     Orientation="Horizontal"
                                     FlowDirection="RightToLeft"
                                     VerticalAlignment="Center"
                                     Margin="0,0,10,0">
-
                             <TextBlock Text="Lionel Andres Messi"
                                        Foreground="Gainsboro"
                                        FontFamily="Calibri"
@@ -259,23 +255,19 @@
                                      Stroke="WhiteSmoke"
                                      StrokeThickness="2"
                                      Margin="10,0,10,0">
-                                <Ellipse.Fill>
-                                    <ImageBrush ImageSource="/recursos/user-login.png"/>
-                                </Ellipse.Fill>
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="/recursos/user-login.png"/>
+                                    </Ellipse.Fill>
                             </Ellipse>
-
                         </StackPanel>
-
                     </Grid>
-                    <!--Contenido / Child views-->
+                    <!--Contenido / Child views -->
                     <ContentControl x:Name="contenedorVentanaHija"
                                     Grid.Row="2"
                                     Margin="25">
                         <Image Source="./recursos/logotipo-white.png" Height="268" Width="323" />
                     </ContentControl>
                 </Grid>
-
-
             </Border>
         </Grid>
     </Border>
