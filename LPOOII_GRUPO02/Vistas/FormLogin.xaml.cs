@@ -34,7 +34,7 @@ namespace Vistas
             Application.Current.Shutdown();
         }
 
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        /*private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             // Obtener el nombre de usuario y la contraseña ingresados
             string usuario = txtUser.Text;
@@ -59,7 +59,7 @@ namespace Vistas
                 // Credenciales incorrectas
                 MessageBox.Show("Nombre de usuario o contraseña incorrectos", "Error de Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-        }
+        }*/
 
         private void irMenuPrincipal(){
             FormMain fMain = new FormMain();

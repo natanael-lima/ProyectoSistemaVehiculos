@@ -1,12 +1,14 @@
 ﻿<Window x:Class="Vistas.FormLogin"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:UC="clr-namespace:Vistas"
         Title="FormLogin" Height="480" Width="320"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True">
+    <!-- xmlns:UC="clr-namespace:Vistas" llama al userControl que se encuentra en el proyecto vistas-->
     <!--Borde Ventana Login-->
     <Border CornerRadius="15">
         <Border.Background>
@@ -107,111 +109,15 @@
                         </Button.Template>
                     </Button>
                 </Grid>
-                
-                <StackPanel Width="200"
-                            Grid.Row="2"
-                            Orientation="Vertical"
-                             Margin="0,35,0,0">
-                    <Image Source="/recursos/logotipo-white.png"
-                           Width="100" Height="85"/>
-                    <TextBlock Text="GRUPO 02"
-                               Foreground="White"
-                               FontSize="25"
-                               FontWeight="Medium"
-                               FontFamily="Franklin Gothic"
-                               HorizontalAlignment="Center"/>
-                    <TextBlock Text="Bienvenido/a al sistema de estacionamiento de vehiculos."
-                               Foreground="LightGray"
-                               FontSize="12"
-                               FontWeight="Medium"
-                               FontFamily="Calibri"
-                               TextWrapping="Wrap"
-                               TextAlignment="Center"
-                               Margin="0,5,0,0"/>
-                    <TextBlock Text="Username"
-                               Foreground="DarkGray"
-                               FontSize="12"
-                               FontWeight="Medium"
-                               FontFamily="Calibri"                             
-                               Margin="0,35,0,0"/>
-                    <TextBox x:Name="txtUser"
-                             FontSize="13"
-                             FontWeight="Medium"
-                             FontFamily="Montserrat"                            
-                             Foreground="White"
-                             CaretBrush="LightGray"
-                             BorderBrush="DarkGray"
-                             BorderThickness="0,0,0,2"
-                             Height="28"
-                             VerticalContentAlignment="Center"
-                             Margin="0,5,0,0"
-                             Padding="20,0,0,0">
-                        <TextBox.Background>
-                            <ImageBrush ImageSource="/recursos/user.png"
-                                        Stretch="None"
-                                        AlignmentX="Left"/>
-                        </TextBox.Background>
-                    </TextBox>
 
-                    <TextBlock Text="Password"
-                               Foreground="DarkGray"
-                               FontSize="12"
-                               FontWeight="Medium"
-                               FontFamily="Calibri"                             
-                               Margin="0,35,0,0"/>
-                    <PasswordBox x:Name="txtPassword"
-                             FontSize="13"
-                             FontWeight="Medium"
-                             FontFamily="Montserrat"                            
-                             Foreground="White"
-                             CaretBrush="LightGray"
-                             BorderBrush="DarkGray"
-                             BorderThickness="0,0,0,2"
-                             Height="28"
-                             VerticalContentAlignment="Center"
-                             Margin="0,5,0,0"
-                             Padding="20,0,0,0">
-                        <PasswordBox.Background>
-                            <ImageBrush ImageSource="/recursos/llave.png"
-                                        Stretch="None"
-                                        AlignmentX="Left"/>
-                            </PasswordBox.Background>
-                    </PasswordBox>
-
-                    <Button x:Name="btnLogin"                          
-                            BorderThickness="0"
-                            Content="INICIAR SESION"
-                            Foreground="White"
-                            FontSize="12"
-                            FontFamily="Calibri"
-                            Cursor="Hand"                           
-                            Margin="0,10,0,0"
-                            Click="btnLogin_Click">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="#D2B24C"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#D2B222"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="150" Height="35"
-                                        CornerRadius="10"
-                                        Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                    
-                    
+               <!-- Usar doble stack panel uno aqui y otro en el userControl porque si -->
+                <StackPanel Orientation="Vertical"
+                             Margin="0,35,0,0" Width="200" Grid.Row="2">
+                   <!-- User Control, Punto 4 TP2 otra forma de llamar es usando 
+                    <local:userControlLogin/>   -->
+                <UC:userControlLogin/>
                 </StackPanel>
-              </Grid>
+            </Grid>
             
         </Border>
     </Border>
