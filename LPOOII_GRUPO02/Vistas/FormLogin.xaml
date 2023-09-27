@@ -10,14 +10,14 @@
         AllowsTransparency="True">
     <!-- xmlns:UC="clr-namespace:Vistas" llama al userControl que se encuentra en el proyecto vistas-->
     <!--Borde Ventana Login-->
+    <!--Borde Ventana Principal Login-->
     <Border CornerRadius="15">
+        <!--Imagen para el fondo del Login-->
         <Border.Background>
-            <ImageBrush ImageSource="/recursos/fondo1.jpg"
-                        Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="/recursos/fondo1.jpg" Stretch="UniformToFill"/>
         </Border.Background>
-        <!--Efecto Gradiante-->
-        <Border CornerRadius="15"
-                Opacity="0.92">
+        <!--Efecto Gradiante y Borde Overlay-->
+        <Border CornerRadius="15" Opacity="0.92">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
                     <GradientStop Color="#18161F" Offset="0"/>
@@ -27,17 +27,20 @@
                 
             <Grid>
                 <Grid.RowDefinitions>
+                    <!--Header Contenedor-->
                     <RowDefinition Height="30"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <!--Grid para Header-->
+                <!--Grid para Header Contenedor-->
                 <Grid Grid.Row="0">
+                    <!--Columnas Botones Header-->
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition Width="25"/>
                         <ColumnDefinition Width="25"/>
                         <ColumnDefinition Width="8"/>
                     </Grid.ColumnDefinitions>
+                    <!--Titulo Ventana Header-->
                     <TextBlock Text="Iniciar Sesion"
                                Foreground="DarkGray"
                                FontSize="10"
@@ -55,6 +58,7 @@
                             Cursor="Hand"
                             Grid.Column="1"
                             Click="btnMinimize_Click">
+                            <!--Efecto Boton-->
                             <Button.Style>
                                 <Style TargetType="Button">
                                 <Setter Property="Background" Value="#F7F7F7"/>
@@ -65,17 +69,17 @@
                                      </Style.Triggers>
                                 </Style>
                             </Button.Style>
-                        
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="18" Height="18"
-                                        CornerRadius="3"
-                                        Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
+                             <!--Contenedor Boton-->
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="18" Height="18"
+                                            CornerRadius="3"
+                                            Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center"
+                                                              HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
                     </Button>
                     <!--Cerrar Login-->
                     <Button x:Name="btnClose"                          
@@ -87,38 +91,41 @@
                             Cursor="Hand"
                             Grid.Column="2"
                             Click="btnClose_Click">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="#F7F7F7"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#F7BFBE"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="18" Height="18"
-                                        CornerRadius="3"
-                                        Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
+                            <!--Efecto Boton-->
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="#F7F7F7"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#F7BFBE"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <!--Contenedor Boton-->
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="18" Height="18"
+                                            CornerRadius="3"
+                                            Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                          HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
                 </Grid>
+
 
                <!-- Usar doble stack panel uno aqui y otro en el userControl porque si -->
                 <StackPanel Orientation="Vertical"
                              Margin="0,35,0,0" Width="200" Grid.Row="2">
                    <!-- User Control, Punto 4 TP2 otra forma de llamar es usando 
-                    <local:userControlLogin/>   -->
-                <UC:userControlLogin/>
+                    <local:userControlLogin/>   
+                    se le poner nombre con x:name para poder trabajar con ese nombre en codigo c#-->
+                <UC:userControlLogin x:Name="userControlLoginn"/>
                 </StackPanel>
-            </Grid>
-            
+            </Grid>          
         </Border>
     </Border>
 </Window>

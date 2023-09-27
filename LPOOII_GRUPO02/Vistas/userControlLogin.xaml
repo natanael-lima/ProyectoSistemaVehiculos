@@ -82,8 +82,7 @@
                             FontSize="12"
                             FontFamily="Calibri"
                             Cursor="Hand"                           
-                            Margin="0,10,0,0"
-                            >
+                            Margin="0,10,0,0" Click="btnLogin_Click">
             <Button.Style>
                 <Style TargetType="Button">
                     <Setter Property="Background" Value="#D2B24C"/>

@@ -19,9 +19,19 @@ namespace Vistas
     /// </summary>
     public partial class userControlLogin : UserControl
     {
+
+        public event RoutedEventHandler botonClick;
+
         public userControlLogin()
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            botonClick.Invoke(this, e);
+        }
+
+
     }
 }
