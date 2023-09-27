@@ -123,8 +123,9 @@
                         <ImageBrush></ImageBrush>
                     </TextBox.Background>
                 </TextBox>
-                <Button BorderThickness="0" Content="GUARDAR" Cursor="Hand" FontFamily="Calibri" FontSize="12" Foreground="White" Margin="255,210,33,27" Name="btnGuardar" Grid.Row="1" Click="btnGuardar_Click">
-                    <Button.Style>
+                <Button Template="{StaticResource btnDesing}" Style="{StaticResource btnStyle}" BorderThickness="0" Content="GUARDAR" Cursor="Hand" FontFamily="Calibri" FontSize="12" Margin="255,210,33,27" Name="btnGuardar" Grid.Row="1" Click="btnGuardar_Click">
+                   <!-- El estilo y el template pasan a la LibreriaRecursos -->
+                    <!--<Button.Style>
                         <Style TargetType="Button">
                             <Style.Triggers>
                                 <Trigger Property="UIElement.IsMouseOver" Value="True">
@@ -140,10 +141,10 @@
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                             </Border>
                         </ControlTemplate>
-                    </Button.Template>
+                    </Button.Template>--> 
                 </Button>
-                <Button BorderThickness="0" Content="MODIFICAR" Cursor="Hand" FontFamily="Calibri" FontSize="12" Foreground="White" Margin="146,210,142,27" Name="btnModificar" Grid.Row="1">
-                    <Button.Style>
+                <Button Template="{StaticResource btnDesing}" Style="{StaticResource btnStyle}" BorderThickness="0" Content="MODIFICAR" Cursor="Hand" FontFamily="Calibri" FontSize="12" Margin="146,210,142,27" Name="btnModificar" Grid.Row="1">
+                   <!-- <Button.Style>
                         <Style TargetType="Button">
                             <Style.Triggers>
                                 <Trigger Property="UIElement.IsMouseOver" Value="True">
@@ -159,10 +160,10 @@
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                             </Border>
                         </ControlTemplate>
-                    </Button.Template>
+                    </Button.Template>-->
                 </Button>
-                <Button BorderThickness="0" Content="ELIMINAR" Cursor="Hand" FontFamily="Calibri" FontSize="12" Foreground="White" Margin="38,210,250,27" Name="button1" Grid.Row="1">
-                    <Button.Style>
+                <Button Template="{StaticResource btnDesing}" Style="{StaticResource btnStyle}" BorderThickness="0" Content="ELIMINAR" Cursor="Hand" FontFamily="Calibri" FontSize="12" Margin="38,210,250,27" Name="button1" Grid.Row="1">
+                   <!-- <Button.Style>
                         <Style TargetType="Button">
                             <Style.Triggers>
                                 <Trigger Property="UIElement.IsMouseOver" Value="True">
@@ -178,7 +179,7 @@
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                             </Border>
                         </ControlTemplate>
-                    </Button.Template>
+                    </Button.Template>-->
                 </Button>
             </Grid>
         </Border>
