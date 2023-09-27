@@ -160,6 +160,10 @@
       <Project>{E82B26AC-6713-4DA8-9914-39AB673680C4}</Project>
       <Name>ClaseBase</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LibreriaRecursos\LibreriaRecursos.csproj">
+      <Project>{155F9922-F6B1-4736-BA8E-066C519A17E1}</Project>
+      <Name>LibreriaRecursos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

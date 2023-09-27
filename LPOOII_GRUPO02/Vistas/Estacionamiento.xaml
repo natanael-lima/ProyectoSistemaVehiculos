@@ -165,7 +165,7 @@
                     <Grid Grid.Row="1">
                         <Label Name="lblDisponible" Content="Disponible" Foreground="DarkGray" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Center" Margin="15,4,0,6" />
                         <Rectangle Name="rect2" Height="20" Margin="134,12,162,6"  Stroke="#FF8CA236" VerticalAlignment="Center" Width="28" Fill="Green" />
-                        <Button Name="btnSalir" Content="Salir" Height="33" VerticalAlignment="Center" Width="84" Margin="216,5,24,1" Click="btnSalir_Click" />
+                        <Button Template="{StaticResource btnDesing}" Style="{StaticResource btnStyle}" Name="btnSalir" Content="Salir" Height="33" VerticalAlignment="Center" Width="84" Margin="216,5,24,1" Click="btnSalir_Click" />
                     </Grid>
                     <Grid Grid.Row="2">
                         <Label Name="lblDeshabilitado" Content="Deshabilitado" Foreground="DarkGray" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Center" Margin="15,4,0,6" />
