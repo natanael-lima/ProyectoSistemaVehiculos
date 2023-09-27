@@ -19,9 +19,37 @@ namespace Vistas
     /// </summary>
     public partial class FormLogin : Window
     {
+        
         public FormLogin()
         {
             InitializeComponent();
+            userControlLoginn.botonClick += UserControlLogin_botonClick;
+        }
+        //nuevo evento agregado en vez del click del boton, ya que este maneja el evento del userControl
+        private void UserControlLogin_botonClick(object sender,EventArgs e)
+        {
+            string usuario = userControlLoginn.txtUser.Text;
+            string password = userControlLoginn.txtPassword.Password;
+
+            // Validar las credenciales hardcoded
+            if (usuario == "admin" && password == "admin")
+            {
+                MessageBox.Show("Bienvenido, Administrador!");
+                App.UserGlobal = "Administrador";
+                irMenuPrincipal();
+            }
+            else if (usuario == "operador" && password == "operador")
+            {
+
+                MessageBox.Show("Bienvenido, Operador!");
+                App.UserGlobal = "Operador";
+                irMenuPrincipal();
+            }
+            else
+            {
+                // Credenciales incorrectas
+                MessageBox.Show("Nombre de usuario o contraseña incorrectos", "Error de Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
@@ -34,32 +62,6 @@ namespace Vistas
             Application.Current.Shutdown();
         }
 
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
-        {
-            // Obtener el nombre de usuario y la contraseña ingresados
-            string usuario = txtUser.Text;
-            string password = txtPassword.Password;
-
-            // Validar las credenciales hardcoded
-            if (usuario == "admin" && password == "admin")
-            { 
-                MessageBox.Show("Bienvenido, Administrador!");
-                App.UserGlobal = "Administrador";
-                irMenuPrincipal();
-            }
-            else if (usuario == "operador" && password == "operador")
-            {
-              
-                MessageBox.Show("Bienvenido, Operador!");
-                App.UserGlobal = "Operador";
-                irMenuPrincipal();
-            }
-            else
-            {
-                // Credenciales incorrectas
-                MessageBox.Show("Nombre de usuario o contraseña incorrectos", "Error de Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
 
         private void irMenuPrincipal(){
             FormMain fMain = new FormMain();
