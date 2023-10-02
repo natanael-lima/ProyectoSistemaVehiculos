@@ -75,35 +75,8 @@
                                         AlignmentX="Left"/>
                 </PasswordBox.Background>
             </PasswordBox>
-            <Button x:Name="btnLogin"                          
-                            BorderThickness="0"
-                            Content="INICIAR SESION"
-                            Foreground="White"
-                            FontSize="12"
-                            FontFamily="Calibri"
-                            Cursor="Hand"                           
-                            Margin="0,10,0,0" Click="btnLogin_Click">
-            <Button.Style>
-                <Style TargetType="Button">
-                    <Setter Property="Background" Value="#D2B24C"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#D2B222"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border Width="150" Height="35"
-                                        CornerRadius="10"
-                                        Background="{TemplateBinding Background}">
-                        <ContentPresenter VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
+            
+        <Button Content="INICIAR SESION" Name="btnLogin" Click="btnLogin_Click" Width="191" Style="{StaticResource BotonGlobalStyle}" Height="40" />
 
 
     </StackPanel>

@@ -142,7 +142,6 @@
     <Resource Include="recursos\fondo1.jpg" />
     <Resource Include="recursos\fondo2.jpg" />
     <Resource Include="recursos\fondo3.jpg" />
-    <Resource Include="recursos\icons8-más-20.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="recursos\logotipo-white.png" />
@@ -171,6 +170,9 @@
       <Project>{155F9922-F6B1-4736-BA8E-066C519A17E1}</Project>
       <Name>LibreriaRecursos</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="recursos\agregar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
