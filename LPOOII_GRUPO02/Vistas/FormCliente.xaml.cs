@@ -69,5 +69,12 @@ namespace Vistas
                 MessageBox.Show("Complete todos los campos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        private void btnSalir_Click(object sender, RoutedEventArgs e)
+        {
+            FormMain fMain = new FormMain();
+            fMain.Show();
+            this.Close();
+        }
     }
 }
