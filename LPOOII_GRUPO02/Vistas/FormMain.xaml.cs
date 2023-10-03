@@ -46,17 +46,17 @@ namespace Vistas
             //txtBlockRol.Text = txtBlockRol.Text + " "+ App.UserGlobal;
             if (App.UserGlobal == "Administrador")
             {
-                itemCli.IsEnabled = false;
-                itemEst.IsEnabled = false;
-                itemEst.Foreground = Brushes.Gray;
-                itemCli.Foreground = Brushes.Gray;
+                btnClientes.IsEnabled = false;
+                btnEstacionamientos.IsEnabled = false;
+                btnEstacionamientos.Foreground = Brushes.Gray;
+                btnClientes.Foreground = Brushes.Gray;
             }
             else
             {
-                itemSec.IsEnabled = false;
-                itemVehic.IsEnabled = false;
-                itemSec.Foreground = Brushes.Gray;
-                itemVehic.Foreground = Brushes.Gray;
+                btnSector.IsEnabled = false;
+                btnVehiculos.IsEnabled = false;
+                btnSector.Foreground = Brushes.Gray;
+                btnVehiculos.Foreground = Brushes.Gray;
             }
         }
 
@@ -71,35 +71,35 @@ namespace Vistas
             Application.Current.Shutdown();
         }
 
-        private void itemSec_Click(object sender, RoutedEventArgs e)
+        private void btnSector_Checked(object sender, RoutedEventArgs e)
         {
             Estacionamiento estacionamiento = new Estacionamiento();
             estacionamiento.Show();
             this.Hide();
         }
 
-        private void itemVehic_Click(object sender, RoutedEventArgs e)
+        private void btnVehiculos_Checked(object sender, RoutedEventArgs e)
         {
             FormVehiculo fVehiculo = new FormVehiculo();
             fVehiculo.Show();
             this.Close();
         }
 
-        private void itemCli_Click(object sender, RoutedEventArgs e)
+        private void btnClientes_Checked(object sender, RoutedEventArgs e)
         {
             FormCliente fCliente = new FormCliente();
             fCliente.Show();
             this.Close();
         }
 
-        private void itemEst_Click(object sender, RoutedEventArgs e)
+        private void btnEstacionamientos_Checked(object sender, RoutedEventArgs e)
         {
             Estacionamiento estacionamiento = new Estacionamiento();
             estacionamiento.Show();
             this.Hide();
         }
 
-        private void btnCerrarSesion_Click(object sender, RoutedEventArgs e)
+        private void btnCerrar_Checked(object sender, RoutedEventArgs e)
         {
             FormLogin login = new FormLogin();
             login.Show();
