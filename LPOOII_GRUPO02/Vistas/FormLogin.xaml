@@ -7,17 +7,18 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="Transparent"
-        AllowsTransparency="True">
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown">
     <!-- xmlns:UC="clr-namespace:Vistas" llama al userControl que se encuentra en el proyecto vistas-->
-    <!--Borde Ventana Login-->
+   
     <!--Borde Ventana Principal Login-->
-    <Border CornerRadius="15">
+    <Border CornerRadius="10">
         <!--Imagen para el fondo del Login-->
         <Border.Background>
             <ImageBrush ImageSource="/recursos/fondo1.jpg" Stretch="UniformToFill"/>
         </Border.Background>
         <!--Efecto Gradiante y Borde Overlay-->
-        <Border CornerRadius="15" Opacity="0.92">
+        <Border CornerRadius="10" Opacity="0.92">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
                     <GradientStop Color="#18161F" Offset="0"/>

@@ -25,6 +25,14 @@ namespace Vistas
             InitializeComponent();
             userControlLoginn.botonClick += UserControlLogin_botonClick;
         }
+        // metodo para mover la ventana con el mouse, se agrega en el inicio de Windows Form
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if(e.LeftButton==MouseButtonState.Pressed){
+                DragMove();
+            }
+        }
+
         //nuevo evento agregado en vez del click del boton, ya que este maneja el evento del userControl
         private void UserControlLogin_botonClick(object sender,EventArgs e)
         {

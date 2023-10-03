@@ -5,10 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="480" d:DesignWidth="320">
-    <StackPanel Width="200"
-                            Grid.Row="2"
-                            Orientation="Vertical"
-                             Margin="0,35,0,0">
+    <StackPanel Width="200" Grid.Row="2" Orientation="Vertical" Margin="0,35,0,0">
         
             <Image Source="/recursos/logotipo-white.png"
                            Width="100" Height="85"/>

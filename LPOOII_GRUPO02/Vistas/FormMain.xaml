@@ -7,48 +7,6 @@
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True">
-    <!--Recursos que se usan en el Menu-->
-    <Window.Resources>
-        <Style x:Key="Main_MenuItem"
-               TargetType="MenuItem">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type MenuItem}">
-                        <Border x:Name="border"
-                                Background="#18161F"
-                                BorderThickness="0">
-                            <Grid>
-                                <!--// Icon //-->
-                                <ContentPresenter ContentSource="Icon"
-                                                  HorizontalAlignment="Left"
-                                                  VerticalAlignment="Center"
-                                                  Height="25"
-                                                  Width="25"
-                                                  Margin="8,0,0,0" />
-                                <!--// Text //-->
-                                <ContentPresenter ContentSource="Header"
-                                                  TextBlock.FontFamily="Calibri"
-                                                  TextBlock.FontSize="18"
-                                                  HorizontalAlignment="Left"
-                                                  VerticalAlignment="Center"
-                                                  Margin="40,0,0,0" />
-                            </Grid>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsHighlighted"
-                                     Value="True">
-                                <Setter Property="Background"
-                                        TargetName="border"
-                                        Value="#2D2D39" />
-
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
-
 
     <!--Borde Ventana Principal Main-->
     <Border CornerRadius="10"                    
@@ -84,40 +42,74 @@
                                    VerticalAlignment="Center"
                                    Margin="10,0,0,0"/>
                     </StackPanel>
-                        <!--Menu Butones-->
+
+                    <!--Menu Buttons-->
+                    <RadioButton Name="btnSector" Style="{StaticResource menuButton}" 
+                                 Command="{Binding ShowHomeViewCommand}" Checked="btnSector_Checked">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="./recursos/menu-sector.png" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Sectores" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton  Name="btnVehiculos" Style="{StaticResource menuButton}" Checked="btnVehiculos_Checked">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="./recursos/menu-auto.png" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Vehiculos" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton  Name="btnClientes" Style="{StaticResource menuButton}" Checked="btnClientes_Checked">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="./recursos/menu-clientes.png" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Clientes" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton  Name="btnEstacionamientos" Style="{StaticResource menuButton}" Checked="btnEstacionamientos_Checked">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="./recursos/menu-estacionamiento.png" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Estacionamientos" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <MenuItem Header="Prueba" Name="btnPrueba" Style="{StaticResource Main_MenuItem}" Foreground="White" Height="48">
+                        <MenuItem.Icon>
+                            <Image Source="./recursos/menu-sector.png" Stretch="Uniform" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <RadioButton Name="btnCerrar" Style="{StaticResource menuButton}" Margin="-5,290,0,0" Checked="btnCerrar_Checked">
+                        <StackPanel Orientation="Horizontal" >
+                            <Image Source="./recursos/menu-salir.png" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Cerrar Sesion" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+                    <!--Menu Butones
                         <Menu Background="Transparent" Margin="0,50,0,0">
-                            <!--Butones-->
-                            <MenuItem Header="Sectores" Name="itemSec" Height="35" Width="200"  Style="{StaticResource Main_MenuItem}" Foreground="White" Click="itemSec_Click">
+                            
+                            <MenuItem Header="Sectores" Name="btnSector" Height="35" Width="200"  Style="{StaticResource Main_MenuItem}" Foreground="White" Click="btnSector_Click">
                                 <MenuItem.Icon>
                                     <Image Source="./recursos/menu-sector.png" Stretch="Uniform"/>
                                 </MenuItem.Icon>
                             </MenuItem>
-                            <MenuItem Header="Vehiculos" Name="itemVehic" Height="35" Width="200" Style="{StaticResource Main_MenuItem}" Foreground="White" Click="itemVehic_Click">
+                            <MenuItem Header="Vehiculos" Name="btnVehiculos" Height="35" Width="200" Style="{StaticResource Main_MenuItem}" Foreground="White" Click="btnVehiculos_Click">
                                 <MenuItem.Icon>
                                     <Image Source="./recursos/menu-auto.png" Stretch="Uniform"/>
                                 </MenuItem.Icon>
                             </MenuItem>
-                            <MenuItem Header="Clientes" Name="itemCli" Height="35" Width="200" Style="{StaticResource Main_MenuItem}" Foreground="White" Click="itemCli_Click">
+                            <MenuItem Header="Clientes" Name="btnClientes" Height="35" Width="200" Style="{StaticResource Main_MenuItem}" Foreground="White" Click="btnClientes_Click">
                                 <MenuItem.Icon>
                                     <Image Source="./recursos/menu-clientes.png" Stretch="Uniform"/>
                                 </MenuItem.Icon>
-                                <!--
-                                        <MenuItem Header="Nuevo Cliente" />
-                                        <MenuItem Header="Editar Cliente" />
-                                        <MenuItem Header="Eliminar Cliente" />-->
                             </MenuItem>
-                            <MenuItem Header="Estacionamiento" Name="itemEst" Height="35" Width="200" Style="{StaticResource Main_MenuItem}" Foreground="White" Click="itemEst_Click">
+                            <MenuItem Header="Estacionamiento" Name="btnEstacionamientos" Height="35" Width="200" Style="{StaticResource Main_MenuItem}" Foreground="White" Click="btnEstacionamientos_Click">
                                 <MenuItem.Icon>
                                     <Image Source="./recursos/menu-estacionamiento.png" Stretch="Uniform"/>
                                 </MenuItem.Icon>
                             </MenuItem>
-                            <MenuItem Header="Cerrar Sesion" Name="btnCerrarSesion" Height="35" Width="200" Margin="0,340,0,0" Style="{StaticResource Main_MenuItem}" Foreground="White" Click="btnCerrarSesion_Click">
+                            <MenuItem Header="Cerrar Sesion" Name="btnCerrar" Height="35" Width="200" Margin="0,340,0,0" Style="{StaticResource Main_MenuItem}" Foreground="White" Click="btnCerrar_Click">
                                 <MenuItem.Icon>
                                     <Image Source="./recursos/menu-salir.png" Stretch="Uniform"/>
                                 </MenuItem.Icon>
                             </MenuItem>
-                        </Menu>
-                    </StackPanel>
+                    </Menu> -->
+                </StackPanel>
             </Border>
             <!--Main Section-->
             <Border CornerRadius="0,10,10,0"
@@ -155,69 +147,15 @@
                                Margin="15,0,0,0" HorizontalAlignment="Center" />
                         <!--Minimizar Login-->
                         <Button x:Name="btnMinimize"
-                            BorderThickness="0"
-                            Content="-"
-                            Foreground="Black"
-                            FontSize="16"
-                            FontFamily="s"
-                            Cursor="Hand"
                             Grid.Column="1"
-                            Click="btnMinimize_Click">
-                            <!--Efecto Boton-->
-                            <Button.Style>
-                                <Style TargetType="Button">
-                                    <Setter Property="Background" Value="#F7F7F7"/>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="#D0D0D0"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                            <!--Contenedor Boton-->
-                            <Button.Template>
-                                <ControlTemplate TargetType="Button">
-                                    <Border Width="18" Height="18"
-                                        CornerRadius="3"
-                                        Background="{TemplateBinding Background}">
-                                        <ContentPresenter VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Button.Template>
+                            Click="btnMinimize_Click"
+                            Style="{StaticResource MinimizeButtonStyle}">
                         </Button>
                         <!--Cerrar Login-->
                         <Button x:Name="btnClose"                          
-                            BorderThickness="0"
-                            Content="X"
-                            Foreground="Black"
-                            FontSize="12"
-                            FontFamily="Shruti"
-                            Cursor="Hand"
                             Grid.Column="2"
-                            Click="btnClose_Click">
-                            <!--Efecto Boton-->
-                            <Button.Style>
-                                <Style TargetType="Button">
-                                    <Setter Property="Background" Value="#F7F7F7"/>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="#F7BFBE"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Button.Style>
-                            <!--Contenedor Boton-->
-                            <Button.Template>
-                                <ControlTemplate TargetType="Button">
-                                    <Border Width="18" Height="18"
-                                        CornerRadius="3"
-                                        Background="{TemplateBinding Background}">
-                                        <ContentPresenter VerticalAlignment="Center"
-                                                      HorizontalAlignment="Center"/>
-                                    </Border>
-                                </ControlTemplate>
-                            </Button.Template>
+                            Click="btnClose_Click"
+                            Style="{StaticResource CloseButtonStyle}">
                         </Button>
                     </Grid>
                     <!--Header User / Adicional-->
@@ -240,7 +178,7 @@
                                        VerticalAlignment="Center"/>
                         
                         </StackPanel>-->
-                        <!--User options-->
+                        <!--Opciones Usuario-->
                         <StackPanel Grid.Column="1"
                                     Orientation="Horizontal"
                                     FlowDirection="RightToLeft"
@@ -262,7 +200,7 @@
                         </StackPanel>
                     </Grid>
                     <!--Contenido / Child views -->
-                    <ContentControl x:Name="contenedorVentanaHija"
+                    <ContentControl 
                                     Grid.Row="2"
                                     Margin="25">
                         <Image Source="./recursos/logotipo-white.png" Height="268" Width="323" />
