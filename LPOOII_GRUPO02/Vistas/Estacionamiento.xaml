@@ -3,12 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Vehiculos en Playa" Height="600" Width="350" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True">
     
-    <Border CornerRadius="15">
+    <Border CornerRadius="10">
         <Border.Background>
             <ImageBrush ImageSource="/recursos/fondo2.jpg" Stretch="UniformToFill"/>
         </Border.Background>
     
-        <Border CornerRadius="5" Opacity="0.87"><!--Efecto Gradiante-->
+        <Border CornerRadius="10" Opacity="0.87"><!--Efecto Gradiante-->
             <!--Borde de la Ventana-->
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
@@ -35,49 +35,18 @@
                     
                     <!--Titulo de la ventana-->
                     <TextBlock Text="Vehiculos en Playa" Foreground="DarkGray" FontSize="20" FontFamily="Calibri" Grid.Column="0" VerticalAlignment="Center" Margin="15,0,0,0"/>
-                    
-                    <!--Boton minimizar-->
-                    <Button x:Name="btnMinimize" BorderThickness="0" Content="-" Foreground="Black" FontSize="16" FontFamily="s" Cursor="Hand" Grid.Column="1" Click="btnMinimize_Click">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="#F7F7F7"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#F7F7F8"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
 
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="18" Height="18" CornerRadius="3" Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
+                    <!--Minimizar Ventana-->
+                    <Button x:Name="btnMinimize"
+                            Grid.Column="1"
+                            Click="btnMinimize_Click"
+                            Style="{StaticResource MinimizeButtonStyle}">
                     </Button>
-                    
-                    <!--Boton cerrar-->
-                    <Button x:Name="btnClose" BorderThickness="0" Content="X" Foreground="Black" FontSize="12" FontFamily="Shruti" Cursor="Hand" Grid.Column="2" Click="btnClose_Click">
-                        <Button.Style>
-                            <Style TargetType="Button">
-                                <Setter Property="Background" Value="#F7F7F7"/>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#F7BFBE"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                        
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Width="18" Height="18" CornerRadius="3" Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
+                    <!--Cerrar Login-->
+                    <Button x:Name="btnClose"                          
+                            Grid.Column="2"
+                            Click="btnClose_Click"
+                            Style="{StaticResource CloseButtonStyle}">
                     </Button>
                 </Grid>
                 
