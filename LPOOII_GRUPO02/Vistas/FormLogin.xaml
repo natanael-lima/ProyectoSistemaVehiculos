@@ -18,11 +18,11 @@
             <ImageBrush ImageSource="/recursos/fondo1.jpg" Stretch="UniformToFill"/>
         </Border.Background>
         <!--Efecto Gradiante y Borde Overlay-->
-        <Border CornerRadius="10" Opacity="0.92">
+        <Border CornerRadius="10" Opacity="0.95">
             <Border.Background>
-                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,1">
                     <GradientStop Color="#18161F" Offset="0"/>
-                    <GradientStop Color="#09070B" Offset="1"/>
+                    <GradientStop Color="#09050B" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
                 
