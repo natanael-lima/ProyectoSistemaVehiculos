@@ -52,7 +52,7 @@ namespace Vistas
                     oCliente.Cli_DNI = int.Parse(txtDNI.Text);
                     oCliente.Cli_Apellido = txtApellido.Text;
                     oCliente.Cli_Nombre = txtNombre.Text;
-                    oCliente.Cli_Telefono = txtTelefono.Text;
+                    oCliente.Cli_Telefono = int.Parse(txtTelefono.Text);
 
                     string mensaje = "ID: " + oCliente.Cli_Id + "\nDNI: " + oCliente.Cli_DNI + "\nApellido: " + oCliente.Cli_Apellido + "\nNombre: " + oCliente.Cli_Nombre + "\nTeléfono: " + oCliente.Cli_Telefono;
                     MessageBoxResult result2 = MessageBox.Show(mensaje, "Valores Almacenados", MessageBoxButton.OK, MessageBoxImage.Information);
