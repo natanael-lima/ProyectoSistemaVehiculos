@@ -14,9 +14,9 @@ namespace ClaseBase
             get { return cli_Id; }
             set { cli_Id = value; }
         }
-        private int cli_DNI;
+        private long cli_DNI;
 
-        public int Cli_DNI
+        public long Cli_DNI
         {
             get { return cli_DNI; }
             set { cli_DNI = value; }
@@ -35,9 +35,9 @@ namespace ClaseBase
             get { return cli_Nombre; }
             set { cli_Nombre = value; }
         }
-        private string cli_Telefono;
+        private long cli_Telefono;
 
-        public string Cli_Telefono
+        public long Cli_Telefono
         {
             get { return cli_Telefono; }
             set { cli_Telefono = value; }

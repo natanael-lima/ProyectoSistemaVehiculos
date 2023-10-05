@@ -28,9 +28,9 @@ namespace ClaseBase
             get { return sec_Identificador; }
             set { sec_Identificador = value; }
         }
-        private bool sec_Habilitado;
+        private int sec_Habilitado;
 
-        public bool Sec_Habilitado
+        public int Sec_Habilitado
         {
             get { return sec_Habilitado; }
             set { sec_Habilitado = value; }
