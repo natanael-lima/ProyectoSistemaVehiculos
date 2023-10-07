@@ -7,7 +7,7 @@
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True"
-        MouseDown="Window_MouseDown">
+        MouseDown="Window_MouseDown" Icon="./recursos/logo-ico.ico">
     <!--xmlns:local="clr-namespace:LibreriaRecursos;assembly=LibreriaRecursos" 
     se define esta referencia para poder acceder al metodo ConversorDeEstados o cualquier Clase que este en LibreriaRecursos-->
     <Window.Resources>

@@ -6,8 +6,7 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="Transparent"
-        AllowsTransparency="True">
-
+        AllowsTransparency="True" Icon="./recursos/logo-ico.ico">
     <!--Borde Ventana Principal Main-->
     <Border CornerRadius="10"                    
             BorderThickness="0">

@@ -8,7 +8,7 @@
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True"
-        MouseDown="Window_MouseDown">
+        MouseDown="Window_MouseDown" Icon="./recursos/logo-ico.ico">
     <!-- xmlns:UC="clr-namespace:Vistas" llama al userControl que se encuentra en el proyecto vistas-->
    
     <!--Borde Ventana Principal Login-->

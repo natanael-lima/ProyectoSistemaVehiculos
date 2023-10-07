@@ -6,7 +6,7 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="Transparent"
-        AllowsTransparency="True">
+        AllowsTransparency="True" Icon="./recursos/logo-ico.ico">
     
     <Window.Resources>
         <ResourceDictionary>
