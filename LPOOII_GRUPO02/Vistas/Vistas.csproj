@@ -55,10 +55,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EstadoSector.xaml.cs">
+      <DependentUpon>EstadoSector.xaml</DependentUpon>
+    </Compile>
     <Compile Include="userControlLogin.xaml.cs">
       <DependentUpon>userControlLogin.xaml</DependentUpon>
     </Compile>
     <Page Include="Estacionamiento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EstadoSector.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -173,6 +180,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="recursos\agregar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Tiempos.xml">
+      <SubType>Designer</SubType>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
