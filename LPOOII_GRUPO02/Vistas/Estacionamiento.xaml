@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Vistas.Estacionamiento"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Vehiculos en Playa" Height="600" Width="350" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True">
+        Title="Vehiculos en Playa" Height="600" Width="350" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True" Icon="./recursos/logo-ico.ico">
     
     <Border CornerRadius="10">
         <Border.Background>
