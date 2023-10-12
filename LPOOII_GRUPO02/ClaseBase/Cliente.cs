@@ -62,6 +62,7 @@ namespace ClaseBase
                 {
                     cli_Nombre = value;
                     OnPropertyChanged("Cli_Nombre");
+                    
                 }
             }
         }
@@ -100,7 +101,7 @@ namespace ClaseBase
         // Implementación de IDataErrorInfo
         public string Error
         {
-            get { throw new NotImplementedException(); }
+            get { return null; }
         }
 
         public string this[string columnName]

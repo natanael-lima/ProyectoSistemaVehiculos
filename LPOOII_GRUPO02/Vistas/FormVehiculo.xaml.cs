@@ -47,13 +47,13 @@ namespace Vistas
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            if (txtCodigo.Text != "" && txtDescripcion.Text != "" && txtTarifa.Text != "")
+            if (txtDescripcion.Text != "" && txtTarifa.Text != "")
             {
                 MessageBoxResult result = MessageBox.Show("¿Está seguro de que desea guardar los datos?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
                 {
                     TipoVehiculo oTipoVehiculo = new TipoVehiculo();
-                    oTipoVehiculo.Tv_Id = int.Parse(txtCodigo.Text);
+                    
                     oTipoVehiculo.Tv_Descripcion = txtDescripcion.Text;
                     oTipoVehiculo.Tv_Tarifa = decimal.Parse(txtTarifa.Text);
                     string mensaje = "Código: " + oTipoVehiculo.Tv_Id + "\nTarifa: " + oTipoVehiculo.Tv_Tarifa + "\nDescripción: " + oTipoVehiculo.Tv_Descripcion;
@@ -83,6 +83,11 @@ namespace Vistas
         private void dgTiposVehiculos_Loaded(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            dgTiposVehiculos.DataContext = TrabajarTipoVehiculos.traer_tipos_vehiculos();
         }
     }
 }

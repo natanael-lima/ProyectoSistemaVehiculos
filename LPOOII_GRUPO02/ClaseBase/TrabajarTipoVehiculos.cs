@@ -29,6 +29,7 @@ namespace ClaseBase
         //Muestra contenido de la bs de la tabla tipo vehiculo en el datagrid
         public static List<TipoVehiculo> traer_tipos_vehiculos()
         {
+           
             List<TipoVehiculo> lista_tv = new List<TipoVehiculo>(); //lista de tipo de vehiculos
 
             using (SqlConnection conexion = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
@@ -38,16 +39,20 @@ namespace ClaseBase
                 {
                     conexion.Open();
                     //Recorre la base de datos y los carga a la lista_tv
-                    using (SqlDataReader lector = comando.ExecuteReader())
+                    using (DbDataReader dr = comando.ExecuteReader())
                     {
-                        while (lector.Read())
+                        if (dr.HasRows)
                         {
-                            TipoVehiculo tv = new TipoVehiculo();
-                            tv.Tv_Id = lector.GetInt32(0);
-                            tv.Tv_Descripcion = lector.GetString(1);
-                            tv.Tv_Tarifa = (decimal)lector.GetFloat(2);// Error de casteo.
-                            lista_tv.Add(tv);
+                            while (dr.Read())
+                            {
+                                TipoVehiculo oTv = new TipoVehiculo();
+                                oTv.Tv_Id = int.Parse(dr["tv_Id"].ToString());
+                                oTv.Tv_Descripcion = dr["tv_Descripcion"].ToString();
+                                oTv.Tv_Tarifa = decimal.Parse(dr["tv_Tarifa"].ToString());
+                                lista_tv.Add(oTv);
+                            }
                         }
+
                     }
                 }
             }

@@ -69,13 +69,13 @@
                 <Border CornerRadius="0,0,0,10" Grid.Column="0" Background="#18161F">
                     <Grid >
                         <TextBlock Text="DNI:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray"   Margin="25,374,160,209" />
-                        <TextBox TextChanged="txtDNI_TextChanged" Margin="25,392,30,0" Name="txtDNI"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}" />
+                        <TextBox Text="{Binding Path=DNI, UpdateSourceTrigger=PropertyChanged}" TextChanged="txtDNI_TextChanged" Margin="25,392,30,0" Name="txtDNI"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}" />
                         <TextBlock Text="Apellido:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="25,297,160,286" />
-                        <TextBox Margin="25,315,30,0" Name="txtApellido"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}" />
+                        <TextBox Text="{Binding Path=Apellido, UpdateSourceTrigger=PropertyChanged}" Margin="25,315,30,0" Name="txtApellido"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}" />
                         <TextBlock Text="Nombre:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="25,221,160,363" />
-                        <TextBox Margin="25,238,30,0" Name="txtNombre"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}" />
+                        <TextBox Text="{Binding Path=Nombre, UpdateSourceTrigger=PropertyChanged}" Margin="25,238,30,0" Name="txtNombre"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}" />
                         <TextBlock Text="Teléfono:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="25,143,160,440" />
-                        <TextBox Margin="25,161,30,0" Name="txtTelefono"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}" />
+                        <TextBox  Text="{Binding Path=Telefono, UpdateSourceTrigger=PropertyChanged}" Margin="25,161,30,0" Name="txtTelefono"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}"/>
                         <Button Content="Salir" Margin="59,492,0,4" Name="btnSalir" HorizontalAlignment="Left" Width="100" Style="{StaticResource BotonGlobalStyle}" Click="btnSalir_Click" />
                         <Button Content="Guardar" Margin="0,506,93,18" Name="btnGuardar" Click="btnGuardar_Click" HorizontalAlignment="Right" Width="100" Style="{StaticResource BotonGlobalStyle}" />
                     </Grid>
@@ -84,7 +84,7 @@
                     <Grid  >
                         <!--Espacio para las tabla de datos-->
                         <!--v2 para mostrar <DataGrid x:Name="dataGridClientes" AutoGenerateColumns="True" Height="400" Width="760"/> -->
-                        <DataGrid x:Name="dataGridClientes" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Height="400" Width="760">
+                        <DataGrid x:Name="dataGridClientes" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Height="450" Width="760">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Id" Binding="{Binding Cli_Id}" Width="1*"/>
                                 <DataGridTextColumn Header="Nombre" Binding="{Binding Cli_Nombre}" Width="1*"/>
