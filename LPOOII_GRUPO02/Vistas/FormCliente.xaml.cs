@@ -23,6 +23,8 @@ namespace Vistas
         public FormCliente()
         {
             InitializeComponent();
+            // Asigna una instancia de Cliente al DataContext
+            DataContext = new Cliente();
         }
 
         private void btnMinimize_Click(object sender, RoutedEventArgs e)

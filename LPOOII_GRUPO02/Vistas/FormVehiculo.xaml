@@ -6,7 +6,7 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="Transparent"
-        AllowsTransparency="True">
+        AllowsTransparency="True" Loaded="Window_Loaded" xmlns:my="clr-namespace:Vistas">
     <!--Para los recursos-->
     <Window.Resources>
         <ResourceDictionary>
@@ -72,8 +72,8 @@
                         <TextBox Margin="25,392,30,0" Name="txtTarifa" Style="{StaticResource TextoBoxStyle}" />
                         <TextBlock FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="25,297,160,0" Text="Descripción:" Height="26" VerticalAlignment="Top"/>
                         <TextBox Margin="25,314,30,0" Name="txtDescripcion" Style="{StaticResource TextoBoxStyle}" />
-                        <TextBlock FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="25,221,160,0" Text="Código:"  Height="26" VerticalAlignment="Top"/>
-                        <TextBox Margin="25,237,30,0" Name="txtCodigo" Style="{StaticResource TextoBoxStyle}" />
+                        <!--<TextBlock FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="25,221,160,0" Text="Código:"  Height="26" VerticalAlignment="Top"/>
+                        <TextBox Margin="25,237,30,0" Name="txtCodigo" Style="{StaticResource TextoBoxStyle}" />-->
                         <Button Content="Salir" Margin="59,492,0,4" Name="btnSalir" HorizontalAlignment="Left" Width="100" Style="{StaticResource BotonGlobalStyle}" Click="btnSalir_Click" />
                         <Button Content="Guardar" Margin="0,506,93,18" Name="btnGuardar" Click="btnGuardar_Click" HorizontalAlignment="Right" Width="100" Style="{StaticResource BotonGlobalStyle}" />
                     </Grid>
@@ -81,12 +81,12 @@
                 <Border CornerRadius="0,0,10,0" Grid.Column="1" Background="#23232D">
                     <Grid>
                         <!--Espacio para las tabla de datos-->
-                        
-                        <DataGrid AutoGenerateColumns="True" Height="388" HorizontalAlignment="Left" Margin="101,110,0,0" Name="dgTiposVehiculos" VerticalAlignment="Top" Width="588" Background="#99000000" ItemsSource="{Binding}" Loaded="dgTiposVehiculos_Loaded">
+
+                        <DataGrid x:Name="dgTiposVehiculos" AutoGenerateColumns="False" Margin="0,0,0,0"  Height="450" Width="760" Background="#99000000" ItemsSource="{Binding}">
                             <DataGrid.Columns >
-                                <DataGridTextColumn Header="Código" Width="100"  Binding="{Binding Tv_Id}"/>
-                                <DataGridTextColumn Header="Descripción" Width="300" Binding="{Binding Tv_Descripcion}"/>
-                                <DataGridTextColumn Header="Tarifa" Width="200" Binding="{Binding Tv_Trarifa}"/>
+                                <DataGridTextColumn Header="Código" Width="1*"  Binding="{Binding Tv_Id}"/>
+                                <DataGridTextColumn Header="Descripción" Width="2*" Binding="{Binding Tv_Descripcion}"/>
+                                <DataGridTextColumn Header="Tarifa" Width="1*" Binding="{Binding Tv_Trarifa}"/>
                             </DataGrid.Columns>
                         </DataGrid>
                         <!--Botones del Form-->
