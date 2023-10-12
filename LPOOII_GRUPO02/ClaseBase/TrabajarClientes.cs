@@ -103,7 +103,38 @@ namespace ClaseBase
             }
         }
 
+        public static Cliente traer_cliente_por_dni(int dni)
+        {
+            Cliente cliente = null;
 
+            using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("traer_cliente_dni", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(new SqlParameter("@dni", SqlDbType.Int, 20));
+                    cmd.Parameters["@dni"].Value = dni;
+                    cn.Open();
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            cliente = new Cliente
+                            {
+                                Cli_Id = int.Parse(reader["cli_Id"].ToString()),
+                                Cli_Apellido = reader["cli_Apellido"].ToString(),
+                                Cli_Nombre = reader["cli_Nombre"].ToString(),
+                                Cli_DNI = long.Parse(reader["cli_DNI"].ToString()),
+                                Cli_Telefono = long.Parse(reader["cli_Telefono"].ToString())
+                            };
+                        }
+                    }
+                }
+            }
+
+            return cliente;
+        }
          
     }
 }

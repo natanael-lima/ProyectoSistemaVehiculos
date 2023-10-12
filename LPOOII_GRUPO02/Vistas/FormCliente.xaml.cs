@@ -97,5 +97,43 @@ namespace Vistas
         {
 
         }
+
+        private void txtDNI_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            // Cuando el texto del TextBox del DNI cambia, llamamos al método para actualizar los datos del cliente.
+            ActualizarDatosCliente();
+        }
+
+
+        private void ActualizarDatosCliente()
+        {   
+
+            // Obtén el DNI ingresado en el TextBox.
+             int dni = int.Parse(txtDNI.Text);
+            // Llama al método para obtener un cliente por DNI.
+            Cliente cliente = TrabajarClientes.traer_cliente_por_dni(dni);
+
+            if (cliente != null)
+            {
+                // Se encontró un cliente con el DNI ingresado, actualiza todos los campos.
+                txtApellido.Text = cliente.Cli_Apellido;
+                txtNombre.Text = cliente.Cli_Nombre;
+                txtTelefono.Text = cliente.Cli_Telefono.ToString();
+            }
+            else
+            {
+                // No se encontró un cliente con el DNI ingresado, muestra un mensaje o limpia los campos.
+                //MessageBox.Show("No se encontró ningún cliente con el DNI ingresado.");
+                txtApellido.Text = "";
+                txtNombre.Text = "";
+                txtTelefono.Text = "";
+            }
+            
+        }
+
+
+
+
+
     }
 }
