@@ -81,7 +81,7 @@
                 <Border CornerRadius="0,0,10,0" Grid.Column="1" Background="#23232D">
                     <Grid>
                         <!--Espacio para las tabla de datos-->
-                        <Image Source="/recursos/fondo3.jpg" Margin="26,110,33,129" />
+                        
                         <DataGrid AutoGenerateColumns="True" Height="388" HorizontalAlignment="Left" Margin="101,110,0,0" Name="dgTiposVehiculos" VerticalAlignment="Top" Width="588" Background="#99000000" ItemsSource="{Binding}" Loaded="dgTiposVehiculos_Loaded">
                             <DataGrid.Columns >
                                 <DataGridTextColumn Header="Código" Width="100"  Binding="{Binding Tv_Id}"/>
