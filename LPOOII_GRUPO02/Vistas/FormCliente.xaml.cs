@@ -11,7 +11,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ClaseBase;
-using System.Data;
 
 namespace Vistas
 {
@@ -55,8 +54,6 @@ namespace Vistas
                     oCliente.Cli_Nombre = txtNombre.Text;
                     oCliente.Cli_Telefono = int.Parse(txtTelefono.Text);
 
-                    TrabajarClientes.alta_cliente(oCliente);
-
                     string mensaje = "ID: " + oCliente.Cli_Id + "\nDNI: " + oCliente.Cli_DNI + "\nApellido: " + oCliente.Cli_Apellido + "\nNombre: " + oCliente.Cli_Nombre + "\nTeléfono: " + oCliente.Cli_Telefono;
                     MessageBoxResult result2 = MessageBox.Show(mensaje, "Valores Almacenados", MessageBoxButton.OK, MessageBoxImage.Information);
                     if (result2 == MessageBoxResult.OK)
@@ -78,24 +75,6 @@ namespace Vistas
             FormMain fMain = new FormMain();
             fMain.Show();
             this.Close();
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            // Asigna la lista de clientes al DataGrid
-            dataGridClientes.DataContext = TrabajarClientes.traer_clientes(); ;
-
-            // v2 para mostrar listado
-            //TrabajarClientes trabajador = new TrabajarClientes();
-            // Llama al método para obtener el DataTable con los datos de los clientes
-            //DataTable dtClientes = TrabajarClientes.TraerClientes();
-            // Asigna el DataTable al DataGrid como su origen de datos
-            //dataGridClientes.ItemsSource = dtClientes.DefaultView;
-        }
-
-        private void btnEditar_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
