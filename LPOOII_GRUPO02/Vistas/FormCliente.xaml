@@ -6,7 +6,7 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="Transparent"
-        AllowsTransparency="True" Icon="./recursos/logo-ico.ico">
+        AllowsTransparency="True" Icon="./recursos/logo-ico.ico" Loaded="Window_Loaded">
     
     <Window.Resources>
         <ResourceDictionary>
@@ -83,12 +83,21 @@
                 <Border CornerRadius="0,0,10,0" Grid.Column="1" Background="#23232D">
                     <Grid  >
                         <!--Espacio para las tabla de datos-->
-                        <Image Source="/recursos/fondo3.jpg" Margin="26,110,33,129" />
+                        <!--v2 para mostrar <DataGrid x:Name="dataGridClientes" AutoGenerateColumns="True" Height="400" Width="760"/> -->
+                        <DataGrid x:Name="dataGridClientes" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Height="400" Width="760">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Id" Binding="{Binding Cli_Id}" Width="1*"/>
+                                <DataGridTextColumn Header="Nombre" Binding="{Binding Cli_Nombre}" Width="1*"/>
+                                <DataGridTextColumn Header="Apellido" Binding="{Binding Cli_Apellido}" Width="1*"/>
+                                <DataGridTextColumn Header="DNI" Binding="{Binding Cli_DNI}" Width="1*"/>
+                                <DataGridTextColumn Header="Telefono" Binding="{Binding Cli_Telefono}" Width="1*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
                         <!--Botones del Form-->
                         <TextBox Margin="50,52,180,0" Name="txtBuscar" Style="{StaticResource TextoBoxStyle}" Grid.Column="1" />
                         <Button Margin="677,28,0,571" Name="btnBuscar" Style="{StaticResource BotonBuscarStyle}"/>
                         <Button Margin="56,546,0,52" Name="btnAgregar" Style="{StaticResource BotonAgregarStyle}" />
-                        <Button Margin="152,546,0,52" Name="btnEditar" Style="{StaticResource BotonEditarStyle}" />
+                        <Button Margin="152,546,0,52" Name="btnEditar" Style="{StaticResource BotonEditarStyle}" Click="btnEditar_Click" />
                         <Button Margin="631,28,0,571" Name="btnActualizar" Style="{StaticResource BotonActualizarStyle}" />
                         <Button Margin="248,546,461,52" Name="btnEliminar" Style="{StaticResource BotonEliminarStyle}"/>
 

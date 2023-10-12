@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.ComponentModel;
 
 namespace ClaseBase
 {
-    public class Cliente
+    public class Cliente : IDataErrorInfo
     {
         private int cli_Id;
 
@@ -46,5 +47,63 @@ namespace ClaseBase
         public Cliente()
         {
         }
+
+
+    // Implementación de IDataErrorInfo
+        public string Error
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        public string this[string columnName]
+        {
+            get
+            {
+            string result = null;
+
+            if (columnName == "DNI")
+            {
+                if (Cli_DNI <= 0 || (Cli_DNI > 99999999))
+                {
+                    result = "El DNI del cliente es obligatorio.";
+                }
+                // Agregar más validaciones si es necesario
+            }
+            else if (columnName == "Apellido")
+            {
+                if (string.IsNullOrEmpty(Cli_Apellido))
+                {
+                    result = "El apellido es obligatorio.";
+                }
+                else if (Cli_Apellido.Length < 3)
+                    result = "El apellido debe tener al menos 3 carácteres";
+            }
+            else if (columnName == "Nombre")
+            {
+                if (string.IsNullOrEmpty(Cli_Nombre))
+                {
+                    result = "El nombre es obligatorio.";
+                }
+                else if (Cli_Nombre.Length < 3)
+                    result = "El nombre debe tener al menos 3 carácteres";
+            }
+            else if (columnName == "Telefono")
+            {
+                if (Cli_Telefono < 0)
+                {
+                    result = "El telefono es obligatorio.";
+                }
+                else if (Cli_Telefono > 3)
+                    result = "El nombre debe tener al menos 8 carácteres";
+            }
+
+            return result;
+            }
+        }
+
+ 
+
+       
+
     }
 }
