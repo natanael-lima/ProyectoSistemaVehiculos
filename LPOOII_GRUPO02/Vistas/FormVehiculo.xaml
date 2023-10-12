@@ -82,6 +82,13 @@
                     <Grid>
                         <!--Espacio para las tabla de datos-->
                         <Image Source="/recursos/fondo3.jpg" Margin="26,110,33,129" />
+                        <DataGrid AutoGenerateColumns="True" Height="388" HorizontalAlignment="Left" Margin="101,110,0,0" Name="dgTiposVehiculos" VerticalAlignment="Top" Width="588" Background="#99000000" ItemsSource="{Binding}" Loaded="dgTiposVehiculos_Loaded">
+                            <DataGrid.Columns >
+                                <DataGridTextColumn Header="Código" Width="100"  Binding="{Binding Tv_Id}"/>
+                                <DataGridTextColumn Header="Descripción" Width="300" Binding="{Binding Tv_Descripcion}"/>
+                                <DataGridTextColumn Header="Tarifa" Width="200" Binding="{Binding Tv_Trarifa}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
                         <!--Botones del Form-->
                         <TextBox Margin="50,52,0,0" Name="txtBuscar" Style="{StaticResource TextoBoxStyle}" HorizontalAlignment="Left" Width="570" />
                         <Button Margin="677,28,0,571" Name="btnBuscar" Style="{StaticResource BotonBuscarStyle}"/>
