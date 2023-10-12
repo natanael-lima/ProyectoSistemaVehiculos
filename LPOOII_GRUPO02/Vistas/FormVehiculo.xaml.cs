@@ -60,6 +60,8 @@ namespace Vistas
                     MessageBoxResult result2 = MessageBox.Show(mensaje, "Valores Almacenados", MessageBoxButton.OK, MessageBoxImage.Information);
                     if (result2 == MessageBoxResult.OK)
                     {
+                        TrabajarTipoVehiculo.guardar_tipo_vehiculo(oTipoVehiculo);
+                       
                         FormVehiculo formVehiculo = new FormVehiculo();
                         formVehiculo.Show();
                         this.Close();
@@ -77,6 +79,11 @@ namespace Vistas
             FormMain fMain = new FormMain();
             fMain.Show();
             this.Close();
+        }
+
+        private void dgTiposVehiculos_Loaded(object sender, RoutedEventArgs e)
+        {
+            dgTiposVehiculos.ItemsSource = TrabajarTipoVehiculo.traer_tipos_vehiculos();
         }
     }
 }
