@@ -45,8 +45,7 @@ namespace Vistas
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            if (txtDNI.Text != "" && txtApellido.Text != "" && txtNombre.Text != "" && txtTelefono.Text != "")
-            {
+            
                 MessageBoxResult result = MessageBox.Show("¿Está seguro de que desea guardar los datos?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
                 {
@@ -68,7 +67,7 @@ namespace Vistas
                         this.Close();
                     }
                 }
-            }
+            
             else
             {
                 MessageBox.Show("Complete todos los campos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -100,18 +99,11 @@ namespace Vistas
 
         }
 
-        private void txtDNI_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            // Cuando el texto del TextBox del DNI cambia, llamamos al método para actualizar los datos del cliente.
-            ActualizarDatosCliente();
-        }
-
-
         private void ActualizarDatosCliente()
         {   
 
             // Obtén el DNI ingresado en el TextBox.
-             int dni = int.Parse(txtDNI.Text);
+             int dni = int.Parse(textBuscar.Text);
             // Llama al método para obtener un cliente por DNI.
             Cliente cliente = TrabajarClientes.traer_cliente_por_dni(dni);
 
@@ -121,6 +113,9 @@ namespace Vistas
                 txtApellido.Text = cliente.Cli_Apellido;
                 txtNombre.Text = cliente.Cli_Nombre;
                 txtTelefono.Text = cliente.Cli_Telefono.ToString();
+                txtDNI.Text = cliente.Cli_DNI.ToString();
+
+                btnGuardar.IsEnabled = false;
             }
             else
             {
@@ -129,8 +124,17 @@ namespace Vistas
                 txtApellido.Text = "";
                 txtNombre.Text = "";
                 txtTelefono.Text = "";
+                txtDNI.Text = "";
+
+                btnGuardar.IsEnabled = true;
             }
             
+        }
+
+        private void textBuscar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            // Cuando el texto del TextBox del DNI cambia, llamamos al método para actualizar los datos del cliente.
+            ActualizarDatosCliente();
         }
 
 

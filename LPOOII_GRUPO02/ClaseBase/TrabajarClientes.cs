@@ -10,6 +10,16 @@ namespace ClaseBase
 {
     public class TrabajarClientes
     {
+        public Cliente traerCliente()
+        {
+            Cliente oCliente = new Cliente();
+            oCliente.Cli_Apellido = "";
+            oCliente.Cli_DNI = 0;
+            oCliente.Cli_Nombre = "";
+            oCliente.Cli_Telefono = 0;
+
+            return oCliente;
+        }
 
         //Metodo para listar todos los clientes de la base de datos
         public static List<Cliente> traer_clientes()

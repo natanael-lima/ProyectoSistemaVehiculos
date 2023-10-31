@@ -1,6 +1,6 @@
 ﻿<Window x:Class="Vistas.FormCliente"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"       
         Title="FormCliente" Height="700" Width="1200"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
@@ -69,13 +69,29 @@
                 <Border CornerRadius="0,0,0,10" Grid.Column="0" Background="#18161F">
                     <Grid >
                         <TextBlock Text="DNI:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray"   Margin="25,374,160,209" />
-                        <TextBox Text="{Binding Path=DNI, UpdateSourceTrigger=PropertyChanged}" TextChanged="txtDNI_TextChanged" Margin="25,392,30,0" Name="txtDNI"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}" />
+                        <TextBox Margin="25,392,30,0" Name="txtDNI"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}">
+                            <TextBox.Text>
+                                <Binding Path="Cli_DNI" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True" />
+                            </TextBox.Text>
+                        </TextBox>
                         <TextBlock Text="Apellido:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="25,297,160,286" />
-                        <TextBox Text="{Binding Path=Apellido, UpdateSourceTrigger=PropertyChanged}" Margin="25,315,30,0" Name="txtApellido"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}" />
+                        <TextBox Margin="25,315,30,0" Name="txtApellido"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}">
+                            <TextBox.Text>
+                                <Binding Path="Cli_Apellido" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True"/>
+                            </TextBox.Text>
+                        </TextBox>
                         <TextBlock Text="Nombre:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="25,221,160,363" />
-                        <TextBox Text="{Binding Path=Nombre, UpdateSourceTrigger=PropertyChanged}" Margin="25,238,30,0" Name="txtNombre"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}" />
+                        <TextBox Margin="25,238,30,0" Name="txtNombre"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}">
+                            <TextBox.Text>
+                                <Binding Path="Cli_Nombre" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True"/>
+                            </TextBox.Text>
+                        </TextBox>
                         <TextBlock Text="Teléfono:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="25,143,160,440" />
-                        <TextBox  Text="{Binding Path=Telefono, UpdateSourceTrigger=PropertyChanged}" Margin="25,161,30,0" Name="txtTelefono"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}"/>
+                        <TextBox Margin="25,161,30,0" Name="txtTelefono"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}">
+                            <TextBox.Text>
+                                <Binding Path="Cli_Telefono" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True" />
+                            </TextBox.Text>
+                        </TextBox>
                         <Button Content="Salir" Margin="59,492,0,4" Name="btnSalir" HorizontalAlignment="Left" Width="100" Style="{StaticResource BotonGlobalStyle}" Click="btnSalir_Click" />
                         <Button Content="Guardar" Margin="0,506,93,18" Name="btnGuardar" Click="btnGuardar_Click" HorizontalAlignment="Right" Width="100" Style="{StaticResource BotonGlobalStyle}" />
                     </Grid>
@@ -99,8 +115,9 @@
                         <Button Margin="56,546,0,52" Name="btnAgregar" Style="{StaticResource BotonAgregarStyle}" />
                         <Button Margin="152,546,0,52" Name="btnEditar" Style="{StaticResource BotonEditarStyle}" Click="btnEditar_Click" />
                         <Button Margin="631,28,0,571" Name="btnActualizar" Style="{StaticResource BotonActualizarStyle}" />
-                        <Button Margin="248,546,461,52" Name="btnEliminar" Style="{StaticResource BotonEliminarStyle}"/>
-
+                        <Button Margin="0,546,461,52" Name="btnEliminar" Style="{StaticResource BotonEliminarStyle}" HorizontalAlignment="Right" Width="89" />
+                        <TextBlock FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="352,567,257,16" Text="DNI para modificar:" />
+                        <TextBox Margin="352,585,127,0" Name="textBuscar" Style="{StaticResource TextoBoxStyle}" Text="{Binding Path=DNI, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center" TextChanged="textBuscar_TextChanged" />
                     </Grid>
                 </Border>
                         

@@ -110,15 +110,22 @@ namespace ClaseBase
             {
                 string result = null;
 
-                if (columnName == "DNI")
+                if (columnName == "Cli_DNI")
                 {
-                    if (Cli_DNI <= 0 || (Cli_DNI > 99999999))
+                    if (Cli_DNI <= 0 ) 
                     {
                         result = "El DNI del cliente es obligatorio.";
+                    }else if (Cli_DNI < 9999999)
+                    {
+                        result = "El DNI no debe tener menos de 8 digitos";
+                    }
+                    else if (Cli_DNI > 99999999)
+                    {
+                        result = "El DNI no debe tener mas de 8 digitos";
                     }
                     // Agregar más validaciones si es necesario
                 }
-                else if (columnName == "Apellido")
+                else if (columnName == "Cli_Apellido")
                 {
                     if (string.IsNullOrEmpty(Cli_Apellido))
                     {
@@ -127,7 +134,7 @@ namespace ClaseBase
                     else if (Cli_Apellido.Length < 3)
                         result = "El apellido debe tener al menos 3 carácteres";
                 }
-                else if (columnName == "Nombre")
+                else if (columnName == "Cli_Nombre")
                 {
                     if (string.IsNullOrEmpty(Cli_Nombre))
                     {
@@ -136,14 +143,14 @@ namespace ClaseBase
                     else if (Cli_Nombre.Length < 3)
                         result = "El nombre debe tener al menos 3 carácteres";
                 }
-                else if (columnName == "Telefono")
+                else if (columnName == "Cli_Telefono")
                 {
                     if (Cli_Telefono < 0)
                     {
                         result = "El telefono es obligatorio.";
                     }
-                    else if (Cli_Telefono > 3)
-                        result = "El nombre debe tener al menos 8 carácteres";
+                    else if (Cli_Telefono < 999999999)
+                        result = "El telefono debe tener al menos 10 carácteres";
                 }
 
                 return result;

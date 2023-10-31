@@ -18,7 +18,7 @@
 
 
     <!--TextBox Campos Form Style -->
-    <Style x:Key="TextoBoxStyle" TargetType="TextBox">
+ <!--   <Style x:Key="TextoBoxStyle" TargetType="TextBox">
         <Setter Property="BorderBrush" Value="DarkGray"/>
         <Setter Property="BorderThickness" Value="0,0,0,2"/>
         <Setter Property="CaretBrush" Value="LightGray"/>
@@ -30,14 +30,14 @@
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="Margin" Value="0,5,0,0"/>
         <Setter Property="Height" Value="24"/>
-        <!-- Agregar una imagen de fondo al TextBox pero sin imagen si no es login-->
+        Agregar una imagen de fondo al TextBox pero sin imagen si no es login
         <Setter Property="Background">
             <Setter.Value>
                 <ImageBrush>
                 </ImageBrush>
             </Setter.Value>
         </Setter>
-    </Style>
+    </Style> -->
 
     <!-- Estilo para el botón Actualizar -->
     <Style x:Key="BotonActualizarStyle" TargetType="Button">
@@ -257,6 +257,45 @@
                 <Setter Property="FontWeight" Value="Bold"/>
                 <Setter Property="FontSize" Value="14"/>
                 <Setter Property="Foreground" Value="Red"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--Style para validaciones -->
+    <ControlTemplate x:Key="ErrorTemplate">
+        <Grid>
+            <Border VerticalAlignment="Top">
+                <AdornedElementPlaceholder />
+            </Border>
+            <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red" VerticalAlignment="Center" HorizontalAlignment="Right" />
+        </Grid>
+    </ControlTemplate>
+
+    <!--TextBox Campos Form Style -->
+    <Style x:Key="TextoBoxStyle" TargetType="TextBox">
+        <Setter Property="BorderBrush" Value="DarkGray"/>
+        <Setter Property="BorderThickness" Value="0,0,0,2"/>
+        <Setter Property="CaretBrush" Value="LightGray"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontFamily" Value="Montserrat"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Margin" Value="0,5,0,0"/>
+        <Setter Property="Height" Value="24"/>
+        <Setter Property="Validation.ErrorTemplate" Value="{StaticResource ErrorTemplate}"/>
+        <!-- Agregar una imagen de fondo al TextBox pero sin imagen si no es login-->
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush>
+                </ImageBrush>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <!-- Trigger para cambiar el borde a rojo cuando hay errores -->
+            <Trigger Property="Validation.HasError" Value="True">
+                <Setter Property="BorderBrush" Value="Red"/>
             </Trigger>
         </Style.Triggers>
     </Style>
