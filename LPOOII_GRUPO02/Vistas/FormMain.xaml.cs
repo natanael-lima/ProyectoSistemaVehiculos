@@ -106,6 +106,15 @@ namespace Vistas
             this.Close();
         }
 
+        private void btnUsuarios_Checked(object sender, RoutedEventArgs e)
+        {
+            FormUsuario frmUsuario = new FormUsuario();
+            frmUsuario.Show();
+            this.Hide();
+        }
+
+       
+
  
 
 

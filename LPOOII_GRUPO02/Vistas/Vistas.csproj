@@ -58,6 +58,9 @@
     <Compile Include="EstadoSector.xaml.cs">
       <DependentUpon>EstadoSector.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FormUsuario.xaml.cs">
+      <DependentUpon>FormUsuario.xaml</DependentUpon>
+    </Compile>
     <Compile Include="userControlLogin.xaml.cs">
       <DependentUpon>userControlLogin.xaml</DependentUpon>
     </Compile>
@@ -92,6 +95,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="FormMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormUsuario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -188,6 +195,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="recursos\logo-ico.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="recursos\anterior-final.png" />
+    <Resource Include="recursos\anterior.png" />
+    <Resource Include="recursos\siguiente-final.png" />
+    <Resource Include="recursos\siguiente.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
