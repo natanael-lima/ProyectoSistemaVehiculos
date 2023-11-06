@@ -76,5 +76,10 @@ namespace Vistas
             fMain.Show();
             this.Close();
         }
+
+        private void userControlLoginn_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
