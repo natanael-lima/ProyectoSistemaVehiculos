@@ -7,8 +7,7 @@
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True" Icon="./recursos/logo-ico.ico" Loaded="Window_Loaded"
-        xmlns:svc="clr-namespace:ClaseBase;assembly=ClaseBase"
-        >
+        xmlns:svc="clr-namespace:ClaseBase;assembly=ClaseBase" xmlns:my="clr-namespace:Vistas">
     <Window.Resources>
         <ObjectDataProvider
             x:Key="List_Users"
@@ -72,63 +71,74 @@
                 </Grid.ColumnDefinitions>
                 <Border CornerRadius="0,0,0,10" Grid.Column="0" Background="#18161F">
                     <Grid>
-                        <Button  Name="btnNavegacionAntFinal" Style="{StaticResource BotonNavegacionStyle}" Margin="59,18,0,579" Click="btnNavegacionAntFinal_Click">
-                            <StackPanel Orientation="Horizontal">
-                                <Image Source="/recursos/anterior-final.png" Width="16" Height="16" Margin="0,0,0,0"/>
-                            </StackPanel>
-                        </Button>
-                        <Button  Name="btnNavegacionAnt" Style="{StaticResource BotonNavegacionStyle}" Margin="119,18,0,579" Click="btnNavegacionAnt_Click">
-                            <StackPanel Orientation="Horizontal">
-                                <Image Source="/recursos/anterior.png" Width="16" Height="16" Margin="0,0,0,0"/>
-                            </StackPanel>
-                        </Button>
-                        <Button  Name="btnNavegacionSig" Style="{StaticResource BotonNavegacionStyle}" Margin="181,18,0,579" Click="btnNavegacionSig_Click">
-                            <StackPanel Orientation="Horizontal">
-                                <Image Source="/recursos/siguiente.png" Width="16" Height="16" Margin="0,0,0,0"/>
-                            </StackPanel>
-                        </Button>
-                        <Button  Name="btnNavegacionSigFinal" Style="{StaticResource BotonNavegacionStyle}" Margin="0,18,93,579" HorizontalAlignment="Right" Click="btnNavegacionSigFinal_Click">
-                            <StackPanel Orientation="Horizontal">
-                                <Image Source="/recursos/siguiente-final.png" Width="16" Height="16" Margin="0,0,0,0"/>
-                            </StackPanel>
-                        </Button>
-                        <Canvas Background="Transparent" Name="canvas_content" DataContext="{Binding Source={StaticResource ResourceKey=List_Users}}" Margin="0,69,0,0">
-                        <TextBlock Text="Apellido:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray"   Margin="25,315,160,268" Canvas.Left="0" Canvas.Top="-80" />
-                        <TextBox Margin="25,333,30,0" Name="txtApellido"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}" Width="328" Canvas.Left="0" Canvas.Top="-80">
-                            <TextBox.Text>
-                                <Binding Path="User_Apellido"/>
-                            </TextBox.Text>
-                        </TextBox>
-                        <TextBlock Text="Nombre:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="25,241,160,342" Canvas.Left="0" Canvas.Top="-71" />
-                        <TextBox Margin="25,259,30,0" Name="txtNombre"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}" Width="328" Canvas.Left="0" Canvas.Top="-71">
-                            <TextBox.Text>
-                                <Binding Path="User_Nombre"/>
-                            </TextBox.Text>
-                        </TextBox>
-                        <TextBlock Text="Password:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="25,170,160,414" Canvas.Left="0" Canvas.Top="-65" />
-                        <TextBox Margin="25,187,30,0" Name="txtPassword"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}" Width="328" Canvas.Left="0" Canvas.Top="-65">
-                            <TextBox.Text>
-                                <Binding Path="User_Password"/>
-                            </TextBox.Text>
-                        </TextBox>
-                        <TextBlock Text="Username:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="25,95,160,488" Canvas.Left="0" Canvas.Top="-71" />
-                        <TextBox Margin="25,113,30,0" Name="txtUsername"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}" Width="328" Canvas.Left="0" Canvas.Top="-71">
-                            <TextBox.Text>
-                                <Binding Path="User_Name"/>
-                            </TextBox.Text>
-                        </TextBox>
-                        <TextBlock Text="Rol:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="25,379,160,204" Canvas.Left="0" Canvas.Top="-71" />
-                        <TextBox Margin="25,397,30,0" Name="txtRol" VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}" Width="328" Canvas.Left="0" Canvas.Top="-71">
-                            <TextBox.Text>
-                                <Binding Path="User_Rol" />
-                            </TextBox.Text>
-                        </TextBox>
-                        </Canvas>
+
+                        <!-- Primera Fila -->
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,18,0,569">
+                            <Button  Name="btnNavegacionAntFinal" Style="{StaticResource BotonNavegacionStyle}" Margin="0,0,10,0" Click="btnNavegacionAntFinal_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/recursos/anterior-final.png" Width="16" Height="16" Margin="0,0,0,0"/>
+                                </StackPanel>
+                            </Button>
+                            <Button  Name="btnNavegacionAnt" Style="{StaticResource BotonNavegacionStyle}" Margin="0,0,10,0" Click="btnNavegacionAnt_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/recursos/anterior.png" Width="16" Height="16" Margin="0,0,0,0"/>
+                                </StackPanel>
+                            </Button>
+                            <Button  Name="btnNavegacionSig" Style="{StaticResource BotonNavegacionStyle}"  Margin="0,0,10,0" Click="btnNavegacionSig_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/recursos/siguiente.png" Width="16" Height="16" Margin="0,0,0,0"/>
+                                </StackPanel>
+                            </Button>
+                            <Button  Name="btnNavegacionSigFinal" Style="{StaticResource BotonNavegacionStyle}" Margin="0,0,10,0" HorizontalAlignment="Right" Click="btnNavegacionSigFinal_Click">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="/recursos/siguiente-final.png" Width="16" Height="16" Margin="0,0,0,0"/>
+                                </StackPanel>
+                            </Button>
+                            <!-- Agrega más botones según sea necesario -->
+                        </StackPanel>
+
+                        <!-- Segunda Fila -->
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="-2,18,187,0" Width="189">
+                            <Canvas Background="Transparent" Name="canvas_content" DataContext="{Binding Source={StaticResource ResourceKey=List_Users}}" Margin="0,69,0,0">
+                                <TextBlock Text="Apellido:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray"   Margin="25,315,160,268" Canvas.Left="0" Canvas.Top="-80" />
+                                <TextBox Margin="25,333,30,0" Name="txtApellido"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}" Width="328" Canvas.Left="0" Canvas.Top="-80">
+                                    <TextBox.Text>
+                                        <Binding Path="User_Apellido"/>
+                                    </TextBox.Text>
+                                </TextBox>
+                                <TextBlock Text="Nombre:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="25,241,160,342" Canvas.Left="0" Canvas.Top="-71" />
+                                <TextBox Margin="25,259,30,0" Name="txtNombre"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}" Width="328" Canvas.Left="0" Canvas.Top="-71">
+                                    <TextBox.Text>
+                                        <Binding Path="User_Nombre"/>
+                                    </TextBox.Text>
+                                </TextBox>
+                                <TextBlock Text="Password:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="25,170,160,414" Canvas.Left="0" Canvas.Top="-65" />
+                                <TextBox Margin="25,187,30,0" Name="txtPassword"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}" Width="328" Canvas.Left="0" Canvas.Top="-65">
+                                    <TextBox.Text>
+                                        <Binding Path="User_Password"/>
+                                    </TextBox.Text>
+                                </TextBox>
+                                <TextBlock Text="Username:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="25,95,160,488" Canvas.Left="0" Canvas.Top="-71" />
+                                <TextBox Margin="25,113,30,0" Name="txtUsername"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}" Width="328" Canvas.Left="0" Canvas.Top="-71">
+                                    <TextBox.Text>
+                                        <Binding Path="User_Name"/>
+                                    </TextBox.Text>
+                                </TextBox>
+                                <TextBlock Text="Rol:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="25,379,160,204" Canvas.Left="0" Canvas.Top="-71"/>
+                                <ComboBox Margin="25,397,30,0" Name="txtRol" VerticalContentAlignment="Center" Style="{StaticResource ComboBoxStyle}" Width="328" Canvas.Left="0" Canvas.Top="-71" SelectedItem="{Binding user_Rol, Mode=TwoWay}">
+                                    <ComboBoxItem Content="Administrador" />
+                                    <ComboBoxItem Content="Operador" />
+                                </ComboBox>
+                            </Canvas>
+                        </StackPanel>
+                        <!-- Tercera Fila -->
+
                         <Button Content="Cancelar" Margin="59,492,0,4" Name="btnCancelar" HorizontalAlignment="Left" Width="100" Style="{StaticResource BotonGlobalStyle}" Click="btnCancelar_Click" />
                         <Button Content="Guardar" Margin="0,506,93,18" Name="btnGuardar"  HorizontalAlignment="Right" Width="100" Style="{StaticResource BotonGlobalStyle}" Click="btnGuardar_Click" />
                         <Button Margin="25,485,0,112" Name="btnAgregar" Style="{StaticResource BotonAgregarStyle}" Click="btnAgregar_Click" />
                         <Button Margin="0,485,153,112" Name="btnEditar" Style="{StaticResource BotonEditarStyle}"  HorizontalAlignment="Right" Click="btnEditar_Click" />
                         <Button Margin="0,485,44,113" Name="btnEliminar" Style="{StaticResource BotonEliminarStyle}" HorizontalAlignment="Right" Width="89" Click="btnEliminar_Click" />
+                        
                     </Grid>
                 </Border>
                 <Border CornerRadius="0,0,10,0" Grid.Column="1" Background="#23232D">

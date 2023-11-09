@@ -143,7 +143,8 @@ namespace Vistas
                 newUser.User_Password = txtPassword.Text;
                 newUser.User_Nombre = txtNombre.Text;
                 newUser.User_Apellido = txtApellido.Text;
-                newUser.User_Rol = txtRol.Text;
+                string rolSeleccionado = (txtRol.SelectedItem as ComboBoxItem).Content.ToString();
+                newUser.User_Rol = rolSeleccionado;
 
                 TrabajarUsuario.altaUsuario(newUser);
                 MessageBox.Show("Usuario Guardado correctamente", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -157,7 +158,8 @@ namespace Vistas
                 newUser.User_Password = txtPassword.Text;
                 newUser.User_Nombre = txtNombre.Text;
                 newUser.User_Apellido = txtApellido.Text;
-                newUser.User_Rol = txtRol.Text;
+                string rolSeleccionado = (txtRol.SelectedItem as ComboBoxItem).Content.ToString();
+                newUser.User_Rol = rolSeleccionado;
                 TrabajarUsuario.editarUsuario(newUser);
                 MessageBox.Show("Usuario Editado correctamente", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
 
@@ -165,7 +167,7 @@ namespace Vistas
                 listUsuario[indice].User_Password = txtPassword.Text;
                 listUsuario[indice].User_Nombre = txtNombre.Text;
                 listUsuario[indice].User_Apellido = txtApellido.Text;
-                listUsuario[indice].User_Rol = txtRol.Text;
+                listUsuario[indice].User_Rol = rolSeleccionado;
                 actualizarLista();
                 deCero();
             }
