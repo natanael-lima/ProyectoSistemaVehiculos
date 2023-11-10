@@ -84,6 +84,10 @@ namespace Vistas
 
         private void btnAgregar_Click(object sender, RoutedEventArgs e)
         {
+            FormUsuarioNuevo form = new FormUsuarioNuevo();
+            form.Show();
+            
+            /* (version maxi)
             Usuario newUser = new Usuario();
             listUsuario.Add(newUser);
 
@@ -102,7 +106,9 @@ namespace Vistas
             btnEliminar.IsEnabled = false;
             btnAgregar.IsEnabled = false;
 
-            agregar = true;
+            agregar = true;*/
+
+            
         }
 
         private void btnNavegacionAntFinal_Click(object sender, RoutedEventArgs e)
