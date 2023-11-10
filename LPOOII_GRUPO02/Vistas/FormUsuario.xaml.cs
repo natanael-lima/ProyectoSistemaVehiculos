@@ -29,6 +29,7 @@ namespace Vistas
         private bool agregar = false;
         private int indice = 0;
         private Usuario band;
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             dataGridUsuarios.DataContext = TrabajarUsuario.traerUsuariosASC();
@@ -43,7 +44,12 @@ namespace Vistas
             btnGuardar.IsEnabled = false;
             btnCancelar.IsEnabled = false;
 
-            
+            // Recargar el diccionario de recursos
+            this.Resources.MergedDictionaries.Clear();
+            this.Resources.MergedDictionaries.Add(new ResourceDictionary()
+            {
+                Source = new Uri("/LibreriaRecursos;component/FormStyle.xaml", UriKind.Relative)
+            });
         }
         private void actualizarLista()
         {

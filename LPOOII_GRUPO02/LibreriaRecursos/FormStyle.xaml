@@ -83,7 +83,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#D2B222"/>
+                <Setter Property="Background" Value="#B59920"/>
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -119,7 +119,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#D2B222"/>
+                <Setter Property="Background" Value="#B59920"/>
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -155,7 +155,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#346746"/>
+                <Setter Property="Background" Value="#408857"/>
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -191,7 +191,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#396387"/>
+                <Setter Property="Background" Value="#457BA8"/>
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -226,7 +226,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#963D41"/>
+                <Setter Property="Background" Value="#B74649"/>
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -251,7 +251,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#A08820"/>
+                <Setter Property="Background" Value="#B59920"/>
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -274,9 +274,6 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-
-    
-
 
     <!-- Boton navegacion-->
     <Style x:Key="BotonNavegacionStyle" TargetType="Button">
@@ -304,5 +301,43 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+    
+    <!-- Estilo para las celdas -->
+    <Style x:Key="DataGridCellStyle" TargetType="{x:Type DataGridCell}">
+        <Setter Property="Background" Value="#201E27"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#37363E"/>
+                <!-- Fondo gris oscuro al pasar el mouse -->
+            </Trigger>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="#403F47"/>
+                <!-- Fondo gris para la celda seleccionada -->
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <!-- Estilo para fondo -->
+    
+    <Style x:Key="DataGridStyle" TargetType="{x:Type DataGrid}">
+        <Setter Property="Background" Value="#201E27"/>
+        <!-- Quitar los bordes por defecto -->
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        
+    </Style>
+    <!-- Estilo para los encabezados de las columnas -->
+    <Style x:Key="DataGridColumnHeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
+        <Setter Property="Background" Value="#18161F"/>
+        <!-- Fondo gris oscuro para los encabezados -->
+        <Setter Property="Foreground" Value="White"/>
+        <!-- Texto en color blanco -->
+        
+    </Style>
+    
+    
 
 </ResourceDictionary>

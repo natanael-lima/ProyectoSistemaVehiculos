@@ -64,6 +64,9 @@
     <Compile Include="FormUsuario.xaml.cs">
       <DependentUpon>FormUsuario.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FormVehiculoNuevo.xaml.cs">
+      <DependentUpon>FormVehiculoNuevo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="userControlLogin.xaml.cs">
       <DependentUpon>userControlLogin.xaml</DependentUpon>
     </Compile>
@@ -110,6 +113,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FormVehiculo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormVehiculoNuevo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
