@@ -113,6 +113,21 @@ namespace ClaseBase
             }
         }
 
+        public static void eliminar_cliente(Cliente cliente)
+        {
+            using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
+            {
+                cn.Open();
+                using (SqlCommand cmd = new SqlCommand("eliminar_cliente", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("id", cliente.Cli_Id);
+                    cmd.ExecuteNonQuery();
+
+                }
+                cn.Close();
+            }
+        }
         public static Cliente traer_cliente_por_dni(int dni)
         {
             Cliente cliente = null;

@@ -155,7 +155,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#69AF80"/>
+                <Setter Property="Background" Value="#346746"/>
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -191,7 +191,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#72ABD6"/>
+                <Setter Property="Background" Value="#396387"/>
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -203,8 +203,9 @@
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="FontFamily" Value="Calibri"/>
         <Setter Property="Cursor" Value="Hand"/>
-        <Setter Property="Margin" Value="0,10,0,0"/>
         <Setter Property="Background" Value="#E55456"/>
+        <Setter Property="Width" Value="90"/>
+        <Setter Property="Height" Value="30"/>
         <Setter Property="Content">
             <Setter.Value>
                 <!-- Puedes agregar un icono aquí -->
@@ -217,7 +218,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border Height="30" Width="90" CornerRadius="15" Background="{TemplateBinding Background}">
+                    <Border CornerRadius="15" Background="{TemplateBinding Background}">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </Border>
                 </ControlTemplate>
@@ -225,7 +226,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#E07778"/>
+                <Setter Property="Background" Value="#963D41"/>
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -237,7 +238,6 @@
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="FontFamily" Value="Calibri"/>
         <Setter Property="Cursor" Value="Hand"/>
-        <Setter Property="Margin" Value="0,10,0,0"/>
         <Setter Property="Background" Value="#D2B24C"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -251,7 +251,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#D2B222"/>
+                <Setter Property="Background" Value="#A08820"/>
             </Trigger>
         </Style.Triggers>
     </Style>
