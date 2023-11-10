@@ -26,7 +26,9 @@ namespace Vistas
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            FormMain menuPrincipal = new FormMain();
+            menuPrincipal.Show();
+            this.Close();
         }
 
         private void btnMinimize_Click(object sender, RoutedEventArgs e)

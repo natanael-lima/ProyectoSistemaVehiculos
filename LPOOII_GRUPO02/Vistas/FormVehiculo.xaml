@@ -6,7 +6,7 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="Transparent"
-        AllowsTransparency="True" Loaded="Window_Loaded" xmlns:my="clr-namespace:Vistas">
+        AllowsTransparency="True" Icon="./recursos/logo-ico.ico" Loaded="Window_Loaded" xmlns:my="clr-namespace:Vistas">
     <!--Para los recursos-->
     <Window.Resources>
         <ResourceDictionary>
@@ -74,28 +74,33 @@
                         <TextBox Margin="25,314,30,0" Name="txtDescripcion" Style="{StaticResource TextoBoxStyle}" />
                         <!--<TextBlock FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="25,221,160,0" Text="Código:"  Height="26" VerticalAlignment="Top"/>
                         <TextBox Margin="25,237,30,0" Name="txtCodigo" Style="{StaticResource TextoBoxStyle}" />-->
-                        <Button Content="Salir" Margin="59,492,0,4" Name="btnSalir" HorizontalAlignment="Left" Width="100" Style="{StaticResource BotonGlobalStyle}" Click="btnSalir_Click" />
-                        <Button Content="Guardar" Margin="0,506,93,18" Name="btnGuardar" Click="btnGuardar_Click" HorizontalAlignment="Right" Width="100" Style="{StaticResource BotonGlobalStyle}" />
+                        <Button Content="Salir" Margin="32,476,0,113" Name="btnSalir" HorizontalAlignment="Left" Width="100" Style="{StaticResource BotonGlobalStyle}" Click="btnSalir_Click" />
+                        <Button Margin="138,481,0,116" Name="btnEditar" Style="{StaticResource BotonEditarStyle}" />
+                        <Button Margin="234,481,50,116" Name="btnEliminar" Style="{StaticResource BotonEliminarStyle}" />
                     </Grid>
                 </Border>
                 <Border CornerRadius="0,0,10,0" Grid.Column="1" Background="#23232D">
                     <Grid>
                         <!--Espacio para las tabla de datos-->
 
-                        <DataGrid x:Name="dgTiposVehiculos" AutoGenerateColumns="False" Margin="0,0,0,0"  Height="450" Width="760" Background="#99000000" ItemsSource="{Binding}">
+                        <DataGrid x:Name="dgTiposVehiculos" AutoGenerateColumns="False" Margin="19,81,19,51" Width="760" ItemsSource="{Binding}"  Style="{StaticResource DataGridStyle}">
+                            <DataGrid.ColumnHeaderStyle>
+                                <StaticResource ResourceKey="DataGridColumnHeaderStyle"/>
+                            </DataGrid.ColumnHeaderStyle>
                             <DataGrid.Columns >
                                 <DataGridTextColumn Header="Código" Width="1*"  Binding="{Binding Tv_Id}"/>
                                 <DataGridTextColumn Header="Descripción" Width="2*" Binding="{Binding Tv_Descripcion}"/>
-                                <DataGridTextColumn Header="Tarifa" Width="1*" Binding="{Binding Tv_Trarifa}"/>
+                                <DataGridTextColumn Header="Tarifa" Width="1*" Binding="{Binding Tv_Tarifa}"/>
                             </DataGrid.Columns>
+                            <DataGrid.CellStyle>
+                                <StaticResource ResourceKey="DataGridCellStyle"/>
+                            </DataGrid.CellStyle>
                         </DataGrid>
                         <!--Botones del Form-->
-                        <TextBox Margin="50,52,0,0" Name="txtBuscar" Style="{StaticResource TextoBoxStyle}" HorizontalAlignment="Left" Width="570" />
-                        <Button Margin="677,28,0,571" Name="btnBuscar" Style="{StaticResource BotonBuscarStyle}"/>
-                        <Button Margin="56,546,0,52" Name="btnAgregar" Style="{StaticResource BotonAgregarStyle}" />
-                        <Button Margin="152,546,0,52" Name="btnEditar" Style="{StaticResource BotonEditarStyle}" />
-                        <Button Margin="631,28,0,571" Name="btnActualizar" Style="{StaticResource BotonActualizarStyle}" />
-                        <Button Margin="248,546,461,52" Name="btnEliminar" Style="{StaticResource BotonEliminarStyle}"/>
+                        <TextBox Margin="50,38,298,0" Name="txtBuscar" Style="{StaticResource TextoBoxStyle}" />
+                        <Button Margin="554,13,0,584" Name="btnBuscar" Style="{StaticResource BotonBuscarStyle}"/>
+                        <Button Margin="688,13,0,584" Name="btnAgregar" Style="{StaticResource BotonAgregarStyle}" Click="btnAgregar_Click" />
+                        <Button Margin="508,13,0,584" Name="btnActualizar" Style="{StaticResource BotonActualizarStyle}" />
                     </Grid>
                 </Border>
             </Grid>

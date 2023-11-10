@@ -17,7 +17,7 @@
     </Window.Resources>
 
     <!--Efecto Gradiante-->
-    <Border CornerRadius="10">
+    <Border CornerRadius="10" BorderBrush="Goldenrod" BorderThickness="2">
         <Border.Background>
             <LinearGradientBrush StartPoint="1,0" EndPoint="0,2">
                 <GradientStop Color="#2A2831" Offset="0"/>

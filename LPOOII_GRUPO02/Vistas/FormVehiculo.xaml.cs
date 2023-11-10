@@ -24,11 +24,6 @@ namespace Vistas
             InitializeComponent();
         }
 
-        private void txtUser_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
@@ -45,33 +40,6 @@ namespace Vistas
             }
         }
 
-        private void btnGuardar_Click(object sender, RoutedEventArgs e)
-        {
-            if (txtDescripcion.Text != "" && txtTarifa.Text != "")
-            {
-                MessageBoxResult result = MessageBox.Show("¿Está seguro de que desea guardar los datos?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                if (result == MessageBoxResult.Yes)
-                {
-                    TipoVehiculo oTipoVehiculo = new TipoVehiculo();
-                    
-                    oTipoVehiculo.Tv_Descripcion = txtDescripcion.Text;
-                    oTipoVehiculo.Tv_Tarifa = decimal.Parse(txtTarifa.Text);
-                    string mensaje = "Código: " + oTipoVehiculo.Tv_Id + "\nTarifa: " + oTipoVehiculo.Tv_Tarifa + "\nDescripción: " + oTipoVehiculo.Tv_Descripcion;
-                    MessageBoxResult result2 = MessageBox.Show(mensaje, "Valores Almacenados", MessageBoxButton.OK, MessageBoxImage.Information);
-                    if (result2 == MessageBoxResult.OK)
-                    {
-                        TrabajarTipoVehiculos.guardar_tipo_vehiculo(oTipoVehiculo);//Guarda en la bd
-                        FormVehiculo formVehiculo = new FormVehiculo();
-                        formVehiculo.Show();
-                        this.Close();
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Complete todos los campos", "Error", MessageBoxButton.OK,MessageBoxImage.Error);
-            }
-        }
 
         private void btnSalir_Click(object sender, RoutedEventArgs e)
         {
@@ -88,6 +56,13 @@ namespace Vistas
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             dgTiposVehiculos.DataContext = TrabajarTipoVehiculos.traer_tipos_vehiculos();
+        }
+
+        private void btnAgregar_Click(object sender, RoutedEventArgs e)
+        {
+            FormVehiculoNuevo form = new FormVehiculoNuevo();
+            form.Show();
+            
         }
     }
 }

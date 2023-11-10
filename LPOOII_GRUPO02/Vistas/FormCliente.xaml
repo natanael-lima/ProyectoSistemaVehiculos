@@ -66,7 +66,7 @@
                     <!--Columna para Tabla  -->
                     <ColumnDefinition Width="800"/>
                 </Grid.ColumnDefinitions>
-                <Border Grid.Column="0" Background="#18161F">
+                <Border CornerRadius="0,0,0,10" Grid.Column="0" Background="#18161F">
                     <Grid >
                         <TextBox Margin="25,18,30,576" Name="txtId"  VerticalContentAlignment="Center" Visibility="Hidden">
                             <TextBox.Text>
@@ -107,11 +107,14 @@
                         </StackPanel>
                     </Grid>
                 </Border>
-                <Border CornerRadius="0,0,10,0" Grid.Column="1" Background="#23232D">
+                <Border CornerRadius="0,0,10,0" Grid.Column="1" Background="#403F47">
                     <Grid  >
                         <!--Espacio para las tabla de datos-->
                         <!--v2 para mostrar <DataGrid x:Name="dataGridClientes" AutoGenerateColumns="True" Height="400" Width="760"/> -->
-                        <DataGrid x:Name="dataGridClientes" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Width="760" Margin="19,84,19,36">
+                        <DataGrid x:Name="dataGridClientes" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Width="760" Margin="19,84,19,36" Style="{StaticResource DataGridStyle}">
+                            <DataGrid.ColumnHeaderStyle>
+                                <StaticResource ResourceKey="DataGridColumnHeaderStyle"/>
+                            </DataGrid.ColumnHeaderStyle>
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Id" Binding="{Binding Cli_Id}" Width="1"/>
                                 <DataGridTextColumn Header="Nombre" Binding="{Binding Cli_Nombre}" Width="1*"/>
@@ -119,6 +122,9 @@
                                 <DataGridTextColumn Header="DNI" Binding="{Binding Cli_DNI}" Width="1*"/>
                                 <DataGridTextColumn Header="Telefono" Binding="{Binding Cli_Telefono}" Width="1*"/>
                             </DataGrid.Columns>
+                            <DataGrid.CellStyle>
+                                <StaticResource ResourceKey="DataGridCellStyle"/>
+                            </DataGrid.CellStyle>
                         </DataGrid>
                         <!--Botones del Form-->
                         <TextBox Margin="19,52,279,0" Name="txtBuscar" Style="{StaticResource TextoBoxStyle}" />

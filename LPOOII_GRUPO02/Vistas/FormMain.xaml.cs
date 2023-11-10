@@ -73,7 +73,7 @@ namespace Vistas
 
         private void btnSector_Checked(object sender, RoutedEventArgs e)
         {
-            Estacionamiento estacionamiento = new Estacionamiento();
+            EstadoSector estacionamiento = new EstadoSector();
             estacionamiento.Show();
             this.Hide();
         }
@@ -110,7 +110,7 @@ namespace Vistas
         {
             FormUsuario frmUsuario = new FormUsuario();
             frmUsuario.Show();
-            this.Hide();
+            this.Close();
         }
 
        

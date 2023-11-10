@@ -9,17 +9,19 @@
         AllowsTransparency="True" Icon="./recursos/logo-ico.ico" Loaded="Window_Loaded"
         xmlns:svc="clr-namespace:ClaseBase;assembly=ClaseBase" xmlns:my="clr-namespace:Vistas">
     <Window.Resources>
-        <ObjectDataProvider
-            x:Key="List_Users"
-            ObjectType="{x:Type svc:TrabajarUsuario}"
-            MethodName="traerUsuarios">
-        </ObjectDataProvider>
-        <ResourceDictionary x:Key="diccionarioRecursos">
+        <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/LibreriaRecursos;component/FormStyle.xaml"/>
+                 <ResourceDictionary Source="/LibreriaRecursos;component/FormStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            <ObjectDataProvider
+                x:Key="List_Users"
+                ObjectType="{x:Type svc:TrabajarUsuario}"
+                MethodName="traerUsuarios">
+            </ObjectDataProvider>
         </ResourceDictionary>
     </Window.Resources>
+
+
     <Border CornerRadius="10">
         <Border.Background>
             <LinearGradientBrush StartPoint="1,0" EndPoint="0,2">
