@@ -147,7 +147,10 @@
                     <Grid  >
                         <!--Espacio para las tabla de datos-->
                         <!--v2 para mostrar <DataGrid x:Name="dataGridClientes" AutoGenerateColumns="True" Height="400" Width="760"/> -->
-                     <DataGrid x:Name="dataGridUsuarios" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Height="450" Width="760">
+                        <DataGrid x:Name="dataGridUsuarios" ItemsSource="{Binding}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Height="450" Width="760" Style="{StaticResource DataGridStyle}">
+                            <DataGrid.ColumnHeaderStyle>
+                                <StaticResource ResourceKey="DataGridColumnHeaderStyle"/>
+                            </DataGrid.ColumnHeaderStyle>
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Id" Binding="{Binding User_Id}" Width="1*"/>
                                 <DataGridTextColumn Header="Username" Binding="{Binding User_Name}" Width="1*"/>
@@ -156,6 +159,9 @@
                                 <DataGridTextColumn Header="Apellido" Binding="{Binding User_Apellido}" Width="1*"/>
                                 <DataGridTextColumn Header="Rol" Binding="{Binding User_Rol}" Width="1*"/>
                             </DataGrid.Columns>
+                            <DataGrid.CellStyle>
+                                <StaticResource ResourceKey="DataGridCellStyle"/>
+                            </DataGrid.CellStyle>
                         </DataGrid>
                         <!--Botones del Form-->
                         

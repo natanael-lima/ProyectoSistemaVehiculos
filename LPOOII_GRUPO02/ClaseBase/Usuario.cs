@@ -62,7 +62,13 @@ namespace ClaseBase
             Notificador("user_Rol");
             }
         }
+        private string user_Foto;
 
+        public string User_Foto
+        {
+            get { return user_Foto; }
+            set { user_Foto = value; }
+        }
         public Usuario()
         {
         }
@@ -75,5 +81,7 @@ namespace ClaseBase
                 PropertyChanged(this,new PropertyChangedEventArgs(pop));
             }
         }
+
+        
     }
 }
