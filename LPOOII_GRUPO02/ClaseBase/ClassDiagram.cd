@@ -3,7 +3,7 @@
   <Class Name="ClaseBase.Sector">
     <Position X="3" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAABQAAEAQAABAAAAAAAAAAAAAAAACABAAAgAAAA=</HashCode>
+      <HashCode>AAAQAABQAAEAQAABAAAAAAAAAAAAAAAACABAAAgAEAA=</HashCode>
       <FileName>Sector.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -17,22 +17,31 @@
   <Class Name="ClaseBase.Cliente">
     <Position X="7" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gIAAAAAAAAAAAQAAAIEAAAAAAAAAAAAAAAwAAIAMAAA=</HashCode>
+      <HashCode>gIAAAAAAAAAAAQAEKIEAAAAAgAAAAAAAAAwAAIAMAAA=</HashCode>
       <FileName>Cliente.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="ClaseBase.Ticket">
     <Position X="9" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>iEAAAQBAAAAAACAAAAAEAAAABAAAAAAgAQJAIIkCYAE=</HashCode>
+      <HashCode>iEAAAQBAAAAAACAEAAAEAAAABAAAAAAgAQJAIIkCYAE=</HashCode>
       <FileName>Ticket.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClaseBase.Usuario">
     <Position X="11" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACBAAAAgAAAAAAAAAAAAABAAgAAQAIAAAAAABgAAQAY=</HashCode>
+      <HashCode>ACBAAAAgAAAAAAAABAAAABQAgAAQAIAAAAIABgAAQAY=</HashCode>
       <FileName>Usuario.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ClaseBase.Zona">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgQAAQIAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAEAA=</HashCode>
+      <FileName>Zona.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

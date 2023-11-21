@@ -169,7 +169,7 @@
                         <TextBox Margin="50,52,180,0" Name="txtBuscar" Style="{StaticResource TextoBoxStyle}" Grid.Column="1" />
                         <Button Margin="677,28,0,571" Name="btnBuscar" Style="{StaticResource BotonBuscarStyle}" Click="btnBuscar_Click" />
                         <Button Margin="631,28,0,571" Name="btnActualizar" Style="{StaticResource BotonActualizarStyle}" />
-                        
+                        <Button Content="Vista Previa de Impresion" HorizontalAlignment="Right" Margin="0,518,284,6" Name="btnVistaImpr" Style="{StaticResource BotonGlobalStyle}" Width="167" Click="btnVistaImpr_Click" />
                     </Grid>
                 </Border>
 

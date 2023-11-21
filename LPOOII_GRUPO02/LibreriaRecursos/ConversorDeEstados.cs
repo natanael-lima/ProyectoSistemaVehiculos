@@ -21,7 +21,10 @@ namespace LibreriaRecursos
             {
                 //Realizo el parseo del valor seleccionado a uno de tipo int
                 int duracion = int.Parse(value.ToString());
-                if (duracion == 0){
+                if (duracion == 200){
+                    return Brushes.Gray;
+                }
+                else if(duracion == 0){
                     return Brushes.Green;
                 }
                 else if (duracion > 0 && duracion <= 30){

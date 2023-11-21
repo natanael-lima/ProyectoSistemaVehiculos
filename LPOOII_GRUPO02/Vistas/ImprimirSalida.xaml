@@ -1,0 +1,28 @@
+﻿<Window x:Class="Vistas.ImprimirSalida"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ImprimirSalida" Height="600" Width="450">
+    <FixedDocument>
+        <FixedDocument.Pages>
+            <PageContent>
+                <FixedPage>
+    <Grid>
+        <StackPanel>
+            <TextBlock Name="txtTicketID"/>
+            <TextBlock Name="txtSector"/>
+            <TextBlock Name="txtCliente"/>
+            <TextBlock Name="txtPatente"/>
+            <TextBlock Name="txtIngreso"/>
+            <TextBlock Name="txtSalida"/>
+            <TextBlock Name="txtTiempoTrans"/>
+            <TextBlock Name="txtTV"/>
+            <TextBlock Name="txtTarifa"/>
+            <TextBlock Name="txtTotal"/>
+            <TextBlock Name="txtUsuario"/>
+        </StackPanel>
+    </Grid>
+                </FixedPage>
+            </PageContent>
+        </FixedDocument.Pages>
+    </FixedDocument>
+</Window>

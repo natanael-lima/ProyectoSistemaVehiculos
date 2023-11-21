@@ -38,7 +38,15 @@ namespace ClaseBase
 
         public Sector()
         {
-            throw new System.NotImplementedException();
+           
+        }
+
+        private int zona_Codigo;
+
+        public int Zona_Codigo
+        {
+            get { return zona_Codigo; }
+            set { zona_Codigo = value; }
         }
     }
 }

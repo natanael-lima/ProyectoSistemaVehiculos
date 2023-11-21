@@ -70,6 +70,18 @@
     <Compile Include="FormVehiculoNuevo.xaml.cs">
       <DependentUpon>FormVehiculoNuevo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ImprimirFixed.xaml.cs">
+      <DependentUpon>ImprimirFixed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImprimirFlow.xaml.cs">
+      <DependentUpon>ImprimirFlow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImprimirSalida.xaml.cs">
+      <DependentUpon>ImprimirSalida.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarEntrada.xaml.cs">
+      <DependentUpon>RegistrarEntrada.xaml</DependentUpon>
+    </Compile>
     <Compile Include="userControlLogin.xaml.cs">
       <DependentUpon>userControlLogin.xaml</DependentUpon>
     </Compile>
@@ -124,6 +136,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FormVehiculoNuevo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImprimirFixed.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImprimirFlow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ImprimirSalida.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegistrarEntrada.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

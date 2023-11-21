@@ -267,5 +267,19 @@ namespace Vistas
            dataGridUsuarios.DataContext = TrabajarUsuario.traerUsuariosFiltro(txtBuscar.Text);
         }
 
+        private void btnVistaImpr_Click(object sender, RoutedEventArgs e)
+        {
+            
+            ObservableCollection<Usuario> list = new ObservableCollection<Usuario>();
+            foreach (Usuario usuario in dataGridUsuarios.Items)
+            {
+                list.Add(usuario);
+            }
+            ImprimirFlow impForm = new ImprimirFlow(list);
+            impForm.Show();
+            
+            
+        }
+
     }
 }

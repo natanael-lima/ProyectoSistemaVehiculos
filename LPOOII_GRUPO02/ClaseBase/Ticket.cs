@@ -80,7 +80,11 @@ namespace ClaseBase
 
         public Ticket()
         {
-            throw new System.NotImplementedException();
+            
+        }
+        public override string ToString()
+        {
+            return T_Id +""+T_Duracion+ Sec_Id + Cli_Id;
         }
     }
 }

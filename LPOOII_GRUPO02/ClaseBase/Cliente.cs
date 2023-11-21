@@ -158,6 +158,10 @@ namespace ClaseBase
         }
 
 
+        public override string ToString()
+        {
+            return ""+Cli_Id+Cli_Nombre+Cli_DNI+Cli_Apellido+Cli_DNI;
+        }
 
 
 

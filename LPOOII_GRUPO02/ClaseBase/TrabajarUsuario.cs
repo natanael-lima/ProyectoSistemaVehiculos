@@ -68,7 +68,7 @@ namespace ClaseBase
             using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
             {
                 cn.Open();
-                using (SqlCommand cmd = new SqlCommand("eliminarUsuario", cn))
+                using (SqlCommand cmd = new SqlCommand("eliminar_usuario", cn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("id", id);

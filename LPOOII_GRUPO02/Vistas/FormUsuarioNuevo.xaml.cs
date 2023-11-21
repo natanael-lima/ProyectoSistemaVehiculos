@@ -95,6 +95,11 @@ namespace Vistas
             }
         }
 
+        private void txtRol_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
 
     }
 }
