@@ -43,13 +43,7 @@
                     </StackPanel>
 
                     <!--Menu Buttons Version 2-->
-                    <RadioButton Name="btnSector" Style="{StaticResource menuButton}" 
-                                 Command="{Binding ShowHomeViewCommand}" Checked="btnSector_Checked">
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="./recursos/menu-sector.png" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Sectores" Style="{StaticResource menuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
+
                     <RadioButton  Name="btnVehiculos" Style="{StaticResource menuButton}" Checked="btnVehiculos_Checked">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="./recursos/menu-auto.png" Style="{StaticResource menuButtonIcon}"/>
@@ -75,7 +69,7 @@
                         </StackPanel>
                     </RadioButton>
                     
-                    <RadioButton Name="btnCerrar" Style="{StaticResource menuButton}" Margin="-5,230,0,0" Checked="btnCerrar_Checked">
+                    <RadioButton Name="btnCerrar" Style="{StaticResource menuButton}" Margin="-5,290,0,0" Checked="btnCerrar_Checked">
                         <StackPanel Orientation="Horizontal" >
                             <Image Source="./recursos/menu-salir.png" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Cerrar Sesion" Style="{StaticResource menuButtonText}"/>

@@ -53,9 +53,7 @@ namespace Vistas
             }
             else
             {
-                btnSector.IsEnabled = false;
                 btnVehiculos.IsEnabled = false;
-                btnSector.Foreground = Brushes.Gray;
                 btnVehiculos.Foreground = Brushes.Gray;
             }
         }
