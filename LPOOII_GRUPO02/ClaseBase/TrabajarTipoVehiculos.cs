@@ -17,11 +17,12 @@ namespace ClaseBase
             SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "INSERT INTO TipoVehiculo(tv_Descripcion,tv_Tarifa) values (@descripcion,@tarifa)";
+            cmd.CommandText = "INSERT INTO TipoVehiculo(tv_Descripcion,tv_Tarifa,tv_Imagen) values (@descripcion,@tarifa,@imagen)";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
             cmd.Parameters.AddWithValue("@descripcion", tipo_vehiculo.Tv_Descripcion);
             cmd.Parameters.AddWithValue("@tarifa", tipo_vehiculo.Tv_Tarifa);
+            cmd.Parameters.AddWithValue("@imagen", tipo_vehiculo.Tv_Imagen);
             cnn.Open();
             cmd.ExecuteNonQuery();
         }
@@ -49,6 +50,7 @@ namespace ClaseBase
                                 oTv.Tv_Id = int.Parse(dr["tv_Id"].ToString());
                                 oTv.Tv_Descripcion = dr["tv_Descripcion"].ToString();
                                 oTv.Tv_Tarifa = decimal.Parse(dr["tv_Tarifa"].ToString());
+                                oTv.Tv_Imagen = dr["tv_Imagen"].ToString();
                                 lista_tv.Add(oTv);
                             }
                         }
@@ -58,5 +60,40 @@ namespace ClaseBase
             }
             return lista_tv;
         }
+
+        public static void eliminarTipoVehiculo(int id)
+        {
+            using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
+            {
+                cn.Open();
+                using (SqlCommand cmd = new SqlCommand("eliminar_vehiculo", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("id", id);
+                    cmd.ExecuteNonQuery();
+
+                }
+                cn.Close();
+            }
+        }
+
+        public static void editarTipoVehiculo(TipoVehiculo veh)
+        {
+            using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
+            {
+                cn.Open();
+                using (SqlCommand cmd = new SqlCommand("modificar_vehiculo", cn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id", veh.Tv_Id);
+                    cmd.Parameters.AddWithValue("@desc", veh.Tv_Descripcion);
+                    cmd.Parameters.AddWithValue("@tarifa", veh.Tv_Tarifa);
+                    cmd.Parameters.AddWithValue("@imagen", veh.Tv_Imagen);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+
     }
 }

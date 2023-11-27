@@ -6,7 +6,7 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="Transparent"
-        AllowsTransparency="True" Icon="./recursos/logo-ico.ico">
+        AllowsTransparency="True" Icon="./recursos/logo-ico.ico" xmlns:my="clr-namespace:Vistas">
     <!--Borde Ventana Principal Main-->
     <Border CornerRadius="10"                    
             BorderThickness="0">
@@ -68,8 +68,14 @@
                             <TextBlock Text="Usuarios" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
+                    <RadioButton  Name="btnAcerca" Style="{StaticResource menuButton}" Checked="btnAcerca_Checked">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="./recursos/menu-acerca.png" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Acerca de" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
                     
-                    <RadioButton Name="btnCerrar" Style="{StaticResource menuButton}" Margin="-5,290,0,0" Checked="btnCerrar_Checked">
+                    <RadioButton Name="btnCerrar" Style="{StaticResource menuButton}" Margin="-5,240,0,0" Checked="btnCerrar_Checked">
                         <StackPanel Orientation="Horizontal" >
                             <Image Source="./recursos/menu-salir.png" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Cerrar Sesion" Style="{StaticResource menuButtonText}"/>
@@ -174,6 +180,7 @@
                     </ContentControl>
                 </Grid>
             </Border>
+            <my:userControlLogin Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="58,706,0,0" x:Name="userControlLogin1" VerticalAlignment="Top" />
         </Grid>
     </Border>
 

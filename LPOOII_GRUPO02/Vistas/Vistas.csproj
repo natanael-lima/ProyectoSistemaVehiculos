@@ -58,6 +58,9 @@
     <Compile Include="EstadoSector.xaml.cs">
       <DependentUpon>EstadoSector.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FormAcercaDe.xaml.cs">
+      <DependentUpon>FormAcercaDe.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FormClienteNuevo.xaml.cs">
       <DependentUpon>FormClienteNuevo.xaml</DependentUpon>
     </Compile>
@@ -70,14 +73,17 @@
     <Compile Include="FormVehiculoNuevo.xaml.cs">
       <DependentUpon>FormVehiculoNuevo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ImprimirFixed.xaml.cs">
-      <DependentUpon>ImprimirFixed.xaml</DependentUpon>
+    <Compile Include="ImprimirEntrada.xaml.cs">
+      <DependentUpon>ImprimirEntrada.xaml</DependentUpon>
     </Compile>
     <Compile Include="ImprimirFlow.xaml.cs">
       <DependentUpon>ImprimirFlow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ImprimirSalida.xaml.cs">
       <DependentUpon>ImprimirSalida.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion.xaml.cs">
+      <DependentUpon>Presentacion.xaml</DependentUpon>
     </Compile>
     <Compile Include="RegistrarEntrada.xaml.cs">
       <DependentUpon>RegistrarEntrada.xaml</DependentUpon>
@@ -90,6 +96,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EstadoSector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormAcercaDe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -139,7 +149,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ImprimirFixed.xaml">
+    <Page Include="ImprimirEntrada.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -148,6 +158,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ImprimirSalida.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -243,6 +257,15 @@
     <Resource Include="recursos\anterior.png" />
     <Resource Include="recursos\siguiente-final.png" />
     <Resource Include="recursos\siguiente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="recursos\menu-acerca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\bienvenida.mp3" />
+    <Content Include="recursos\bienvenida.mp3" />
+    <Content Include="recursos\video.mp4" />
+    <Resource Include="recursos\logo-black.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
