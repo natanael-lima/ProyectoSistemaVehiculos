@@ -21,7 +21,6 @@
         </ResourceDictionary>
     </Window.Resources>
 
-
     <Border CornerRadius="10">
         <Border.Background>
             <LinearGradientBrush StartPoint="1,0" EndPoint="0,2">
