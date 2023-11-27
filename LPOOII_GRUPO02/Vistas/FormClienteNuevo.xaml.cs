@@ -47,7 +47,6 @@ namespace Vistas
             if (result == MessageBoxResult.Yes)
             {
                 Cliente oCliente = new Cliente();
-                //oCliente.Cli_Id = 1;
                 oCliente.Cli_DNI = int.Parse(txtDNI.Text);
                 oCliente.Cli_Apellido = txtApellido.Text;
                 oCliente.Cli_Nombre = txtNombre.Text;
@@ -55,7 +54,7 @@ namespace Vistas
 
                 TrabajarClientes.alta_cliente(oCliente);
 
-                string mensaje = "ID: " + oCliente.Cli_Id + "\nDNI: " + oCliente.Cli_DNI + "\nApellido: " + oCliente.Cli_Apellido + "\nNombre: " + oCliente.Cli_Nombre + "\nTeléfono: " + oCliente.Cli_Telefono;
+                string mensaje = "DNI: " + oCliente.Cli_DNI + "\nApellido: " + oCliente.Cli_Apellido + "\nNombre: " + oCliente.Cli_Nombre + "\nTeléfono: " + oCliente.Cli_Telefono;
                 MessageBoxResult result2 = MessageBox.Show(mensaje, "Valores Almacenados", MessageBoxButton.OK, MessageBoxImage.Information);
                 if (result2 == MessageBoxResult.OK)
                 {

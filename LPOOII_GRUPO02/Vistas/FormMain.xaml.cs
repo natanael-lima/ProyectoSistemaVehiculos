@@ -111,6 +111,13 @@ namespace Vistas
             this.Close();
         }
 
+        private void btnAcerca_Checked(object sender, RoutedEventArgs e)
+        {
+            FormAcercaDe form = new FormAcercaDe();
+            form.Show();
+            this.Close();
+        }
+
        
 
  

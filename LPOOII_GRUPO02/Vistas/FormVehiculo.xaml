@@ -68,22 +68,29 @@
                 </Grid.ColumnDefinitions>
                 <Border CornerRadius="0,0,0,10" Grid.Column="0" Background="#18161F">
                     <Grid>
-                        <TextBlock FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="25,374,160,0" Text="Tarifa:" Height="26" VerticalAlignment="Top" />
-                        <TextBox Margin="25,392,30,0" Name="txtTarifa" Style="{StaticResource TextoBoxStyle}" />
-                        <TextBlock FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="25,297,160,0" Text="Descripción:" Height="26" VerticalAlignment="Top"/>
-                        <TextBox Margin="25,314,30,0" Name="txtDescripcion" Style="{StaticResource TextoBoxStyle}" />
+                        <TextBlock FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Height="26" Margin="32,136,153,0" Text="Id:" VerticalAlignment="Top" />
+                        <TextBox Margin="32,154,23,0" Name="txtId" Style="{StaticResource TextoBoxStyle}" IsReadOnly="True" />
+                        <TextBlock FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="32,211,153,0" Text="Descripción:" Height="26" VerticalAlignment="Top"/>
+                        <TextBox Margin="32,228,23,0" Name="txtDescripcion" Style="{StaticResource TextoBoxStyle}" />
+                        <TextBlock FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="32,288,153,0" Text="Tarifa:" Height="26" VerticalAlignment="Top" />
+                        <TextBox Margin="32,306,23,0" Name="txtTarifa" Style="{StaticResource TextoBoxStyle}" />
+                        <TextBlock FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="32,365,153,0" Text="Imagen:" Height="26" VerticalAlignment="Top" />
+                        <TextBox Margin="32,382,23,0" Name="txtImagen" Style="{StaticResource TextoBoxStyle}" />
                         <!--<TextBlock FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="25,221,160,0" Text="Código:"  Height="26" VerticalAlignment="Top"/>
                         <TextBox Margin="25,237,30,0" Name="txtCodigo" Style="{StaticResource TextoBoxStyle}" />-->
-                        <Button Content="Salir" Margin="32,476,0,113" Name="btnSalir" HorizontalAlignment="Left" Width="100" Style="{StaticResource BotonGlobalStyle}" Click="btnSalir_Click" />
-                        <Button Margin="138,481,0,116" Name="btnEditar" Style="{StaticResource BotonEditarStyle}" />
-                        <Button Margin="234,481,50,116" Name="btnEliminar" Style="{StaticResource BotonEliminarStyle}" />
+                        <StackPanel HorizontalAlignment="Center"  Margin="32,484,30,86" Orientation="Horizontal" Width="312">
+                            <Button Margin="0,0,10,0"  Content="Salir" Name="btnSalir" Width="100" Style="{StaticResource BotonGlobalStyle}" Click="btnSalir_Click" />
+                            <Button Margin="0,0,10,0" Name="btnEditar" Style="{StaticResource BotonEditarStyle}" Click="btnEditar_Click" />
+                            <Button Margin="0,0,10,0" Name="btnEliminar" Style="{StaticResource BotonEliminarStyle}" Click="btnEliminar_Click" />
+                        </StackPanel>
+                        
                     </Grid>
                 </Border>
                 <Border CornerRadius="0,0,10,0" Grid.Column="1" Background="#23232D">
                     <Grid>
                         <!--Espacio para las tabla de datos-->
 
-                        <DataGrid x:Name="dgTiposVehiculos" AutoGenerateColumns="False" Margin="19,81,19,51" Width="760" ItemsSource="{Binding}"  Style="{StaticResource DataGridStyle}">
+                        <DataGrid x:Name="dgTiposVehiculos" AutoGenerateColumns="False" Margin="19,81,19,51" Width="760" ItemsSource="{Binding}"  Style="{StaticResource DataGridStyle}" SelectionChanged="DataGrid_SelectionChanged">
                             <DataGrid.ColumnHeaderStyle>
                                 <StaticResource ResourceKey="DataGridColumnHeaderStyle"/>
                             </DataGrid.ColumnHeaderStyle>
@@ -91,6 +98,7 @@
                                 <DataGridTextColumn Header="Código" Width="1*"  Binding="{Binding Tv_Id}"/>
                                 <DataGridTextColumn Header="Descripción" Width="2*" Binding="{Binding Tv_Descripcion}"/>
                                 <DataGridTextColumn Header="Tarifa" Width="1*" Binding="{Binding Tv_Tarifa}"/>
+                                <DataGridTextColumn Header="Nombre Imagen" Width="1*" Binding="{Binding Tv_Imagen}"/>
                             </DataGrid.Columns>
                             <DataGrid.CellStyle>
                                 <StaticResource ResourceKey="DataGridCellStyle"/>
@@ -98,9 +106,9 @@
                         </DataGrid>
                         <!--Botones del Form-->
                         <TextBox Margin="50,38,298,0" Name="txtBuscar" Style="{StaticResource TextoBoxStyle}" />
-                        <Button Margin="554,13,0,584" Name="btnBuscar" Style="{StaticResource BotonBuscarStyle}"/>
+                        <Button Margin="554,13,0,584" Name="btnBuscar" Style="{StaticResource BotonBuscarStyle}" Click="btnBuscar_Click" />
                         <Button Margin="688,13,0,584" Name="btnAgregar" Style="{StaticResource BotonAgregarStyle}" Click="btnAgregar_Click" />
-                        <Button Margin="508,13,0,584" Name="btnActualizar" Style="{StaticResource BotonActualizarStyle}" />
+                        <Button Margin="508,13,0,584" Name="btnActualizar" Style="{StaticResource BotonActualizarStyle}" Click="btnActualizar_Click" />
                     </Grid>
                 </Border>
             </Grid>

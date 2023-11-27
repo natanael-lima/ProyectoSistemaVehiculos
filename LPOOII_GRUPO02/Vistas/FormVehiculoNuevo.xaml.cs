@@ -11,6 +11,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ClaseBase;
+using System.Data;
+using Microsoft.Win32;
+using System.IO;
 
 
 namespace Vistas
@@ -47,29 +50,71 @@ namespace Vistas
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            if (txtDescripcion.Text != "" && txtTarifa.Text != "")
+             if (txtDescripcion.Text == "" || txtTarifa.Text == "" || txtUrl.Text == "")
             {
-                MessageBoxResult result = MessageBox.Show("¿Está seguro de que desea guardar los datos?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                if (result == MessageBoxResult.Yes)
+                MessageBox.Show("Debe llenar todos los campos", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }else
+                 if (txtDescripcion.Text.Length < 4)
                 {
+                    MessageBox.Show("Descripcion invalido", "Invalido", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                 else if (txtTarifa.Text.Length < 3)
+                {
+                    MessageBox.Show("Tarifa invalido", "Invalido", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                 else if (txtUrl.Text.Length < 5)
+                {
+                    MessageBox.Show("Url Imagen invalido", "Invalido", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else 
+                {
+                    MessageBoxResult result = MessageBox.Show("¿Está seguro de que desea guardar los datos?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                   
+                    if (result == MessageBoxResult.Yes)
+                    {
                     TipoVehiculo oTipoVehiculo = new TipoVehiculo();
 
                     oTipoVehiculo.Tv_Descripcion = txtDescripcion.Text;
                     oTipoVehiculo.Tv_Tarifa = decimal.Parse(txtTarifa.Text);
+                    oTipoVehiculo.Tv_Imagen = txtUrl.Text;
                     string mensaje = "Tarifa: " + oTipoVehiculo.Tv_Tarifa + "\nDescripción: " + oTipoVehiculo.Tv_Descripcion;
+                    string destino = @"C:\FOTOS\";
+
+                    string recurso = imgFoto.Source.ToString().Replace("file:///", "");
+                    File.Copy(recurso, destino + txtUrl.Text, true);
+
                     MessageBoxResult result2 = MessageBox.Show(mensaje, "Valores Almacenados", MessageBoxButton.OK, MessageBoxImage.Information);
-                    if (result2 == MessageBoxResult.OK)
-                    {
-                        TrabajarTipoVehiculos.guardar_tipo_vehiculo(oTipoVehiculo);//Guarda en la bd
-                        FormVehiculo formVehiculo = new FormVehiculo();
-                        formVehiculo.Show();
-                        this.Close();
+                        if (result2 == MessageBoxResult.OK)
+                        {
+                            TrabajarTipoVehiculos.guardar_tipo_vehiculo(oTipoVehiculo);//Guarda en la bd
+                        
+                            this.Close();
+                        }
                     }
                 }
-            }
-            else
+        }
+
+        private void btnCargarFoto_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.gif;*.bmp|Todos los archivos|*.*";
+
+            if (openFileDialog.ShowDialog() == true)
             {
-                MessageBox.Show("Complete todos los campos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                try
+                {
+                    BitmapImage foto = new BitmapImage();
+                    foto.BeginInit();
+                    foto.UriSource = new Uri(openFileDialog.FileName);
+                    foto.EndInit();
+                    foto.Freeze();
+
+                    imgFoto.Source = foto;
+                    txtUrl.Text = txtDescripcion.Text + "imagen-vehiculo" + ".jpg";
+                }
+                catch
+                {
+                }
             }
         }
     }

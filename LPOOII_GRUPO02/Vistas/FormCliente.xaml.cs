@@ -70,7 +70,7 @@ namespace Vistas
             if (result == MessageBoxResult.Yes)
             {
                 Cliente oCliente = new Cliente();
-                //oCliente.Cli_Id = 1;
+                oCliente.Cli_Id = int.Parse(txtId.Text);
                 oCliente.Cli_DNI = int.Parse(txtDNI.Text);
                 oCliente.Cli_Apellido = txtApellido.Text;
                 oCliente.Cli_Nombre = txtNombre.Text;
@@ -140,9 +140,7 @@ namespace Vistas
                 txtNombre.Text = cliente.Cli_Nombre;
                 txtTelefono.Text = cliente.Cli_Telefono.ToString();
                 txtDNI.Text = cliente.Cli_DNI.ToString();
-                txtId.Text = cliente.Cli_Id.ToString();
-
-                
+                txtId.Text = cliente.Cli_Id.ToString();   
             }
             else
             {
@@ -169,6 +167,11 @@ namespace Vistas
         }
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnActualizar_Click(object sender, RoutedEventArgs e)
         {
 
         }

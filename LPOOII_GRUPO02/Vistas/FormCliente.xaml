@@ -107,7 +107,7 @@
                         </StackPanel>
                     </Grid>
                 </Border>
-                <Border CornerRadius="0,0,10,0" Grid.Column="1" Background="#403F47">
+                <Border CornerRadius="0,0,10,0" Grid.Column="1" Background="#23232D">
                     <Grid  >
                         <!--Espacio para las tabla de datos-->
                         <!--v2 para mostrar <DataGrid x:Name="dataGridClientes" AutoGenerateColumns="True" Height="400" Width="760"/> -->
@@ -129,7 +129,7 @@
                         <!--Botones del Form-->
                         <TextBox Margin="19,52,279,0" Name="txtBuscar" Style="{StaticResource TextoBoxStyle}" />
                         <Button Margin="571,22,0,575" Name="btnBuscar" Style="{StaticResource BotonBuscarStyle}" Click="btnBuscar_Click" />
-                        <Button Margin="525,22,0,575" Name="btnActualizar" Style="{StaticResource BotonActualizarStyle}" />
+                        <Button Margin="525,22,0,575" Name="btnActualizar" Style="{StaticResource BotonActualizarStyle}" Click="btnActualizar_Click" />
                         <Button Margin="689,21,0,576" Name="btnAgregar" Style="{StaticResource BotonAgregarStyle}" Click="btnAgregar_Click" />
                     </Grid>
                 </Border>

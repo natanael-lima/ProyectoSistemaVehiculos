@@ -29,6 +29,14 @@ namespace ClaseBase
             set { tv_Tarifa = value; }
         }
 
+        private string tv_Imagen;
+
+        public string Tv_Imagen
+        {
+            get { return tv_Imagen; }
+            set { tv_Imagen = value; }
+        }
+
         public TipoVehiculo()
         {
         }

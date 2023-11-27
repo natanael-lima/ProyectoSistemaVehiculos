@@ -105,10 +105,11 @@ namespace ClaseBase
             using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
             {
                 cn.Open();
-                using (SqlCommand cmd = new SqlCommand("UPDATE Ticket SET t_FechaHoraSal= " + tiket.T_FechaHoraSal +" WHERE t_Id = "+ tiket.T_Id,cn))
-	
+                using (SqlCommand cmd = new SqlCommand("UPDATE Ticket SET t_FechaHoraSal = @fecha WHERE t_Id = @id", cn))
                 {
                     cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@fecha", tiket.T_FechaHoraSal);
+                    cmd.Parameters.AddWithValue("@id", tiket.T_Id);
                     cmd.ExecuteNonQuery();
                 }
             }
