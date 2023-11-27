@@ -112,7 +112,7 @@ namespace ClaseBase
 
                 if (columnName == "Cli_DNI")
                 {
-                    if (Cli_DNI <= 0 ) 
+                    if (Cli_DNI <= 0) 
                     {
                         result = "El DNI del cliente es obligatorio.";
                     }else if (Cli_DNI < 9999999)
@@ -145,7 +145,7 @@ namespace ClaseBase
                 }
                 else if (columnName == "Cli_Telefono")
                 {
-                    if (Cli_Telefono < 0)
+                    if (Cli_Telefono <= 0)
                     {
                         result = "El telefono es obligatorio.";
                     }

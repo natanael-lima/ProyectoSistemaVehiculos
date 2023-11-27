@@ -12,6 +12,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ClaseBase;
 using System.Data;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Linq;
+
 
 namespace Vistas
 {
@@ -20,11 +24,22 @@ namespace Vistas
     /// </summary>
     public partial class FormCliente : Window
     {
+        private ObservableCollection<Cliente> clientes = new ObservableCollection<Cliente>();
         public FormCliente()
         {
             InitializeComponent();
             // Asigna una instancia de Cliente al DataContext
+            //DataContext = new Cliente();
+
+            // Llena la colección con tus clientes al inicio
+            clientes = traer_clientes();
+
+            // Asigna la colección como ItemsSource del DataGrid
+            dataGridClientes.ItemsSource = clientes;
+
+            // Puedes establecer el DataContext si es necesario para otras partes de tu código
             DataContext = new Cliente();
+
         }
 
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
@@ -54,7 +69,7 @@ namespace Vistas
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // Asigna la lista de clientes al DataGrid
-            dataGridClientes.DataContext = TrabajarClientes.traer_clientes(); ;
+            dataGridClientes.DataContext = TrabajarClientes.traer_clientes();
 
             // v2 para mostrar listado
             //TrabajarClientes trabajador = new TrabajarClientes();
@@ -127,30 +142,39 @@ namespace Vistas
 
         private void ActualizarDatosCliente()
         {   
+             if (textBuscar.Text == "")
+             {
+                 // No se encontró un cliente con el DNI ingresado, muestra un mensaje o limpia los campos.
+                 //MessageBox.Show("No se encontró ningún cliente con el DNI ingresado.");
+                 txtApellido.Text = "";
+                 txtNombre.Text = "";
+                 txtTelefono.Text = "";
+                 txtDNI.Text = "";
+             }
+             else {
+                
+                 // Llama al método para obtener un cliente por DNI.
+                 Cliente cliente = TrabajarClientes.traer_cliente_por_dni(int.Parse(textBuscar.Text));
 
-            // Obtén el DNI ingresado en el TextBox.
-             int dni = int.Parse(textBuscar.Text);
-            // Llama al método para obtener un cliente por DNI.
-            Cliente cliente = TrabajarClientes.traer_cliente_por_dni(dni);
-
-            if (cliente != null)
-            {
-                // Se encontró un cliente con el DNI ingresado, actualiza todos los campos.
-                txtApellido.Text = cliente.Cli_Apellido;
-                txtNombre.Text = cliente.Cli_Nombre;
-                txtTelefono.Text = cliente.Cli_Telefono.ToString();
-                txtDNI.Text = cliente.Cli_DNI.ToString();
-                txtId.Text = cliente.Cli_Id.ToString();   
-            }
-            else
-            {
-                // No se encontró un cliente con el DNI ingresado, muestra un mensaje o limpia los campos.
-                //MessageBox.Show("No se encontró ningún cliente con el DNI ingresado.");
-                txtApellido.Text = "";
-                txtNombre.Text = "";
-                txtTelefono.Text = "";
-                txtDNI.Text = "";
-            }
+                 if (cliente != null)
+                 {
+                     // Se encontró un cliente con el DNI ingresado, actualiza todos los campos.
+                     txtApellido.Text = cliente.Cli_Apellido;
+                     txtNombre.Text = cliente.Cli_Nombre;
+                     txtTelefono.Text = cliente.Cli_Telefono.ToString();
+                     txtDNI.Text = cliente.Cli_DNI.ToString();
+                     txtId.Text = cliente.Cli_Id.ToString();
+                 }
+                 else
+                 {
+                     // No se encontró un cliente con el DNI ingresado, muestra un mensaje o limpia los campos.
+                     //MessageBox.Show("No se encontró ningún cliente con el DNI ingresado.");
+                     txtApellido.Text = "";
+                     txtNombre.Text = "";
+                     txtTelefono.Text = "";
+                     txtDNI.Text = "";
+                 }
+             }
             
         }
 
@@ -166,14 +190,30 @@ namespace Vistas
             ActualizarDatosCliente();
         }
 
-        private void btnBuscar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void btnActualizar_Click(object sender, RoutedEventArgs e)
         {
+            dataGridClientes.ItemsSource = TrabajarClientes.traer_clientes();
+        }
 
+        // Método para traer todos los clientes
+        private ObservableCollection<Cliente> traer_clientes()
+        {
+            return ClaseBase.TrabajarClientes.traer_clientes();
+        }
+
+        private void TxtBusqueda_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            // Obtén el texto del TextBox
+            string filtro = txtBusqueda.Text;
+
+            // Trae todos los clientes de la base de datos
+            ObservableCollection<Cliente> clientes = TrabajarClientes.traer_clientes();
+
+            // Filtra los clientes según el texto ingresado
+            var clientesFiltrados = clientes.Where(c => c.Cli_Nombre.ToLower().Contains(filtro)).ToList();
+
+            // Asigna la lista filtrada al control DataGrid
+            dataGridClientes.ItemsSource = clientesFiltrados;
         }
 
 

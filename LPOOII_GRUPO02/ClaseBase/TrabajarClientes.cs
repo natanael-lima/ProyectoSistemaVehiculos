@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Collections.ObjectModel;
 using System.Data.SqlClient;
 using System.Data;
 using System.Data.Common;
@@ -10,21 +11,12 @@ namespace ClaseBase
 {
     public class TrabajarClientes
     {
-        public Cliente traerCliente()
-        {
-            Cliente oCliente = new Cliente();
-            oCliente.Cli_Apellido = "";
-            oCliente.Cli_DNI = 0;
-            oCliente.Cli_Nombre = "";
-            oCliente.Cli_Telefono = 0;
-
-            return oCliente;
-        }
+        
 
         //Metodo para listar todos los clientes de la base de datos
-        public static List<Cliente> traer_clientes()
+        public static ObservableCollection<Cliente> traer_clientes()
         {
-            List<Cliente> clientes = new List<Cliente>();
+            ObservableCollection<Cliente>  clientes = new ObservableCollection<Cliente>() ;
 
             using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
             {
