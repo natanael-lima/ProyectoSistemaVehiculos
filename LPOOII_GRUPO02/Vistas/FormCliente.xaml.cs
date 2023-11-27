@@ -26,10 +26,11 @@ namespace Vistas
     {
         private ObservableCollection<Cliente> clientes = new ObservableCollection<Cliente>();
         public FormCliente()
-        {
+        {   
+
             InitializeComponent();
-            // Asigna una instancia de Cliente al DataContext
-            //DataContext = new Cliente();
+            btnEditar.IsEnabled = true;
+            btnEliminar.IsEnabled = true;
 
             // Llena la colección con tus clientes al inicio
             clientes = traer_clientes();
@@ -91,15 +92,12 @@ namespace Vistas
                 oCliente.Cli_Nombre = txtNombre.Text;
                 oCliente.Cli_Telefono = long.Parse(txtTelefono.Text);
 
-                TrabajarClientes.modificar_cliente(oCliente);
-
                 string mensaje = "ID: " + oCliente.Cli_Id + "\nDNI: " + oCliente.Cli_DNI + "\nApellido: " + oCliente.Cli_Apellido + "\nNombre: " + oCliente.Cli_Nombre + "\nTeléfono: " + oCliente.Cli_Telefono;
                 MessageBoxResult result2 = MessageBox.Show(mensaje, "Valores Almacenados", MessageBoxButton.OK, MessageBoxImage.Information);
                 if (result2 == MessageBoxResult.OK)
                 {
-                    FormCliente formCliente = new FormCliente();
-                    formCliente.Show();
-                    this.Close();
+                    TrabajarClientes.modificar_cliente(oCliente);
+                    dataGridClientes.DataContext = TrabajarClientes.traer_clientes();
                 }
             }
 
@@ -121,15 +119,14 @@ namespace Vistas
                 oCliente.Cli_Nombre = txtNombre.Text;
                 oCliente.Cli_Telefono = long.Parse(txtTelefono.Text);
 
-                TrabajarClientes.eliminar_cliente(oCliente);
+                
 
                 string mensaje = "ID: " + oCliente.Cli_Id + "\nDNI: " + oCliente.Cli_DNI + "\nApellido: " + oCliente.Cli_Apellido + "\nNombre: " + oCliente.Cli_Nombre + "\nTeléfono: " + oCliente.Cli_Telefono;
                 MessageBoxResult result2 = MessageBox.Show(mensaje, "Valores Eliminados", MessageBoxButton.OK, MessageBoxImage.Information);
                 if (result2 == MessageBoxResult.OK)
                 {
-                    FormCliente formCliente = new FormCliente();
-                    formCliente.Show();
-                    this.Close();
+                    TrabajarClientes.eliminar_cliente(oCliente);
+                    dataGridClientes.DataContext = TrabajarClientes.traer_clientes();
                 }
             }
 
@@ -141,7 +138,10 @@ namespace Vistas
         }
 
         private void ActualizarDatosCliente()
-        {   
+        {
+            btnEditar.IsEnabled = true;
+            btnEliminar.IsEnabled = true;
+
              if (textBuscar.Text == "")
              {
                  // No se encontró un cliente con el DNI ingresado, muestra un mensaje o limpia los campos.
@@ -215,10 +215,6 @@ namespace Vistas
             // Asigna la lista filtrada al control DataGrid
             dataGridClientes.ItemsSource = clientesFiltrados;
         }
-
-
-
-
 
     }
 }

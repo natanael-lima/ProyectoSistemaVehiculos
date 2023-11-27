@@ -105,10 +105,8 @@
                             </DataGrid.CellStyle>
                         </DataGrid>
                         <!--Botones del Form-->
-                        <TextBox Margin="50,38,298,0" Name="txtBuscar" Style="{StaticResource TextoBoxStyle}" />
-                        <Button Margin="554,13,0,584" Name="btnBuscar" Style="{StaticResource BotonBuscarStyle}" Click="btnBuscar_Click" />
                         <Button Margin="688,13,0,584" Name="btnAgregar" Style="{StaticResource BotonAgregarStyle}" Click="btnAgregar_Click" />
-                        <Button Margin="508,13,0,584" Name="btnActualizar" Style="{StaticResource BotonActualizarStyle}" Click="btnActualizar_Click" />
+                        <Button Margin="640,13,0,584" Name="btnActualizar" Style="{StaticResource BotonActualizarStyle}" Click="btnActualizar_Click" Width="42" />
                     </Grid>
                 </Border>
             </Grid>

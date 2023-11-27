@@ -98,7 +98,7 @@
                             </TextBox.Text>
                         </TextBox>
                         
-                        <TextBlock FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="25,381,160,217" Text="Buscar DNI para Modificar/Eliminar:" />
+                        <TextBlock FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGoldenrod" Margin="25,381,160,217" Text="Buscar DNI para Modificar/Eliminar:" />
                         <TextBox Margin="25,399,30,0" Name="textBuscar" Style="{StaticResource TextoBoxStyle}" Text="{Binding Path=DNI, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center" TextChanged="textBuscar_TextChanged" />
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="53,440,49,125" Width="272">
                             <Button Margin="0,0,5,0" Content="Salir"  Name="btnSalir" Style="{StaticResource BotonGlobalStyle}" Width="80" Click="btnSalir_Click" />

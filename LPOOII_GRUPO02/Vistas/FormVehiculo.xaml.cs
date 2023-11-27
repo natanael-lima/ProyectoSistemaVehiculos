@@ -57,6 +57,11 @@ namespace Vistas
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             dgTiposVehiculos.DataContext = TrabajarTipoVehiculos.traer_tipos_vehiculos();
+            txtDescripcion.IsReadOnly=true;
+            txtTarifa.IsReadOnly = true;
+            txtImagen.IsReadOnly = true;
+            btnEditar.IsEnabled = false;
+            btnEliminar.IsEnabled = false;
         }
 
         private void btnAgregar_Click(object sender, RoutedEventArgs e)
@@ -82,6 +87,13 @@ namespace Vistas
                 txtDescripcion.Text = descripcion;
                 txtTarifa.Text = tarifa.ToString();
                 txtImagen.Text = imagen;
+                // campos
+                txtDescripcion.IsReadOnly = false;
+                txtTarifa.IsReadOnly = false;
+                txtImagen.IsReadOnly = false;
+                //botones
+                btnEditar.IsEnabled = true;
+                btnEliminar.IsEnabled = true;
             }
         }
 
@@ -134,11 +146,5 @@ namespace Vistas
         {
             dgTiposVehiculos.DataContext = TrabajarTipoVehiculos.traer_tipos_vehiculos();
         }
-
-        private void btnBuscar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
     }
 }

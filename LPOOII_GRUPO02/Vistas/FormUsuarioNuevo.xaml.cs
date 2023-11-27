@@ -48,27 +48,55 @@ namespace Vistas
         }
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("¿Está seguro de que desea guardar los datos?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
-            if (result == MessageBoxResult.Yes)
+            if (txtApellido.Text == "" || txtNombre.Text == "" || txtUsername.Text == "" || txtPassword.Text == "")
             {
-                Usuario newUser = new Usuario();
-                newUser.User_Name = txtNombre.Text;
-                newUser.User_Password = txtPassword.Text;
-                newUser.User_Nombre = txtNombre.Text;
-                newUser.User_Apellido = txtApellido.Text;
-                string rolSeleccionado = (txtRol.SelectedItem as ComboBoxItem).Content.ToString();
-                newUser.User_Rol = rolSeleccionado;
-                newUser.User_Foto = txtUrl.Text;
-
-                string destino = @"C:\FOTOS\";
-
-                string recurso = imgFoto.Source.ToString().Replace("file:///", "");
-                File.Copy(recurso, destino + txtUrl.Text, true);
-
-                TrabajarUsuario.altaUsuario(newUser);
-                MessageBox.Show("Usuario Guardado correctamente", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
-                
+                MessageBox.Show("Debe llenar todos los campos", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
+            else
+            {
+                if (txtApellido.Text.Length < 3)
+                {
+                    MessageBox.Show("Apellido invalido", "Invalido", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else if (txtNombre.Text.Length < 3)
+                {
+                    MessageBox.Show("Nombre invalido", "Invalido", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else if (txtUsername.Text.Length <= 3)
+                {
+                    MessageBox.Show("Username invalido", "Invalido", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else if (txtPassword.Text.Length <= 3)
+                {
+                    MessageBox.Show("Password invalido", "Invalido", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else
+                {
+                    MessageBoxResult result = MessageBox.Show("¿Está seguro de que desea guardar los datos?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        Usuario newUser = new Usuario();
+                        newUser.User_Name = txtNombre.Text;
+                        newUser.User_Password = txtPassword.Text;
+                        newUser.User_Nombre = txtUsername.Text;
+                        newUser.User_Apellido = txtApellido.Text;
+                        string rolSeleccionado = (txtRol.SelectedItem as ComboBoxItem).Content.ToString();
+                        newUser.User_Rol = rolSeleccionado;
+                        newUser.User_Foto = txtUrl.Text;
+
+                        string destino = @"C:\FOTOS\";
+
+                        string recurso = imgFoto.Source.ToString().Replace("file:///", "");
+                        File.Copy(recurso, destino + txtUrl.Text, true);
+
+                        TrabajarUsuario.altaUsuario(newUser);
+                        MessageBox.Show("Usuario Guardado correctamente", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    }
+                }
+            }
+
+            
         }
 
         private void btnCargarFoto_Click(object sender, RoutedEventArgs e)

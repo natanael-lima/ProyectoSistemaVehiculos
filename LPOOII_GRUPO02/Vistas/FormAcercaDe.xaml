@@ -75,13 +75,13 @@
                      <TextBlock Name="txtname2" Foreground="White" FontSize="12" Margin="50,15,0,5" Text="VIRREYRA RUIZ, Ayelen Raquel" />
                      <TextBlock Name="txtname3" Foreground="White" FontSize="12" Margin="50,15,0,5" Text="GAITAN, Nahuel Maximiliano" />
                      <TextBlock Name="txtname4" Foreground="White" FontSize="12" Margin="50,15,0,5" Text="LOTO, Mateo Ignacio" />
-                     <TextBlock Name="txtname5" Foreground="White" FontSize="12" Margin="50,15,0,5" Text="GALLARDO, Joaquin" />
-                     <TextBlock Name="txtname6" Foreground="White" FontSize="12" Margin="50,15,0,5" Text="MACHICADO, Marianella Denis" />
+                     <TextBlock Name="txtname5" Foreground="White" FontSize="12" Margin="50,15,0,5" Text="GALLARDO, Matias Joaquin" />
+                     <TextBlock Name="txtname6" Foreground="White" FontSize="12" Margin="50,15,0,5" Text="MACHICADO, Marianella Rocio Denis" />
                      </StackPanel>
                 </Grid>
                 <Grid Grid.Column="1">
-                    <MediaElement Name="mediaPlayer" LoadedBehavior="Manual" Width="600" Height="400"/>
-                    <Button Content="Reproducir" Click="ReproducirVideo" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,20" />
+                    <MediaElement Name="mediaPlayer" LoadedBehavior="Manual" Width="600" Height="400" Margin="112,87,88,142" />
+                    <Button Content="Reproducir" Click="ReproducirVideo" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="365,0,324,106" Style="{StaticResource BotonGlobalStyle}" Width="111" />
                 </Grid>
 
             </Grid>

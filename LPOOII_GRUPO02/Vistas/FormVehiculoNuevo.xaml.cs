@@ -87,7 +87,6 @@ namespace Vistas
                         if (result2 == MessageBoxResult.OK)
                         {
                             TrabajarTipoVehiculos.guardar_tipo_vehiculo(oTipoVehiculo);//Guarda en la bd
-                        
                             this.Close();
                         }
                     }

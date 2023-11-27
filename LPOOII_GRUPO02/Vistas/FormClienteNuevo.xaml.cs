@@ -42,34 +42,50 @@ namespace Vistas
 
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
-
-            MessageBoxResult result = MessageBox.Show("¿Está seguro de que desea guardar los datos?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
-            if (result == MessageBoxResult.Yes)
+            if (txtApellido.Text == "" || txtNombre.Text == "" || txtDNI.Text == "" || txtTelefono.Text == "")
             {
-                Cliente oCliente = new Cliente();
-                oCliente.Cli_DNI = int.Parse(txtDNI.Text);
-                oCliente.Cli_Apellido = txtApellido.Text;
-                oCliente.Cli_Nombre = txtNombre.Text;
-                oCliente.Cli_Telefono = long.Parse(txtTelefono.Text);
-
-                TrabajarClientes.alta_cliente(oCliente);
-
-                string mensaje = "DNI: " + oCliente.Cli_DNI + "\nApellido: " + oCliente.Cli_Apellido + "\nNombre: " + oCliente.Cli_Nombre + "\nTeléfono: " + oCliente.Cli_Telefono;
-                MessageBoxResult result2 = MessageBox.Show(mensaje, "Valores Almacenados", MessageBoxButton.OK, MessageBoxImage.Information);
-                if (result2 == MessageBoxResult.OK)
-                {
-                    FormCliente formCliente = new FormCliente();
-                    formCliente.Show();
-                    this.Close();
-                }
+                MessageBox.Show("Debe llenar todos los campos", "Advertencia", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
-
             else
             {
-                MessageBox.Show("Complete todos los campos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                if (txtApellido.Text.Length < 3)
+                {
+                    MessageBox.Show("Apellido invalido", "Invalido", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else if (txtNombre.Text.Length < 3)
+                {
+                    MessageBox.Show("Nombre invalido", "Invalido", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else if (txtDNI.Text.Length <=7)
+                {
+                    MessageBox.Show("DNI invalido", "Invalido", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else if (txtTelefono.Text.Length <= 9)
+                {
+                    MessageBox.Show("Telefono invalido", "Invalido", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else
+                {
+                    MessageBoxResult result = MessageBox.Show("¿Está seguro de que desea guardar los datos?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        Cliente oCliente = new Cliente();
+                        oCliente.Cli_DNI = int.Parse(txtDNI.Text);
+                        oCliente.Cli_Apellido = txtApellido.Text;
+                        oCliente.Cli_Nombre = txtNombre.Text;
+                        oCliente.Cli_Telefono = long.Parse(txtTelefono.Text);
+
+                        string mensaje = "DNI: " + oCliente.Cli_DNI + "\nApellido: " + oCliente.Cli_Apellido + "\nNombre: " + oCliente.Cli_Nombre + "\nTeléfono: " + oCliente.Cli_Telefono;
+                        MessageBoxResult result2 = MessageBox.Show(mensaje, "Valores Almacenados", MessageBoxButton.OK, MessageBoxImage.Information);
+                        if (result2 == MessageBoxResult.OK)
+                        {
+                            TrabajarClientes.alta_cliente(oCliente);//Guarda en la bd
+                            this.Close();
+                        }
+                    }
+                }
             }
         }
-
         private void btnSalir_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
