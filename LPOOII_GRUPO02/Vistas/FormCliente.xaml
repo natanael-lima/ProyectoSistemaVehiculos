@@ -127,10 +127,10 @@
                             </DataGrid.CellStyle>
                         </DataGrid>
                         <!--Botones del Form-->
-                        <TextBox Margin="19,52,279,0" Name="txtBuscar" Style="{StaticResource TextoBoxStyle}" />
-                        <Button Margin="571,22,0,575" Name="btnBuscar" Style="{StaticResource BotonBuscarStyle}" Click="btnBuscar_Click" />
-                        <Button Margin="525,22,0,575" Name="btnActualizar" Style="{StaticResource BotonActualizarStyle}" Click="btnActualizar_Click" />
+                        <TextBox Margin="114,50,165,0" TextChanged="TxtBusqueda_TextChanged" Name="txtBusqueda" Style="{StaticResource TextoBoxStyle}" Height="26" />
+                        <Button Margin="639,22,0,575" Name="btnActualizar" Style="{StaticResource BotonActualizarStyle}" Click="btnActualizar_Click" Width="44" />
                         <Button Margin="689,21,0,576" Name="btnAgregar" Style="{StaticResource BotonAgregarStyle}" Click="btnAgregar_Click" />
+                        <TextBlock FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="19,56,680,551" Text="Filtrar por Nombre:" />
                     </Grid>
                 </Border>
                         

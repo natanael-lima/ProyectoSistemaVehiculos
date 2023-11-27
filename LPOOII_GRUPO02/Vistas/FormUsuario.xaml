@@ -165,7 +165,7 @@
                         </DataGrid>
                         <!--Botones del Form-->
                         
-                        <TextBlock Text="Filtrado por UserName:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="50,35,135,548" />
+                        <TextBlock Text="Filtrado por UserName:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="50,35,135,569" />
                         <TextBox Margin="50,52,180,0" Name="txtBuscar" Style="{StaticResource TextoBoxStyle}" Grid.Column="1" />
                         <Button Margin="677,28,0,571" Name="btnBuscar" Style="{StaticResource BotonBuscarStyle}" Click="btnBuscar_Click" />
                         <Button Margin="631,28,0,571" Name="btnActualizar" Style="{StaticResource BotonActualizarStyle}" />

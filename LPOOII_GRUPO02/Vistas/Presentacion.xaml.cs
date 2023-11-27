@@ -66,7 +66,7 @@ namespace Vistas
             // Crea una animación de escala (zoom)
             DoubleAnimation animacion = new DoubleAnimation();
             animacion.From = 1; // Escala inicial
-            animacion.To = 2.5; // Escala final
+            animacion.To = 1.6; // Escala final
             animacion.Duration = TimeSpan.FromSeconds(2); // Duración de la animación (en segundos)
 
             // Asocia la animación al RenderTransform de la imagen
