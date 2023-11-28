@@ -76,9 +76,9 @@ namespace Vistas
                     if (result == MessageBoxResult.Yes)
                     {
                         Usuario newUser = new Usuario();
-                        newUser.User_Name = txtNombre.Text;
+                        newUser.User_Name = txtUsername.Text;
                         newUser.User_Password = txtPassword.Text;
-                        newUser.User_Nombre = txtUsername.Text;
+                        newUser.User_Nombre = txtNombre.Text;
                         newUser.User_Apellido = txtApellido.Text;
                         string rolSeleccionado = (txtRol.SelectedItem as ComboBoxItem).Content.ToString();
                         newUser.User_Rol = rolSeleccionado;
@@ -89,8 +89,14 @@ namespace Vistas
                         string recurso = imgFoto.Source.ToString().Replace("file:///", "");
                         File.Copy(recurso, destino + txtUrl.Text, true);
 
-                        TrabajarUsuario.altaUsuario(newUser);
-                        MessageBox.Show("Usuario Guardado correctamente", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                        MessageBoxResult result2 = MessageBox.Show("Usuario Guardado correctamente", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                        if (result2 == MessageBoxResult.OK)
+                        {
+                            TrabajarUsuario.altaUsuario(newUser);//Guarda en la bd
+                            this.Close();
+                        }
 
                     }
                 }

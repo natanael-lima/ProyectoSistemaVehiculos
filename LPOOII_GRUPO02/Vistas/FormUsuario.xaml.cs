@@ -42,7 +42,7 @@ namespace Vistas
             txtRol.IsEnabled = false;
 
             btnGuardar.IsEnabled = false;
-            btnCancelar.IsEnabled = false;
+            
 
             // Recargar el diccionario de recursos
             this.Resources.MergedDictionaries.Clear();
@@ -279,6 +279,11 @@ namespace Vistas
             impForm.Show();
             
             
+        }
+
+        private void btnActualizar_Click(object sender, RoutedEventArgs e)
+        {
+            dataGridUsuarios.DataContext = TrabajarUsuario.traerUsuariosASC();
         }
 
     }

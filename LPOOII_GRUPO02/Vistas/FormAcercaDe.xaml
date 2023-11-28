@@ -49,15 +49,15 @@
                 <Button x:Name="btnMinimize"
                             Grid.Column="1"
                             
-                            Style="{StaticResource MinimizeButtonStyle}">
+                            Style="{StaticResource MinimizeButtonStyle}" Click="btnMinimize_Click">
                 </Button>
                 <!--Cerrar Ventana-->
                 <Button x:Name="btnClose"                          
                             Grid.Column="2"
                             
-                            Style="{StaticResource CloseButtonStyle}">
+                            Style="{StaticResource CloseButtonStyle}" Click="btnClose_Click">
                 </Button>
-                <my:userControlLogin Grid.Column="1" Grid.ColumnSpan="3" HorizontalAlignment="Left" Margin="14,15,0,0" x:Name="userControlLogin1" VerticalAlignment="Top" />
+                
             </Grid>
             <!--Grid para Contenido-->
             <Grid Grid.Row="1">

@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Windows;
+using ClaseBase;
 
 namespace Vistas
 {
@@ -14,6 +15,6 @@ namespace Vistas
     public partial class App : Application
     {
         // Variable utilizada para guardar el rol del empleado, la utilizo en FromMain
-        public static string UserGlobal { get; set; }
+        public static Usuario UserGlobal { get; set; }
     }
 }
