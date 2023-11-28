@@ -138,8 +138,9 @@
                             <Button Margin="0,0,10,0" Name="btnEditar" Style="{StaticResource BotonEditarStyle}"  HorizontalAlignment="Right" Click="btnEditar_Click" />
                             <Button Margin="0,0,10,0" Name="btnEliminar" Style="{StaticResource BotonEliminarStyle}" HorizontalAlignment="Right" Width="89" Click="btnEliminar_Click" />
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="74,518,87,65">
-                            <Button Content="Salir" Margin="0,0,10,0" Name="btnCancelar" HorizontalAlignment="Left" Width="100" Style="{StaticResource BotonGlobalStyle}" Click="btnCancelar_Click" />
+                        <StackPanel Orientation="Horizontal" Margin="35,518,-1,65">
+                            <Button Content="Salir" Margin="0,0,10,0" Name="btnSalir" HorizontalAlignment="Left" Width="100" Style="{StaticResource BotonGlobalStyle}" Click="btnSalir_Click" />
+                            <Button Content="Cancelar" Margin="0,0,10,0" Name="btnCancelar" HorizontalAlignment="Left" Width="100" Style="{StaticResource BotonGlobalStyle}" Click="btnCancelar_Click" />
                             <Button Content="Guardar" Margin="0,0,10,0" Name="btnGuardar" Width="100" Style="{StaticResource BotonGlobalStyle}" Click="btnGuardar_Click" />
                         </StackPanel>
                         
