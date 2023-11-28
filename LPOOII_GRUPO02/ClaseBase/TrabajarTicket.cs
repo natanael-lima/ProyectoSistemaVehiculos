@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
 using System.Data;
+using System.Data.Common;
 using System.Collections.ObjectModel;
 namespace ClaseBase
 {
@@ -39,62 +40,61 @@ namespace ClaseBase
         }
         public static Ticket traerTicket(Sector sector)
         {
-            Ticket ticket = null; 
+            Ticket ticket = null;
             using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
             {
                 cn.Open();
                 using (var cmd = cn.CreateCommand())
                 {
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "SELECT TOP 1 Ticket.* FROM Ticket INNER JOIN Sector ON Ticket.sec_Id = "+ sector.Sec_Codigo + " WHERE Sector.sec_Identificador = '" + sector.Sec_Identificador + "' ORDER BY t_Id DESC" ;
+                    cmd.CommandText = "SELECT TOP 1 Ticket.* FROM Ticket INNER JOIN Sector ON Ticket.sec_Id = " + sector.Sec_Codigo + " WHERE Sector.sec_Identificador = '" + sector.Sec_Identificador + "' ORDER BY t_Id DESC";
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         if (reader.Read())
                         {
-                            ticket = new Ticket();
-                            // Mapear las columnas según la estructura de tu tabla Sector
-                            ticket.T_Id = Convert.ToInt32(reader["t_Id"]);
-                            Cliente cli = new Cliente();
-                            cli.Cli_Id = Convert.ToInt32(reader["cli_Id"]);
-                            foreach (Cliente clii in TrabajarClientes.traer_clientes())
-                            {
-                                if (cli.Cli_Id == clii.Cli_Id)
+                                ticket = new Ticket();
+                                // Mapear las columnas según la estructura de tu tabla Sector
+                                ticket.T_Id = Convert.ToInt32(reader["t_Id"]);
+                                Cliente cli = new Cliente();
+                                cli.Cli_Id = Convert.ToInt32(reader["cli_Id"]);
+                                foreach (Cliente clii in TrabajarClientes.traer_clientes())
                                 {
-                                    cli = clii;
-                                    break;
+                                    if (cli.Cli_Id == clii.Cli_Id)
+                                    {
+                                        cli = clii;
+                                        break;
+                                    }
                                 }
-                            }
-                            ticket.Cli_Id = cli;
-                            TipoVehiculo tp = new TipoVehiculo();
-                            tp.Tv_Id = Convert.ToInt32(reader["tv_Id"]);
-                            foreach (TipoVehiculo tpp in TrabajarTipoVehiculos.traer_tipos_vehiculos())
-                            {
-                                if (tp.Tv_Id == tpp.Tv_Id)
+                                ticket.Cli_Id = cli;
+                                TipoVehiculo tp = new TipoVehiculo();
+                                tp.Tv_Id = Convert.ToInt32(reader["tv_Id"]);
+                                foreach (TipoVehiculo tpp in TrabajarTipoVehiculos.traer_tipos_vehiculos())
                                 {
-                                    tp = tpp;
-                                    break;
+                                    if (tp.Tv_Id == tpp.Tv_Id)
+                                    {
+                                        tp = tpp;
+                                        break;
+                                    }
                                 }
-                            }
-                            ticket.Tv_Id = tp;
-                            Sector sec = new Sector();
-                            sec.Sec_Codigo = Convert.ToInt32(reader["sec_Id"]);
-                            foreach (Sector secc in TrabajarSector.traerSectores())
-                            {
-                                if (sec.Sec_Codigo==secc.Sec_Codigo)
+                                ticket.Tv_Id = tp;
+                                Sector sec = new Sector();
+                                sec.Sec_Codigo = Convert.ToInt32(reader["sec_Id"]);
+                                foreach (Sector secc in TrabajarSector.traerSectores())
                                 {
-                                    sec = secc;
-                                    break;
+                                    if (sec.Sec_Codigo == secc.Sec_Codigo)
+                                    {
+                                        sec = secc;
+                                        break;
+                                    }
                                 }
-                            }
-                            ticket.Sec_Id = sec;  
-                            ticket.T_Duracion = Convert.ToDouble(reader["t_Duracion"]);
-                            ticket.T_FechaHoraEnt = Convert.ToDateTime(reader["t_FechaHoraEnt"]);
-                            ticket.T_Patente = Convert.ToString(reader["t_Patente"]);
+                                ticket.Sec_Id = sec;
+                                ticket.T_Duracion = Convert.ToDouble(reader["t_Duracion"]);
+                                ticket.T_FechaHoraEnt = Convert.ToDateTime(reader["t_FechaHoraEnt"]);
+                                ticket.T_Patente = Convert.ToString(reader["t_Patente"]);
                                 ticket.T_Tarifa = Convert.ToDecimal(reader["t_Tarifa"]);
-                            ticket.T_Total = Convert.ToDecimal(reader["t_Total"]);
-                            // Otros atributos
-
-                        }
+                                ticket.T_Total = Convert.ToDecimal(reader["t_Total"]);
+                                // Otros atributos
+                            }   
                     }
                 }
             }
@@ -114,7 +114,75 @@ namespace ClaseBase
                 }
             }
         }
-        
+        public static ObservableCollection<Ticket> traerTickets()
+        {
+            ObservableCollection<Ticket> listaTicket = new ObservableCollection<Ticket>();
 
+            using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
+            {
+                cn.Open();
+                using (var cmd = cn.CreateCommand())
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "SELECT * FROM Ticket";
+
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.HasRows)
+                        {
+                            while (dr.Read())
+                            {
+                                if (dr["t_FechaHoraSal"] != DBNull.Value)
+                                {
+                                    Ticket ticket = new Ticket();
+                                    ticket.T_Id = int.Parse(dr["t_Id"].ToString());
+                                    Cliente cli = new Cliente();
+                                    cli.Cli_Id = int.Parse(dr["cli_Id"].ToString());
+                                    foreach (Cliente clii in TrabajarClientes.traer_clientes())
+                                    {
+                                        if (cli.Cli_Id == clii.Cli_Id)
+                                        {
+                                            cli = clii;
+                                            break;
+                                        }
+                                    }
+                                    ticket.Cli_Id = cli;
+                                    TipoVehiculo tp = new TipoVehiculo();
+                                    tp.Tv_Id = int.Parse(dr["tv_Id"].ToString());
+                                    foreach (TipoVehiculo tpp in TrabajarTipoVehiculos.traer_tipos_vehiculos())
+                                    {
+                                        if (tp.Tv_Id == tpp.Tv_Id)
+                                        {
+                                            tp = tpp;
+                                            break;
+                                        }
+                                    }
+                                    ticket.Tv_Id = tp;
+                                    Sector sec = new Sector();
+                                    sec.Sec_Codigo = int.Parse(dr["sec_Id"].ToString());
+                                    foreach (Sector secc in TrabajarSector.traerSectores())
+                                    {
+                                        if (sec.Sec_Codigo == secc.Sec_Codigo)
+                                        {
+                                            sec = secc;
+                                            break;
+                                        }
+                                    }
+                                    ticket.Sec_Id = sec;
+                                    ticket.T_Duracion = Double.Parse(dr["t_Duracion"].ToString().ToString());
+                                    ticket.T_FechaHoraEnt = Convert.ToDateTime(dr["t_FechaHoraEnt"].ToString());
+                                    ticket.T_FechaHoraSal = Convert.ToDateTime(dr["t_FechaHoraSal"].ToString());
+                                    ticket.T_Patente = Convert.ToString(dr["t_Patente"].ToString());
+                                    ticket.T_Tarifa = Convert.ToDecimal(dr["t_Tarifa"].ToString());
+                                    ticket.T_Total = Convert.ToDecimal(dr["t_Total"].ToString());
+                                    listaTicket.Add(ticket);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return listaTicket;
+        }
     }
 }

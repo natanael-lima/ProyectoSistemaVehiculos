@@ -99,7 +99,7 @@
                         </StackPanel>
 
                         <!-- Segunda Fila -->
-                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="-2,18,187,0" Width="189">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="-2,18,-1,0" Width="377">
                             <Canvas Background="Transparent" Name="canvas_content" DataContext="{Binding Source={StaticResource ResourceKey=List_Users}}" Margin="0,69,0,0">
                                 <TextBlock Text="Apellido:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray"   Margin="25,315,160,268" Canvas.Left="0" Canvas.Top="-80" />
                                 <TextBox Margin="25,333,30,0" Name="txtApellido"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}" Width="328" Canvas.Left="0" Canvas.Top="-80">
@@ -133,12 +133,17 @@
                             </Canvas>
                         </StackPanel>
                         <!-- Tercera Fila -->
-
-                        <Button Content="Cancelar" Margin="59,492,0,4" Name="btnCancelar" HorizontalAlignment="Left" Width="100" Style="{StaticResource BotonGlobalStyle}" Click="btnCancelar_Click" />
-                        <Button Content="Guardar" Margin="0,506,93,18" Name="btnGuardar"  HorizontalAlignment="Right" Width="100" Style="{StaticResource BotonGlobalStyle}" Click="btnGuardar_Click" />
-                        <Button Margin="25,485,0,112" Name="btnAgregar" Style="{StaticResource BotonAgregarStyle}" Click="btnAgregar_Click" />
-                        <Button Margin="0,485,153,112" Name="btnEditar" Style="{StaticResource BotonEditarStyle}"  HorizontalAlignment="Right" Click="btnEditar_Click" />
-                        <Button Margin="0,485,44,113" Name="btnEliminar" Style="{StaticResource BotonEliminarStyle}" HorizontalAlignment="Right" Width="89" Click="btnEliminar_Click" />
+                        <StackPanel Orientation="Horizontal" Margin="46,456,0,127">
+                            <Button Margin="0,0,10,0" Name="btnAgregar" Style="{StaticResource BotonAgregarStyle}" Click="btnAgregar_Click" />
+                            <Button Margin="0,0,10,0" Name="btnEditar" Style="{StaticResource BotonEditarStyle}"  HorizontalAlignment="Right" Click="btnEditar_Click" />
+                            <Button Margin="0,0,10,0" Name="btnEliminar" Style="{StaticResource BotonEliminarStyle}" HorizontalAlignment="Right" Width="89" Click="btnEliminar_Click" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="74,518,87,65">
+                            <Button Content="Salir" Margin="0,0,10,0" Name="btnCancelar" HorizontalAlignment="Left" Width="100" Style="{StaticResource BotonGlobalStyle}" Click="btnCancelar_Click" />
+                            <Button Content="Guardar" Margin="0,0,10,0" Name="btnGuardar" Width="100" Style="{StaticResource BotonGlobalStyle}" Click="btnGuardar_Click" />
+                        </StackPanel>
+                        
+                        
                         
                     </Grid>
                 </Border>
@@ -167,7 +172,7 @@
                         <TextBlock Text="Filtrado por UserName:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="50,35,135,569" />
                         <TextBox Margin="50,52,180,0" Name="txtBuscar" Style="{StaticResource TextoBoxStyle}" Grid.Column="1" />
                         <Button Margin="677,28,0,571" Name="btnBuscar" Style="{StaticResource BotonBuscarStyle}" Click="btnBuscar_Click" />
-                        <Button Margin="631,28,0,571" Name="btnActualizar" Style="{StaticResource BotonActualizarStyle}" />
+                        <Button Margin="631,28,0,571" Name="btnActualizar" Style="{StaticResource BotonActualizarStyle}" Click="btnActualizar_Click" />
                         <Button Content="Vista Previa de Impresion" HorizontalAlignment="Right" Margin="0,518,284,6" Name="btnVistaImpr" Style="{StaticResource BotonGlobalStyle}" Width="167" Click="btnVistaImpr_Click" />
                     </Grid>
                 </Border>

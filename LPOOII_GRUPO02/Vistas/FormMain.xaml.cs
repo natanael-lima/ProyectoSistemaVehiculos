@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using ClaseBase;
 
 namespace Vistas
 {
@@ -44,7 +45,7 @@ namespace Vistas
 
             //MessageBox.Show("Rol: " + App.UserGlobal);
             //txtBlockRol.Text = txtBlockRol.Text + " "+ App.UserGlobal;
-            if (App.UserGlobal == "Administrador")
+            if (App.UserGlobal.User_Rol == "Administrador")
             {
                 btnClientes.IsEnabled = false;
                 btnEstacionamientos.IsEnabled = false;
@@ -55,10 +56,24 @@ namespace Vistas
             {
                 btnVehiculos.IsEnabled = false;
                 btnVehiculos.Foreground = Brushes.Gray;
+                btnUsuarios.IsEnabled = false;
+                btnUsuarios.Foreground = Brushes.Gray;
             }
+
+            
+                Usuario user = App.UserGlobal;
+                // Ahora puedes usar 'primerUsuario' para trabajar con el primer usuario en la lista.
+                // Por ejemplo, podrías mostrar sus datos en la interfaz de usuario.
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.UriSource = new Uri(@"C:\FOTOS\" + user.User_Foto); // Ruta de la imagen
+                image.EndInit();
+                imgBrush.ImageSource = image;
+
+                usuario.Text=App.UserGlobal.User_Nombre+" "+App.UserGlobal.User_Apellido;
         }
 
-
+       
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
@@ -114,6 +129,13 @@ namespace Vistas
         private void btnAcerca_Checked(object sender, RoutedEventArgs e)
         {
             FormAcercaDe form = new FormAcercaDe();
+            form.Show();
+            this.Close();
+        }
+
+        private void btnVenta_Checked(object sender, RoutedEventArgs e)
+        {
+            FormVentas form = new FormVentas();
             form.Show();
             this.Close();
         }

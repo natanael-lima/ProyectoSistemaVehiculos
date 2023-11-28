@@ -12,7 +12,7 @@ namespace ClaseBase
     {
         public static Sector traerSector(string cod)
         {
-            Sector sec = new Sector();;
+            Sector sec = new Sector(); ;
             using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
             {
                 cn.Open();
@@ -25,13 +25,14 @@ namespace ClaseBase
                         if (reader.Read())
                         {
 
-                                // Mapear las columnas según la estructura de tu tabla Sector
+                            // Mapear las columnas según la estructura de tu tabla Sector
                             sec.Sec_Codigo = Convert.ToInt32(reader["sec_Id"]);
                             sec.Sec_Descripcion = Convert.ToString(reader["sec_Descripcion"]);
                             sec.Sec_Habilitado = Convert.ToInt32(reader["sec_Habilitado"]);
                             sec.Sec_Identificador = Convert.ToString(reader["sec_Identificador"]);
-                                // Otros atributos
-                            
+                            sec.Zona_Codigo = Convert.ToInt32(reader["zona_Codigo"]);
+                            // Otros atributos
+
                         }
                     }
                 }
@@ -43,8 +44,7 @@ namespace ClaseBase
             using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
             {
                 cn.Open();
-                using (SqlCommand cmd = new SqlCommand("UPDATE Sector SET sec_Habilitado = " + sector.Sec_Habilitado +" WHERE sec_Id = "+sector.Sec_Codigo,cn))
-	
+                using (SqlCommand cmd = new SqlCommand("UPDATE Sector SET sec_Habilitado = " + sector.Sec_Habilitado + " WHERE sec_Id = " + sector.Sec_Codigo, cn))
                 {
                     cmd.CommandType = CommandType.Text;
                     cmd.ExecuteNonQuery();
@@ -71,10 +71,10 @@ namespace ClaseBase
                             {
                                 Sector sector = new Sector();
                                 sector.Sec_Codigo = int.Parse(dr["sec_Id"].ToString());
-                                sector.Sec_Descripcion= dr["sec_Descripcion"].ToString();
+                                sector.Sec_Descripcion = dr["sec_Descripcion"].ToString();
                                 sector.Sec_Habilitado = int.Parse(dr["sec_Habilitado"].ToString());
                                 sector.Sec_Identificador = dr["sec_Identificador"].ToString();
-                                
+                                sector.Zona_Codigo = int.Parse(dr["zona_Codigo"].ToString());
                                 listaSectores.Add(sector);
                             }
                         }

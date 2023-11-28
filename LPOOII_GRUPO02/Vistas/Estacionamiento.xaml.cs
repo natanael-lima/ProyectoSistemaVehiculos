@@ -526,6 +526,13 @@ namespace Vistas
            btnE30.ToolTip = toolTipp("E30");
        }
 
+       private void btnVerSector_Click(object sender, RoutedEventArgs e)
+       {
+           FormSectores form = new FormSectores();
+           form.Show();
+           this.Close();
+       }
+
 
        
     }

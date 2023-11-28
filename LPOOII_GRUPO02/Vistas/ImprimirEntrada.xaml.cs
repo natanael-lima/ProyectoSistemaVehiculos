@@ -28,7 +28,7 @@ namespace Vistas
             txtIngreso.Text = "Ingreso: " + tiket.T_FechaHoraEnt;
             txtTV.Text = "Tipo de Vehiculo: " + tiket.Tv_Id.Tv_Descripcion;
             txtTarifa.Text = "Tarifa: "+ tiket.T_Tarifa.ToString();
-            txtUsuario.Text = "Usuario: " + App.UserGlobal;
+            txtUsuario.Text = "Usuario: " + App.UserGlobal.User_Nombre;
         }
     }
 }

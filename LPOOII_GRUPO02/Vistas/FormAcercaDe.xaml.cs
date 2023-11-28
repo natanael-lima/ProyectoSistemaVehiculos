@@ -33,5 +33,17 @@ namespace Vistas
             // Reproduce el video
             mediaPlayer.Play();
         }
+
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            FormMain menuPrincipal = new FormMain();
+            menuPrincipal.Show();
+            this.Close();
+        }
     }
 }

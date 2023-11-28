@@ -30,7 +30,7 @@ namespace Vistas
             txtTV.Text = "Tipo de Vehiculo: " + tiket.Tv_Id.Tv_Descripcion;
             txtTarifa.Text = "Tarifa: " + tiket.T_Tarifa.ToString();
             txtTotal.Text = "Total: " + tiket.T_Total.ToString();
-            txtUsuario.Text = "Usuario: " + App.UserGlobal;
+            txtUsuario.Text = "Usuario: " + App.UserGlobal.User_Nombre;
             TimeSpan tiempoTranscurrido = DateTime.Now - tiket.T_FechaHoraEnt;
             txtTiempoTrans.Text = "Tiempo Transcurrido: " + tiempoTranscurrido.ToString(@"hh\:mm\:ss");
         }

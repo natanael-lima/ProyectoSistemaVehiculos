@@ -36,6 +36,7 @@ namespace ClaseBase
                                 user.User_Nombre = dr["user_Nombre"].ToString();
                                 user.User_Apellido = dr["user_Apellido"].ToString();
                                 user.User_Rol = dr["user_Rol"].ToString();
+                                user.User_Foto= dr["user_Foto"].ToString();
                                 listaUsuario.Add(user);
                             }
                         }
@@ -58,6 +59,7 @@ namespace ClaseBase
                     cmd.Parameters.AddWithValue("@nombre", user.User_Nombre);
                     cmd.Parameters.AddWithValue("@apellido", user.User_Apellido);
                     cmd.Parameters.AddWithValue("@rol", user.User_Rol);
+                    cmd.Parameters.AddWithValue("@foto", user.User_Foto);
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -87,10 +89,10 @@ namespace ClaseBase
                 using (SqlCommand cmd = new SqlCommand("modificar_usuario", cn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@id", user.User_Rol);
+                    cmd.Parameters.AddWithValue("@id", user.User_Id);
                     cmd.Parameters.AddWithValue("@username", user.User_Name);
                     cmd.Parameters.AddWithValue("@password", user.User_Password);
-                    cmd.Parameters.AddWithValue("@nombre", user.User_Nombre);
+                    cmd.Parameters.AddWithValue("@name", user.User_Nombre);
                     cmd.Parameters.AddWithValue("@apellido", user.User_Apellido);
                     cmd.Parameters.AddWithValue("@rol", user.User_Rol);
                     cmd.ExecuteNonQuery();
@@ -154,6 +156,41 @@ namespace ClaseBase
                                 user.User_Nombre = dr["user_Nombre"].ToString();
                                 user.User_Apellido = dr["user_Apellido"].ToString();
                                 user.User_Rol = dr["user_Rol"].ToString();
+                                listaUsuario.Add(user);
+                            }
+                        }
+                    }
+                }
+            }
+            return listaUsuario;
+        }
+
+        public static ObservableCollection<Usuario> search_usuarios(string sPattern)
+        {
+            ObservableCollection<Usuario> listaUsuario = new ObservableCollection<Usuario>();
+
+            using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
+            {
+                cn.Open();
+                using (var cmd = cn.CreateCommand())
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "traer_usuario";  // Cambiado a "traer_usuarios" si es el procedimiento almacenado correcto
+                    cmd.Parameters.AddWithValue("@username", "%" + sPattern + "%");
+                    using (DbDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.HasRows)
+                        {
+                            while (dr.Read())
+                            {
+                                Usuario user = new Usuario();
+                                user.User_Id = int.Parse(dr["user_Id"].ToString());
+                                user.User_Name = dr["user_Name"].ToString();
+                                user.User_Password = dr["user_Password"].ToString();
+                                user.User_Nombre = dr["user_Nombre"].ToString();
+                                user.User_Apellido = dr["user_Apellido"].ToString();
+                                user.User_Rol = dr["user_Rol"].ToString();
+                                user.User_Foto = dr["user_Foto"].ToString();
                                 listaUsuario.Add(user);
                             }
                         }

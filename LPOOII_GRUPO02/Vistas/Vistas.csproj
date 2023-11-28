@@ -64,6 +64,9 @@
     <Compile Include="FormClienteNuevo.xaml.cs">
       <DependentUpon>FormClienteNuevo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FormSectores.xaml.cs">
+      <DependentUpon>FormSectores.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FormUsuario.xaml.cs">
       <DependentUpon>FormUsuario.xaml</DependentUpon>
     </Compile>
@@ -72,6 +75,9 @@
     </Compile>
     <Compile Include="FormVehiculoNuevo.xaml.cs">
       <DependentUpon>FormVehiculoNuevo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormVentas.xaml.cs">
+      <DependentUpon>FormVentas.xaml</DependentUpon>
     </Compile>
     <Compile Include="ImprimirEntrada.xaml.cs">
       <DependentUpon>ImprimirEntrada.xaml</DependentUpon>
@@ -133,6 +139,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="FormSectores.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FormUsuario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -146,6 +156,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="FormVehiculoNuevo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormVentas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
