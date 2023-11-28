@@ -92,5 +92,11 @@ namespace Vistas
             this.Close();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ImprimirVentas imp = new ImprimirVentas(listTiket);
+            imp.Show();
+        }
+
     }
 }

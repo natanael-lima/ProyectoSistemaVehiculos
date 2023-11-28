@@ -91,7 +91,7 @@
                     
                 </DataGrid>
                 <TextBox Margin="43,539,766,62" Name="txtTotal" IsEnabled="False" Height="30"/>
-                <Button Content="Imprimir" Style="{StaticResource BotonGlobalStyle}" Margin="464,527,332,60" />
+                <Button Content="Imprimir" Style="{StaticResource BotonGlobalStyle}" Margin="464,527,332,60" Click="Button_Click" />
                 <StackPanel Margin="0,0,6,0" Grid.ColumnSpan="2">
                     <DatePicker x:Name="fecha1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" />
                     <DatePicker x:Name="fecha2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" />

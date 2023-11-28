@@ -88,6 +88,12 @@
     <Compile Include="ImprimirSalida.xaml.cs">
       <DependentUpon>ImprimirSalida.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ImprimirSectoresOcup.xaml.cs">
+      <DependentUpon>ImprimirSectoresOcup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImprimirVentas.xaml.cs">
+      <DependentUpon>ImprimirVentas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion.xaml.cs">
       <DependentUpon>Presentacion.xaml</DependentUpon>
     </Compile>
@@ -172,6 +178,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="ImprimirSalida.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImprimirSectoresOcup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImprimirVentas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

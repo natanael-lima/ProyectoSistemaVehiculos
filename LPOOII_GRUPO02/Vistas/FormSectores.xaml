@@ -82,7 +82,7 @@
                         <StaticResource ResourceKey="DataGridCellStyle"/>
                     </DataGrid.CellStyle>
                 </DataGrid>
-                <Button Content="Imprimir" HorizontalAlignment="Center" Margin="518,0,547,53" Style="{StaticResource BotonGlobalStyle}" VerticalAlignment="Bottom" Width="111" />
+                <Button Content="Imprimir" HorizontalAlignment="Center" Margin="518,0,547,53" Style="{StaticResource BotonGlobalStyle}" VerticalAlignment="Bottom" Width="111" Click="Button_Click" />
             </Grid>
      </Grid>
     

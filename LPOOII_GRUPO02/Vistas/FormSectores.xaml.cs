@@ -20,7 +20,7 @@ namespace Vistas
     /// </summary>
     public partial class FormSectores : Window
     {
-
+        ObservableCollection<Ticket> listTiket = new ObservableCollection<Ticket>();
         public FormSectores()
         {
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace Vistas
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             ObservableCollection<Sector> lSec = TrabajarSector.traerSectores();
-            ObservableCollection<Ticket> listTiket = new ObservableCollection<Ticket>();
+            
 
 
             foreach (Sector sec in lSec)
@@ -127,6 +127,12 @@ namespace Vistas
                 }
             }
             return child;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ImprimirSectoresOcup imp = new ImprimirSectoresOcup(listTiket);
+            imp.Show();
         }
 
 
