@@ -95,7 +95,7 @@
                 <StackPanel Margin="0,0,6,0" Grid.ColumnSpan="2">
                     <DatePicker x:Name="fecha1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" />
                     <DatePicker x:Name="fecha2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" />
-                    <Button Content="Buscar" Name="buscar" HorizontalAlignment="Left" Click="buscar_Click" />
+                    <Button Margin="5,5,0,0" Content="Buscar" Name="buscar" HorizontalAlignment="Left" Style="{StaticResource BotonGlobalStyle}" Click="buscar_Click" Width="120" />
                    
                 </StackPanel>
             </Grid>

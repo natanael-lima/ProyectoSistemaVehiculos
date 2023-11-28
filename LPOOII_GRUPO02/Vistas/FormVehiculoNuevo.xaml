@@ -51,15 +51,15 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="Descripcion:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="29,36,156,352" />
                 <TextBox Margin="29,53,26,0" Name="txtDescripcion"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}">
-                    <!--<TextBox.Text>
-                        <Binding Path="Cli_Nombre" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True"/>
-                    </TextBox.Text>-->
+                    <TextBox.Text>
+                        <Binding Path="Tv_Descripcion" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True"/>
+                    </TextBox.Text>
                 </TextBox>
                 <TextBlock Text="Tarifa:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="29,112,156,276" />
                 <TextBox Margin="29,130,26,0" Name="txtTarifa"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}">
-                    <!--<TextBox.Text>
-                        <Binding Path="Cli_Apellido" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True"/>
-                    </TextBox.Text> -->
+                    <TextBox.Text>
+                        <Binding Path="Tv_Tarifa" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True"/>
+                    </TextBox.Text>
                 </TextBox>
                 <Image x:Name="imgFoto" Margin="29,177,208,111" />
                 <Border BorderBrush="White" BorderThickness="1" Margin="29,177,208,111" />

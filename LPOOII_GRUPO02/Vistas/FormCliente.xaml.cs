@@ -41,6 +41,14 @@ namespace Vistas
             // Puedes establecer el DataContext si es necesario para otras partes de tu código
             DataContext = new Cliente();
 
+            txtApellido.IsReadOnly = true;
+            txtDNI.IsReadOnly = true;
+            txtNombre.IsReadOnly = true;
+            txtTelefono.IsReadOnly = true;
+            btnEditar.IsEnabled = false;
+            btnEliminar.IsEnabled = false;
+    
+
         }
 
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
@@ -139,9 +147,6 @@ namespace Vistas
 
         private void ActualizarDatosCliente()
         {
-            btnEditar.IsEnabled = true;
-            btnEliminar.IsEnabled = true;
-
              if (textBuscar.Text == "")
              {
                  // No se encontró un cliente con el DNI ingresado, muestra un mensaje o limpia los campos.
@@ -150,6 +155,8 @@ namespace Vistas
                  txtNombre.Text = "";
                  txtTelefono.Text = "";
                  txtDNI.Text = "";
+                 btnEditar.IsEnabled = false;
+                 btnEliminar.IsEnabled = false;
              }
              else {
                 
@@ -164,6 +171,8 @@ namespace Vistas
                      txtTelefono.Text = cliente.Cli_Telefono.ToString();
                      txtDNI.Text = cliente.Cli_DNI.ToString();
                      txtId.Text = cliente.Cli_Id.ToString();
+                     btnEditar.IsEnabled = true;
+                     btnEliminar.IsEnabled = true;
                  }
                  else
                  {
@@ -173,6 +182,8 @@ namespace Vistas
                      txtNombre.Text = "";
                      txtTelefono.Text = "";
                      txtDNI.Text = "";
+                     btnEditar.IsEnabled = false;
+                     btnEliminar.IsEnabled = false;
                  }
              }
             
@@ -188,6 +199,10 @@ namespace Vistas
         {
             // Cuando el texto del TextBox del DNI cambia, llamamos al método para actualizar los datos del cliente.
             ActualizarDatosCliente();
+            txtApellido.IsReadOnly = false;
+            txtDNI.IsReadOnly = false;
+            txtNombre.IsReadOnly = false;
+            txtTelefono.IsReadOnly = false;
         }
 
         private void btnActualizar_Click(object sender, RoutedEventArgs e)
