@@ -60,8 +60,15 @@ namespace Vistas
 
         private void buscar_Click(object sender, RoutedEventArgs e)
         {
-            filtrar();
-            calcularTotal();
+            if (fecha1.ToString() != "" && fecha2.ToString() != "")
+            {
+                filtrar();
+                calcularTotal();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una fecha valida", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
         private void calcularTotal()
         {
