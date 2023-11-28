@@ -30,8 +30,7 @@ namespace Vistas
             Loaded += Window_Loaded;
 
             media = new MediaPlayer();
-            string rutaAudio = @"C:\Users\admin\Documents\Visual Studio 2010\Projects\LPOOII_GRUPO02\Vistas\recursos\bienvenida.mp3";
-            media.Open(new Uri(rutaAudio));
+            media.Open(new Uri(@"..\..\recursos\bienvenida.mp3",UriKind.Relative));
             media.Play();
             media.MediaEnded += Media_MediaEnded;
         }

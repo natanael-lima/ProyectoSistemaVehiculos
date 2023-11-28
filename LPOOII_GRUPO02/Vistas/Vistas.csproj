@@ -291,7 +291,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\bienvenida.mp3" />
-    <Content Include="recursos\bienvenida.mp3" />
+    <Content Include="recursos\bienvenida.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="recursos\video.mp4" />
     <Resource Include="recursos\logo-black.png" />
   </ItemGroup>
