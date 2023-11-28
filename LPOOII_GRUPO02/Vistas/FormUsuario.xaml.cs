@@ -151,7 +151,7 @@ namespace Vistas
             Usuario newUser = new Usuario();
             if (agregar == true)
             {
-                newUser.User_Name = txtNombre.Text;
+                newUser.User_Name = txtUsername.Text;
                 newUser.User_Password = txtPassword.Text;
                 newUser.User_Nombre = txtNombre.Text;
                 newUser.User_Apellido = txtApellido.Text;
@@ -166,7 +166,7 @@ namespace Vistas
             else
             {
                 newUser.User_Id = listUsuario[indice].User_Id;
-                newUser.User_Name = txtNombre.Text;
+                newUser.User_Name = txtUsername.Text;
                 newUser.User_Password = txtPassword.Text;
                 newUser.User_Nombre = txtNombre.Text;
                 newUser.User_Apellido = txtApellido.Text;
@@ -175,7 +175,7 @@ namespace Vistas
                 TrabajarUsuario.editarUsuario(newUser);
                 MessageBox.Show("Usuario Editado correctamente", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                listUsuario[indice].User_Name = txtNombre.Text;
+                listUsuario[indice].User_Name = txtUsername.Text;
                 listUsuario[indice].User_Password = txtPassword.Text;
                 listUsuario[indice].User_Nombre = txtNombre.Text;
                 listUsuario[indice].User_Apellido = txtApellido.Text;

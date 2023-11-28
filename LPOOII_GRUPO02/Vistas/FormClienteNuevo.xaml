@@ -51,7 +51,6 @@
                     <ColumnDefinition Width="336*" />
                 </Grid.ColumnDefinitions>
                 
-                        
                         <TextBlock Text="Nombre:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="32,23,153,365" />
                         <TextBox Margin="32,40,23,0" Name="txtNombre"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}">
                             <TextBox.Text>

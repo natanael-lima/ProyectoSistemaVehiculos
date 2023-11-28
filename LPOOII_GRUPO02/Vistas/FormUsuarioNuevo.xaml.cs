@@ -26,6 +26,7 @@ namespace Vistas
         public FormUsuarioNuevo()
         {
             InitializeComponent();
+            DataContext = new Usuario();
         }
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {

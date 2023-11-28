@@ -26,7 +26,7 @@ namespace Vistas
         public FormVehiculoNuevo()
         {
             InitializeComponent();
-            //DataContext = new Vehiculo();
+            DataContext = new TipoVehiculo();
         }
 
         private void btnMinimize_Click(object sender, RoutedEventArgs e)

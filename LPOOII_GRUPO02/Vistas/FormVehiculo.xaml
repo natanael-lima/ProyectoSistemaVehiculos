@@ -71,11 +71,19 @@
                         <TextBlock FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Height="26" Margin="32,136,153,0" Text="Id:" VerticalAlignment="Top" />
                         <TextBox Margin="32,154,23,0" Name="txtId" Style="{StaticResource TextoBoxStyle}" IsReadOnly="True" />
                         <TextBlock FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="32,211,153,0" Text="Descripción:" Height="26" VerticalAlignment="Top"/>
-                        <TextBox Margin="32,228,23,0" Name="txtDescripcion" Style="{StaticResource TextoBoxStyle}" />
+                        <TextBox Margin="32,228,23,0" Name="txtDescripcion"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}">
+                            <TextBox.Text>
+                                <Binding Path="Tv_Descripcion" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True"/>
+                            </TextBox.Text>
+                        </TextBox>
                         <TextBlock FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="32,288,153,0" Text="Tarifa:" Height="26" VerticalAlignment="Top" />
-                        <TextBox Margin="32,306,23,0" Name="txtTarifa" Style="{StaticResource TextoBoxStyle}" />
+                        <TextBox Margin="32,306,23,0" Name="txtTarifa"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}">
+                            <TextBox.Text>
+                                <Binding Path="Tv_Tarifa" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True"/>
+                            </TextBox.Text>
+                        </TextBox>
                         <TextBlock FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="32,365,153,0" Text="Imagen:" Height="26" VerticalAlignment="Top" />
-                        <TextBox Margin="32,382,23,0" Name="txtImagen" Style="{StaticResource TextoBoxStyle}" />
+                        <TextBox Margin="32,382,23,0" Name="txtImagen" Style="{StaticResource TextoBoxStyle}" IsReadOnly="True"/>
                         <!--<TextBlock FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Margin="25,221,160,0" Text="Código:"  Height="26" VerticalAlignment="Top"/>
                         <TextBox Margin="25,237,30,0" Name="txtCodigo" Style="{StaticResource TextoBoxStyle}" />-->
                         <StackPanel HorizontalAlignment="Center"  Margin="32,484,30,86" Orientation="Horizontal" Width="312">

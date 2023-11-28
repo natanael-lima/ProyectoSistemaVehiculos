@@ -55,26 +55,26 @@
                     <TextBlock Margin="0,0,0,12" Text="Apellido:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Width="327" />
                     <TextBox Margin="0,0,0,12" Name="txtApellido"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}" Width="328">
                         <TextBox.Text>
-                            <Binding Path="User_Apellido"/>
+                            <Binding Path="User_Apellido" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True"/>
                         </TextBox.Text>
                     </TextBox>
                     <TextBlock Margin="0,0,0,12" Text="Nombre:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Width="329" />
                     <TextBox Margin="0,0,0,12" Name="txtNombre"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}" Width="328" >
                         <TextBox.Text>
-                            <Binding Path="User_Nombre"/>
+                            <Binding Path="User_Nombre" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True"/>
                         </TextBox.Text>
                     </TextBox>
 
                     <TextBlock Margin="0,0,0,12" Text="Username:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Width="327" />
                     <TextBox  Margin="0,0,0,12" Name="txtUsername"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}" Width="328" >
                         <TextBox.Text>
-                            <Binding Path="User_Name"/>
+                            <Binding Path="User_Name" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True"/>
                         </TextBox.Text>
                     </TextBox>
                     <TextBlock Margin="0,0,0,12" Text="Password:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Width="328" />
                     <TextBox Margin="0,0,0,12" Name="txtPassword"  VerticalContentAlignment="Center" Style="{StaticResource TextoBoxStyle}" Width="328" >
                         <TextBox.Text>
-                            <Binding Path="User_Password"/>
+                            <Binding Path="User_Password" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True"/>
                         </TextBox.Text>
                     </TextBox>
                     <TextBlock Margin="0,0,0,12" Text="Rol:" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray" Width="328" />

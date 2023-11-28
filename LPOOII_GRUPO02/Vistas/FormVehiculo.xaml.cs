@@ -90,7 +90,7 @@ namespace Vistas
                 // campos
                 txtDescripcion.IsReadOnly = false;
                 txtTarifa.IsReadOnly = false;
-                txtImagen.IsReadOnly = false;
+                txtImagen.IsReadOnly = true;
                 //botones
                 btnEditar.IsEnabled = true;
                 btnEliminar.IsEnabled = true;

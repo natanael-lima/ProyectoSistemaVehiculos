@@ -335,17 +335,17 @@
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="0">
                         <Label Name="lblOcupado" Content="Ocupado" Foreground="DarkGray" FontSize="16" VerticalAlignment="Center" Margin="15,4,0,6" />
-                        <Rectangle Name="rect1" Height="20" Margin="134,12,162,6"  Stroke="#FFC3354B" VerticalAlignment="Center" Width="28" Fill="Red" />
+                        <Rectangle Name="rect1" Height="20" Margin="128,12,928,6"  Stroke="#FFC3354B" VerticalAlignment="Center" Width="118" Fill="Red" />
                     </Grid>
                     <Grid Grid.Row="1">
                         <Label Name="lblDisponible" Content="Disponible" Foreground="DarkGray" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Center" Margin="15,4,0,6" />
-                        <Rectangle Name="rect2" Height="20" Margin="134,12,162,6"  Stroke="#FF8CA236" VerticalAlignment="Center" Width="28" Fill="Green" />
+                        <Rectangle Name="rect2" Height="20" Margin="128,12,928,6"  Stroke="#FF8CA236" VerticalAlignment="Center" Width="118" Fill="Green"/>
                         <Button Style="{StaticResource BotonGlobalStyle}" Name="btnSalir" Content="Salir" Height="33" VerticalAlignment="Center" Width="84" Margin="216,5,24,1" Click="btnSalir_Click" />
                         <Button Style="{StaticResource BotonGlobalStyle}" Name="btnVerSector" Content="Sectores" Height="33" VerticalAlignment="Center" Width="122" Margin="730,5,322,1" Click="btnVerSector_Click" />
                     </Grid>
                     <Grid Grid.Row="2">
                         <Label Name="lblDeshabilitado" Content="Deshabilitado" Foreground="DarkGray" FontSize="16" HorizontalAlignment="Left"  VerticalAlignment="Center" Margin="15,4,0,6" />
-                        <Rectangle Name="rect3" Height="20" Margin="134,12,162,6"  Stroke="#FFB1B1B1" VerticalAlignment="Center" Width="28" Fill="Gray" />
+                        <Rectangle Name="rect3" Height="20" Margin="128,12,928,6"  Stroke="#FFB1B1B1" VerticalAlignment="Center" Width="118" Fill="Gray" />
                     </Grid>
                     <Grid Grid.Row="3"></Grid>   
                 </Grid>
