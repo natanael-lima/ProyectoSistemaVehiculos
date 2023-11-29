@@ -77,6 +77,7 @@ namespace Vistas
                     oTipoVehiculo.Tv_Descripcion = txtDescripcion.Text;
                     oTipoVehiculo.Tv_Tarifa = decimal.Parse(txtTarifa.Text);
                     oTipoVehiculo.Tv_Imagen = txtUrl.Text;
+                    oTipoVehiculo.Tv_Ex = 1;
                     string mensaje = "Tarifa: " + oTipoVehiculo.Tv_Tarifa + "\nDescripción: " + oTipoVehiculo.Tv_Descripcion;
                     string destino = @"C:\FOTOS\";
 

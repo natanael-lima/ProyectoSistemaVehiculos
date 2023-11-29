@@ -99,12 +99,13 @@ namespace Vistas
                 oCliente.Cli_Apellido = txtApellido.Text;
                 oCliente.Cli_Nombre = txtNombre.Text;
                 oCliente.Cli_Telefono = long.Parse(txtTelefono.Text);
+                oCliente.Cli_Ex = 1;
 
+                TrabajarClientes.modificar_cliente(oCliente);
                 string mensaje = "ID: " + oCliente.Cli_Id + "\nDNI: " + oCliente.Cli_DNI + "\nApellido: " + oCliente.Cli_Apellido + "\nNombre: " + oCliente.Cli_Nombre + "\nTeléfono: " + oCliente.Cli_Telefono;
                 MessageBoxResult result2 = MessageBox.Show(mensaje, "Valores Almacenados", MessageBoxButton.OK, MessageBoxImage.Information);
                 if (result2 == MessageBoxResult.OK)
                 {
-                    TrabajarClientes.modificar_cliente(oCliente);
                     dataGridClientes.DataContext = TrabajarClientes.traer_clientes();
                 }
             }
@@ -126,14 +127,13 @@ namespace Vistas
                 oCliente.Cli_Apellido = txtApellido.Text;
                 oCliente.Cli_Nombre = txtNombre.Text;
                 oCliente.Cli_Telefono = long.Parse(txtTelefono.Text);
-
-                
-
+                oCliente.Cli_Ex = 0;
+                TrabajarClientes.modificar_cliente(oCliente);
                 string mensaje = "ID: " + oCliente.Cli_Id + "\nDNI: " + oCliente.Cli_DNI + "\nApellido: " + oCliente.Cli_Apellido + "\nNombre: " + oCliente.Cli_Nombre + "\nTeléfono: " + oCliente.Cli_Telefono;
                 MessageBoxResult result2 = MessageBox.Show(mensaje, "Valores Eliminados", MessageBoxButton.OK, MessageBoxImage.Information);
                 if (result2 == MessageBoxResult.OK)
                 {
-                    TrabajarClientes.eliminar_cliente(oCliente);
+                    
                     dataGridClientes.DataContext = TrabajarClientes.traer_clientes();
                 }
             }
@@ -147,45 +147,58 @@ namespace Vistas
 
         private void ActualizarDatosCliente()
         {
-             if (textBuscar.Text == "")
-             {
-                 // No se encontró un cliente con el DNI ingresado, muestra un mensaje o limpia los campos.
-                 //MessageBox.Show("No se encontró ningún cliente con el DNI ingresado.");
-                 txtApellido.Text = "";
-                 txtNombre.Text = "";
-                 txtTelefono.Text = "";
-                 txtDNI.Text = "";
-                 btnEditar.IsEnabled = false;
-                 btnEliminar.IsEnabled = false;
-             }
-             else {
-                
-                 // Llama al método para obtener un cliente por DNI.
-                 Cliente cliente = TrabajarClientes.traer_cliente_por_dni(int.Parse(textBuscar.Text));
+            if (string.IsNullOrEmpty(textBuscar.Text) || textBuscar.Text.Length > 9)
+            {
+                // No se encontró un cliente con el DNI ingresado, muestra un mensaje o limpia los campos.
+                // MessageBox.Show("No se encontró ningún cliente con el DNI ingresado.");
+                txtApellido.Text = "";
+                txtNombre.Text = "";
+                txtTelefono.Text = "";
+                txtDNI.Text = "";
+                btnEditar.IsEnabled = false;
+                btnEliminar.IsEnabled = false;
+            }
+            else
+            {
+                // Verificar si el texto contiene solo dígitos
+                bool esNumero = textBuscar.Text.All(char.IsDigit);
 
-                 if (cliente != null)
-                 {
-                     // Se encontró un cliente con el DNI ingresado, actualiza todos los campos.
-                     txtApellido.Text = cliente.Cli_Apellido;
-                     txtNombre.Text = cliente.Cli_Nombre;
-                     txtTelefono.Text = cliente.Cli_Telefono.ToString();
-                     txtDNI.Text = cliente.Cli_DNI.ToString();
-                     txtId.Text = cliente.Cli_Id.ToString();
-                     btnEditar.IsEnabled = true;
-                     btnEliminar.IsEnabled = true;
-                 }
-                 else
-                 {
-                     // No se encontró un cliente con el DNI ingresado, muestra un mensaje o limpia los campos.
-                     //MessageBox.Show("No se encontró ningún cliente con el DNI ingresado.");
-                     txtApellido.Text = "";
-                     txtNombre.Text = "";
-                     txtTelefono.Text = "";
-                     txtDNI.Text = "";
-                     btnEditar.IsEnabled = false;
-                     btnEliminar.IsEnabled = false;
-                 }
-             }
+                if (esNumero)
+                {
+                    // Llama al método para obtener un cliente por DNI.
+                    Cliente cliente = TrabajarClientes.traer_cliente_por_dni(int.Parse(textBuscar.Text));
+
+                    if (cliente != null)
+                    {
+                        // Se encontró un cliente con el DNI ingresado, actualiza todos los campos.
+                        txtApellido.Text = cliente.Cli_Apellido;
+                        txtNombre.Text = cliente.Cli_Nombre;
+                        txtTelefono.Text = cliente.Cli_Telefono.ToString();
+                        txtDNI.Text = cliente.Cli_DNI.ToString();
+                        txtId.Text = cliente.Cli_Id.ToString();
+                        btnEditar.IsEnabled = true;
+                        btnEliminar.IsEnabled = true;
+                    }
+                    else
+                    {
+                        // No se encontró un cliente con el DNI ingresado, muestra un mensaje o limpia los campos.
+                        // MessageBox.Show("No se encontró ningún cliente con el DNI ingresado.");
+                        txtApellido.Text = "";
+                        txtNombre.Text = "";
+                        txtTelefono.Text = "";
+                        txtDNI.Text = "";
+                        btnEditar.IsEnabled = false;
+                        btnEliminar.IsEnabled = false;
+                    }
+                }
+                else
+                {
+                    // Muestra un mensaje si el texto no contiene solo dígitos.
+                    MessageBox.Show("Por favor, ingrese solo números en el campo de búsqueda.");
+                    textBuscar.Text = "";
+                }
+            }
+
             
         }
 

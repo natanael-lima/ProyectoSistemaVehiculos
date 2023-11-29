@@ -107,6 +107,7 @@ namespace Vistas
                 oVeh.Tv_Descripcion = txtDescripcion.Text;
                 oVeh.Tv_Tarifa = decimal.Parse(txtTarifa.Text);
                 oVeh.Tv_Imagen = txtImagen.Text;
+                oVeh.Tv_Ex = 1;
 
                 TrabajarTipoVehiculos.editarTipoVehiculo(oVeh);
 
@@ -130,8 +131,9 @@ namespace Vistas
                 oVeh.Tv_Descripcion = txtImagen.Text;
                 oVeh.Tv_Tarifa = decimal.Parse(txtTarifa.Text);
                 oVeh.Tv_Imagen = txtImagen.Text;
+                oVeh.Tv_Ex = 0;
 
-                TrabajarTipoVehiculos.eliminarTipoVehiculo(oVeh.Tv_Id);
+                TrabajarTipoVehiculos.editarTipoVehiculo(oVeh);
 
                 string mensaje = "ID: " + oVeh.Tv_Id + "\nDescripcion: " + oVeh.Tv_Descripcion + "\nTarfica: " + oVeh.Tv_Tarifa;
                 MessageBoxResult result2 = MessageBox.Show(mensaje, "Valores Eliminados", MessageBoxButton.OK, MessageBoxImage.Information);

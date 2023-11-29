@@ -17,12 +17,13 @@ namespace ClaseBase
             SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "INSERT INTO TipoVehiculo(tv_Descripcion,tv_Tarifa,tv_Imagen) values (@descripcion,@tarifa,@imagen)";
+            cmd.CommandText = "INSERT INTO TipoVehiculo(tv_Descripcion,tv_Tarifa,tv_Imagen, tv_Ex) values (@descripcion,@tarifa,@imagen,@ex)";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
             cmd.Parameters.AddWithValue("@descripcion", tipo_vehiculo.Tv_Descripcion);
             cmd.Parameters.AddWithValue("@tarifa", tipo_vehiculo.Tv_Tarifa);
             cmd.Parameters.AddWithValue("@imagen", tipo_vehiculo.Tv_Imagen);
+            cmd.Parameters.AddWithValue("@ex", tipo_vehiculo.Tv_Ex);
             cnn.Open();
             cmd.ExecuteNonQuery();
         }
@@ -35,7 +36,7 @@ namespace ClaseBase
 
             using (SqlConnection conexion = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
             {
-                string consulta = "SELECT * FROM TipoVehiculo";
+                string consulta = "SELECT * FROM TipoVehiculo WHERE tv_Ex = 1";
                 using (SqlCommand comando = new SqlCommand(consulta, conexion))
                 {
                     conexion.Open();
@@ -89,6 +90,7 @@ namespace ClaseBase
                     cmd.Parameters.AddWithValue("@desc", veh.Tv_Descripcion);
                     cmd.Parameters.AddWithValue("@tarifa", veh.Tv_Tarifa);
                     cmd.Parameters.AddWithValue("@imagen", veh.Tv_Imagen);
+                    cmd.Parameters.AddWithValue("@ex", veh.Tv_Ex);
                     cmd.ExecuteNonQuery();
                 }
             }

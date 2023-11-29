@@ -81,6 +81,7 @@ namespace ClaseBase
                     cmd.Parameters.AddWithValue("@apellido", cliente.Cli_Apellido);
                     cmd.Parameters.AddWithValue("@dni", cliente.Cli_DNI);
                     cmd.Parameters.AddWithValue("@telefono", cliente.Cli_Telefono);
+                    cmd.Parameters.AddWithValue("@ex", cliente.Cli_Ex);
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -100,6 +101,7 @@ namespace ClaseBase
                     cmd.Parameters.AddWithValue("@NuevoNombre", cliente.Cli_Nombre);
                     cmd.Parameters.AddWithValue("@NuevoDNI", cliente.Cli_DNI);
                     cmd.Parameters.AddWithValue("@NuevoTelefono", cliente.Cli_Telefono);
+                    cmd.Parameters.AddWithValue("@Ex", cliente.Cli_Ex);
                     cmd.ExecuteNonQuery();
                 }
             }
