@@ -62,12 +62,22 @@ namespace Vistas
 
             
                 Usuario user = App.UserGlobal;
-                // Ahora puedes usar 'primerUsuario' para trabajar con el primer usuario en la lista.
-                // Por ejemplo, podrías mostrar sus datos en la interfaz de usuario.
+                // Obtenemos la ruta de acceso absoluta de la carpeta raíz del proyecto
+                string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
+                // Obtenemos la ruta de acceso relativa de la carpeta FOTOS
+                string fotosDirectory = System.IO.Path.Combine(baseDirectory, "../../recursos/images");
+
+                // Obtenemos la ruta de acceso completa de la imagen
+                string imagePath = System.IO.Path.Combine(fotosDirectory, user.User_Foto);
+
+                // Cargamos la imagen
                 BitmapImage image = new BitmapImage();
                 image.BeginInit();
-                image.UriSource = new Uri(@"C:\FOTOS\" + user.User_Foto); // Ruta de la imagen
+                image.UriSource = new Uri(imagePath);
                 image.EndInit();
+
+                // Asignamos la imagen al pincel
                 imgBrush.ImageSource = image;
 
                 usuario.Text=App.UserGlobal.User_Nombre+" "+App.UserGlobal.User_Apellido;

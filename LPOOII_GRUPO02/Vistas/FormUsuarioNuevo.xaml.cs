@@ -85,7 +85,11 @@ namespace Vistas
                         newUser.User_Rol = rolSeleccionado;
                         newUser.User_Foto = txtUrl.Text;
 
-                        string destino = @"C:\FOTOS\";
+                        // Obtenemos la ruta de acceso absoluta de la carpeta raíz del proyecto
+                        string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
+                        // Obtenemos la ruta de acceso relativa de la carpeta FOTOS
+                        string destino = System.IO.Path.Combine(baseDirectory, "../../recursos/images/");
 
                         string recurso = imgFoto.Source.ToString().Replace("file:///", "");
                         File.Copy(recurso, destino + txtUrl.Text, true);
