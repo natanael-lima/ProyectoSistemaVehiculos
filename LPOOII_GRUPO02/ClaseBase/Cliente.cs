@@ -162,6 +162,14 @@ namespace ClaseBase
             return ""+Cli_Id+Cli_Nombre+Cli_DNI+Cli_Apellido+Cli_DNI;
         }
 
+        private int cli_Ex;
+
+        public int Cli_Ex
+        {
+            get { return cli_Ex; }
+            set { cli_Ex = value; }
+        }
+
 
 
     }

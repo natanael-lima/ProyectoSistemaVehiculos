@@ -114,5 +114,13 @@ namespace ClaseBase
             }
         }
 
+        private int tv_Ex;
+
+        public int Tv_Ex
+        {
+            get { return tv_Ex; }
+            set { tv_Ex = value; }
+        }
+
     }
 }
