@@ -286,5 +286,6 @@ namespace Vistas
             dataGridUsuarios.DataContext = TrabajarUsuario.traerUsuariosASC();
         }
 
+
     }
 }
