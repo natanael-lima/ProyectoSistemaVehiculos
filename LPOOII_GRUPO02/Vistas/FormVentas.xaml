@@ -74,11 +74,11 @@
                         <DataGridTextColumn Header="Zona" Binding="{Binding Sec_Id.Zona_Codigo}" Width="1*"/>
                         <DataGridTextColumn Header="Sector" Binding="{Binding Sec_Id.Sec_Identificador}" Width="1*"/>
                         <DataGridTextColumn Header="Nro. Ticket" Binding="{Binding T_Id}" Width="1*"/>
-                        <DataGridTextColumn Header="Fecha y Hora de Entrada" Binding="{Binding T_FechaHoraEnt}" Width="1*"/>
-                        <DataGridTextColumn Header="Fecha y Hora de Salida" Binding="{Binding T_FechaHoraSal}" Width="1*"/>
+                        <DataGridTextColumn Header="Fecha y Hora de Entrada" Binding="{Binding T_FechaHoraEnt}" Width="2*"/>
+                        <DataGridTextColumn Header="Fecha y Hora de Salida" Binding="{Binding T_FechaHoraSal}" Width="2*"/>
                         <DataGridTextColumn Header="Apellido" Binding="{Binding Cli_Id.Cli_Nombre}" Width="1*"/>
                         <DataGridTextColumn Header="Nombre" Binding="{Binding Cli_Id.Cli_Apellido}" Width="1*"/>
-                        <DataGridTextColumn Header="Tipo de Vehiculo" Binding="{Binding Tv_Id.Tv_Descripcion}" Width="1*"/>
+                        <DataGridTextColumn Header="Tipo de Vehiculo" Binding="{Binding Tv_Id.Tv_Descripcion}" Width="2*"/>
                         <DataGridTextColumn Header="Patente" Binding="{Binding T_Patente}" Width="1*"/>
                         <DataGridTextColumn Header="Duracion" Binding="{Binding T_Duracion}" Width="1*"/>
                         <DataGridTextColumn Header="Tarifa" Binding="{Binding T_Tarifa}" Width="1*"/>
@@ -92,11 +92,17 @@
                 </DataGrid>
                 <TextBox Margin="43,539,766,62" Name="txtTotal" IsEnabled="False" Height="30"/>
                 <Button Content="Imprimir" Style="{StaticResource BotonGlobalStyle}" Margin="464,527,332,60" Click="Button_Click" />
-                <StackPanel Margin="0,0,6,0" Grid.ColumnSpan="2">
-                    <DatePicker x:Name="fecha1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" />
-                    <DatePicker x:Name="fecha2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" />
-                    <Button Margin="5,5,0,0" Content="Buscar" Name="buscar" HorizontalAlignment="Left" Style="{StaticResource BotonGlobalStyle}" Click="buscar_Click" Width="120" />
-                   
+                <StackPanel Margin="43,0,6,0" Grid.ColumnSpan="2">
+                    <StackPanel Orientation="Horizontal" Margin="5,40,0,0">
+                        <TextBlock Text="Fecha Inicio:" Margin="0,5,15,0" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray"/>
+                        <DatePicker x:Name="fecha1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" />
+                        <TextBlock Text="Fecha Fin:" Margin="50,5,15,0" FontFamily="Calibri" FontSize="12" FontWeight="Medium" Foreground="DarkGray"/>
+                        <DatePicker x:Name="fecha2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="142" />
+                        <Button Content="Buscar" Name="buscar" HorizontalAlignment="Left" Style="{StaticResource BotonGlobalStyle}" Click="buscar_Click" Width="120" Margin="70,-3,0,0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5,0,0,0">
+                        
+                    </StackPanel>
                 </StackPanel>
             </Grid>
         </Grid>
