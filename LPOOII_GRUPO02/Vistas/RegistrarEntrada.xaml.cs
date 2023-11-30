@@ -83,13 +83,13 @@ namespace Vistas
                 btn.Content = "Registrar Salida";
 
             }
-            else 
+            else
             {
 
                 txtBTotal.IsEnabled = false;
                 txtTotal.IsEnabled = false;
 
-                
+
 
                 //inicializar temporizador
                 // Inicializar el temporizador
@@ -163,7 +163,7 @@ namespace Vistas
 
                 tiket.T_Duracion = double.Parse(cmbTime.SelectedValue.ToString());
                 tiket.T_FechaHoraEnt = DateTime.Now;
-                tiket.T_Total= (tiket.T_Tarifa*Convert.ToDecimal(tiket.T_Duracion))/60;
+                tiket.T_Total = (tiket.T_Tarifa * Convert.ToDecimal(tiket.T_Duracion)) / 60;
 
                 tiket = TrabajarTicket.altaTicket(tiket);
                 sec.Sec_Habilitado = 0;
@@ -171,7 +171,7 @@ namespace Vistas
                 ImprimirFixed imp = new ImprimirFixed(tiket);
                 imp.Show();
 
-                
+
 
                 sec.Sec_Habilitado = 2;
                 TrabajarSector.estadoSector(sec);
@@ -198,8 +198,14 @@ namespace Vistas
         //chekear el tiempo seleccionado
         private void comboTime(double comp)
         {
+            // Obtenemos la ruta de acceso absoluta de la carpeta raíz del proyecto
+            string origen = AppDomain.CurrentDomain.BaseDirectory;
+
+            // Obtenemos la ruta de acceso relativa de la carpeta FOTOS
+            //string fotosDirectory = System.IO.Path.Combine(origen, "recursos/usuarios");
+
             XmlDocument doc = new XmlDocument();
-            doc.Load("../../Tiempos.xml"); // Reemplaza con la ruta correcta de tu archivo XML
+            doc.Load(origen + "/Tiempos.xml"); // Reemplaza con la ruta correcta de tu archivo XML
 
             XmlNodeList nodeList = doc.SelectNodes("//minutos");
 
@@ -218,7 +224,7 @@ namespace Vistas
         private void cmbTVehiculos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             TipoVehiculo tp = (TipoVehiculo)cmbTVehiculos.SelectedItem;
-            txtTarifa.Text = tp.Tv_Tarifa.ToString(); 
+            txtTarifa.Text = tp.Tv_Tarifa.ToString();
         }
     }
 }

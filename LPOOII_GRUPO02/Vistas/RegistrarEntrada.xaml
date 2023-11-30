@@ -29,7 +29,7 @@
         <Grid>
             <Grid.Resources>
                 <!-- Definicion del x:Key para poder realizar la conexion con el XML  -->
-                <XmlDataProvider x:Key="Tiempos" Source="Tiempos.xml" XPath="/tiempos" />
+                <XmlDataProvider x:Key="Tiempos" Source="/Tiempos.xml" XPath="/tiempos" />
             </Grid.Resources>
             <Grid.RowDefinitions>
                 <!--Grid para Header-->
