@@ -11,25 +11,29 @@ namespace ClaseBase
 {
     public class TrabajarClientes
     {
-        
+        //Ontengo la ruta absoluta en donde se instalo la aplicacion
+        private static string nuevoDir = AppDomain.CurrentDomain.BaseDirectory;
 
         //Metodo para listar todos los clientes de la base de datos
         public static ObservableCollection<Cliente> traer_clientes()
         {
-            ObservableCollection<Cliente>  clientes = new ObservableCollection<Cliente>() ;
-
+            ObservableCollection<Cliente> clientes = new ObservableCollection<Cliente>();
+            //Modifico la cadena de conexcion con la ruta en donde se guardo la aplicacion
+            AppDomain.CurrentDomain.SetData("DataDirectory", nuevoDir);
             using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
             {
                 cn.Open();
-                using(var cmd = cn.CreateCommand())
+                using (var cmd = cn.CreateCommand())
                 {
-                    cmd.CommandType=CommandType.StoredProcedure;
-                    cmd.CommandText="listar_clientes";
-                
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "listar_clientes";
+
                     using (DbDataReader dr = cmd.ExecuteReader())
                     {
-                        if(dr.HasRows){
-                            while(dr.Read()){
+                        if (dr.HasRows)
+                        {
+                            while (dr.Read())
+                            {
                                 Cliente oCliente = new Cliente();
                                 oCliente.Cli_Id = int.Parse(dr["cli_Id"].ToString());
                                 oCliente.Cli_Apellido = dr["cli_Apellido"].ToString();
@@ -41,16 +45,17 @@ namespace ClaseBase
                         }
 
                     }
-                  
+
                 }
-                
+
             }
 
-          return clientes;
+            return clientes;
         }
         // otra forma v2 de listar datos
         public DataTable TraerClientes()
         {
+            AppDomain.CurrentDomain.SetData("DataDirectory", nuevoDir);
             using (DataTable dt = new DataTable())
             {
                 using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
@@ -71,6 +76,7 @@ namespace ClaseBase
 
         public static void alta_cliente(Cliente cliente)
         {
+            AppDomain.CurrentDomain.SetData("DataDirectory", nuevoDir);
             using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
             {
                 cn.Open();
@@ -90,6 +96,7 @@ namespace ClaseBase
 
         public static void modificar_cliente(Cliente cliente)
         {
+            AppDomain.CurrentDomain.SetData("DataDirectory", nuevoDir);
             using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
             {
                 cn.Open();
@@ -109,6 +116,7 @@ namespace ClaseBase
 
         public static void eliminar_cliente(Cliente cliente)
         {
+            AppDomain.CurrentDomain.SetData("DataDirectory", nuevoDir);
             using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
             {
                 cn.Open();
@@ -125,7 +133,7 @@ namespace ClaseBase
         public static Cliente traer_cliente_por_dni(int dni)
         {
             Cliente cliente = null;
-
+            AppDomain.CurrentDomain.SetData("DataDirectory", nuevoDir);
             using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("traer_cliente_dni", cn))
@@ -154,6 +162,6 @@ namespace ClaseBase
 
             return cliente;
         }
-         
+
     }
 }

@@ -30,7 +30,14 @@ namespace Vistas
             Loaded += Window_Loaded;
 
             media = new MediaPlayer();
-            media.Open(new Uri(@"..\..\recursos\bienvenida.mp3",UriKind.Relative));
+
+             // Obtenemos la ruta de acceso absoluta de la carpeta raíz del proyecto
+            string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
+            // Obtenemos la ruta de acceso relativa de la carpeta recursos para acceder al archivo mp3
+            string rutaMP3 = System.IO.Path.Combine(baseDirectory, "recursos/bienvenida.mp3");
+
+            media.Open(new Uri(rutaMP3,UriKind.Relative));
             media.Play();
             media.MediaEnded += Media_MediaEnded;
         }

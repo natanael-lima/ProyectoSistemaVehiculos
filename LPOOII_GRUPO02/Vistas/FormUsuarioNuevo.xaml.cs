@@ -88,11 +88,15 @@ namespace Vistas
                         // Obtenemos la ruta de acceso absoluta de la carpeta raíz del proyecto
                         string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
-                        // Obtenemos la ruta de acceso relativa de la carpeta FOTOS
-                        string destino = System.IO.Path.Combine(baseDirectory, "../../recursos/images/");
+                        // Obtenemos la ruta de acceso relativa de la carpeta de las fotos de los usuarios
+                        string destino = System.IO.Path.Combine(baseDirectory, "recursos", "usuarios");
+
+                        // Combinar la ruta de destino con el nombre de archivo proporcionado en txtUrl.Text
+                        string rutaArchivoDestino = System.IO.Path.Combine(destino, txtUrl.Text);
 
                         string recurso = imgFoto.Source.ToString().Replace("file:///", "");
-                        File.Copy(recurso, destino + txtUrl.Text, true);
+                        // Copiar el archivo de la imagen al destino
+                        File.Copy(recurso, rutaArchivoDestino, true);
 
 
                         MessageBoxResult result2 = MessageBox.Show("Usuario Guardado correctamente", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);

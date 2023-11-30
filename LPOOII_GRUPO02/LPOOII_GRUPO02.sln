@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vistas", "Vistas\Vistas.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreriaRecursos", "LibreriaRecursos\LibreriaRecursos.csproj", "{155F9922-F6B1-4736-BA8E-066C519A17E1}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupPlaya", "SetupPlaya\SetupPlaya.vdproj", "{F886860E-28D9-4928-BFF0-A6A0236B9D0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,12 @@ Global
 		{155F9922-F6B1-4736-BA8E-066C519A17E1}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{155F9922-F6B1-4736-BA8E-066C519A17E1}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{155F9922-F6B1-4736-BA8E-066C519A17E1}.Release|x86.ActiveCfg = Release|Any CPU
+		{F886860E-28D9-4928-BFF0-A6A0236B9D0E}.Debug|Any CPU.ActiveCfg = Debug
+		{F886860E-28D9-4928-BFF0-A6A0236B9D0E}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{F886860E-28D9-4928-BFF0-A6A0236B9D0E}.Debug|x86.ActiveCfg = Debug
+		{F886860E-28D9-4928-BFF0-A6A0236B9D0E}.Release|Any CPU.ActiveCfg = Release
+		{F886860E-28D9-4928-BFF0-A6A0236B9D0E}.Release|Mixed Platforms.ActiveCfg = Release
+		{F886860E-28D9-4928-BFF0-A6A0236B9D0E}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -62,11 +62,12 @@ namespace Vistas
 
             
                 Usuario user = App.UserGlobal;
+
                 // Obtenemos la ruta de acceso absoluta de la carpeta raíz del proyecto
                 string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
                 // Obtenemos la ruta de acceso relativa de la carpeta FOTOS
-                string fotosDirectory = System.IO.Path.Combine(baseDirectory, "../../recursos/images");
+                string fotosDirectory = System.IO.Path.Combine(baseDirectory, "recursos/usuarios");
 
                 // Obtenemos la ruta de acceso completa de la imagen
                 string imagePath = System.IO.Path.Combine(fotosDirectory, user.User_Foto);
