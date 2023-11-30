@@ -34,7 +34,6 @@ namespace Vistas
             listTiket = TrabajarTicket.traerTickets();
             dataGridVentas.ItemsSource = listTiket;
             calcularTotal();
-
         }
 
 
@@ -43,6 +42,7 @@ namespace Vistas
             ICollectionView vista = CollectionViewSource.GetDefaultView(listTiket);
             DateTime fechaInicio = Convert.ToDateTime(fecha1.Text);
             DateTime fechaSalida = Convert.ToDateTime(fecha2.Text);
+
             vista.Filter = item =>
             {
                 Ticket ticket = item as Ticket;
@@ -60,6 +60,8 @@ namespace Vistas
 
         private void buscar_Click(object sender, RoutedEventArgs e)
         {
+
+
             if (fecha1.ToString() != "" && fecha2.ToString() != "")
             {
                 filtrar();
@@ -69,6 +71,8 @@ namespace Vistas
             {
                 MessageBox.Show("Debe seleccionar una fecha valida", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+
+            
         }
         private void calcularTotal()
         {
@@ -101,8 +105,15 @@ namespace Vistas
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ImprimirVentas imp = new ImprimirVentas(listTiket);
-            imp.Show();
+            if (txtTotal.Text != "0")
+            {
+                ImprimirVentas imp = new ImprimirVentas(listTiket);
+                imp.Show();
+            }
+            else 
+            {
+                MessageBox.Show("No hay datos necesarios para la impresion.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
     }

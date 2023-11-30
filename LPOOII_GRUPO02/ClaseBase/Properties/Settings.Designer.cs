@@ -26,9 +26,8 @@ namespace ClaseBase.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=\"C:\\Users\\admin\\Documents\\Visual Studio" +
-            " 2010\\Projects\\LPOOII_GRUPO02\\playa.mdf\";Integrated Security=True;Connect Timeou" +
-            "t=30;User Instance=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=C:\\Users\\admin\\Desktop\\LPOOII_GRUPO02\\p" +
+            "laya.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True")]
         public string playaConnectionString {
             get {
                 return ((string)(this["playaConnectionString"]));
