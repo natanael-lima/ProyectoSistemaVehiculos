@@ -10,8 +10,14 @@ namespace ClaseBase
 {
     public class TrabajarTicket
     {
+        //Ontengo la ruta absoluta en donde se instalo la aplicacion
+        private static string nuevoDir = AppDomain.CurrentDomain.BaseDirectory;
+
         public static Ticket altaTicket(Ticket ticket)
         {
+            //Modifico la cadena de conexcion con la ruta en donde se guardo la aplicacion
+            AppDomain.CurrentDomain.SetData("DataDirectory", nuevoDir);
+
             using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
             {
                 cn.Open();
@@ -41,6 +47,10 @@ namespace ClaseBase
         public static Ticket traerTicket(Sector sector)
         {
             Ticket ticket = null;
+
+            //Modifico la cadena de conexcion con la ruta en donde se guardo la aplicacion
+            AppDomain.CurrentDomain.SetData("DataDirectory", nuevoDir);
+
             using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
             {
                 cn.Open();
@@ -52,49 +62,49 @@ namespace ClaseBase
                     {
                         if (reader.Read())
                         {
-                                ticket = new Ticket();
-                                // Mapear las columnas según la estructura de tu tabla Sector
-                                ticket.T_Id = Convert.ToInt32(reader["t_Id"]);
-                                Cliente cli = new Cliente();
-                                cli.Cli_Id = Convert.ToInt32(reader["cli_Id"]);
-                                foreach (Cliente clii in TrabajarClientes.traer_clientes())
+                            ticket = new Ticket();
+                            // Mapear las columnas según la estructura de tu tabla Sector
+                            ticket.T_Id = Convert.ToInt32(reader["t_Id"]);
+                            Cliente cli = new Cliente();
+                            cli.Cli_Id = Convert.ToInt32(reader["cli_Id"]);
+                            foreach (Cliente clii in TrabajarClientes.traer_clientes())
+                            {
+                                if (cli.Cli_Id == clii.Cli_Id)
                                 {
-                                    if (cli.Cli_Id == clii.Cli_Id)
-                                    {
-                                        cli = clii;
-                                        break;
-                                    }
+                                    cli = clii;
+                                    break;
                                 }
-                                ticket.Cli_Id = cli;
-                                TipoVehiculo tp = new TipoVehiculo();
-                                tp.Tv_Id = Convert.ToInt32(reader["tv_Id"]);
-                                foreach (TipoVehiculo tpp in TrabajarTipoVehiculos.traer_tipos_vehiculos())
+                            }
+                            ticket.Cli_Id = cli;
+                            TipoVehiculo tp = new TipoVehiculo();
+                            tp.Tv_Id = Convert.ToInt32(reader["tv_Id"]);
+                            foreach (TipoVehiculo tpp in TrabajarTipoVehiculos.traer_tipos_vehiculos())
+                            {
+                                if (tp.Tv_Id == tpp.Tv_Id)
                                 {
-                                    if (tp.Tv_Id == tpp.Tv_Id)
-                                    {
-                                        tp = tpp;
-                                        break;
-                                    }
+                                    tp = tpp;
+                                    break;
                                 }
-                                ticket.Tv_Id = tp;
-                                Sector sec = new Sector();
-                                sec.Sec_Codigo = Convert.ToInt32(reader["sec_Id"]);
-                                foreach (Sector secc in TrabajarSector.traerSectores())
+                            }
+                            ticket.Tv_Id = tp;
+                            Sector sec = new Sector();
+                            sec.Sec_Codigo = Convert.ToInt32(reader["sec_Id"]);
+                            foreach (Sector secc in TrabajarSector.traerSectores())
+                            {
+                                if (sec.Sec_Codigo == secc.Sec_Codigo)
                                 {
-                                    if (sec.Sec_Codigo == secc.Sec_Codigo)
-                                    {
-                                        sec = secc;
-                                        break;
-                                    }
+                                    sec = secc;
+                                    break;
                                 }
-                                ticket.Sec_Id = sec;
-                                ticket.T_Duracion = Convert.ToDouble(reader["t_Duracion"]);
-                                ticket.T_FechaHoraEnt = Convert.ToDateTime(reader["t_FechaHoraEnt"]);
-                                ticket.T_Patente = Convert.ToString(reader["t_Patente"]);
-                                ticket.T_Tarifa = Convert.ToDecimal(reader["t_Tarifa"]);
-                                ticket.T_Total = Convert.ToDecimal(reader["t_Total"]);
-                                // Otros atributos
-                            }   
+                            }
+                            ticket.Sec_Id = sec;
+                            ticket.T_Duracion = Convert.ToDouble(reader["t_Duracion"]);
+                            ticket.T_FechaHoraEnt = Convert.ToDateTime(reader["t_FechaHoraEnt"]);
+                            ticket.T_Patente = Convert.ToString(reader["t_Patente"]);
+                            ticket.T_Tarifa = Convert.ToDecimal(reader["t_Tarifa"]);
+                            ticket.T_Total = Convert.ToDecimal(reader["t_Total"]);
+                            // Otros atributos
+                        }
                     }
                 }
             }
@@ -102,6 +112,9 @@ namespace ClaseBase
         }
         public static void updateTiket(Ticket tiket)
         {
+            //Modifico la cadena de conexcion con la ruta en donde se guardo la aplicacion
+            AppDomain.CurrentDomain.SetData("DataDirectory", nuevoDir);
+
             using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
             {
                 cn.Open();
@@ -117,6 +130,9 @@ namespace ClaseBase
         public static ObservableCollection<Ticket> traerTickets()
         {
             ObservableCollection<Ticket> listaTicket = new ObservableCollection<Ticket>();
+
+            //Modifico la cadena de conexcion con la ruta en donde se guardo la aplicacion
+            AppDomain.CurrentDomain.SetData("DataDirectory", nuevoDir);
 
             using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
             {

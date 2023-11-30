@@ -10,9 +10,14 @@ namespace ClaseBase
 {
     public class TrabajarTipoVehiculos
     {
+        //Ontengo la ruta absoluta en donde se instalo la aplicacion
+        private static string nuevoDir = AppDomain.CurrentDomain.BaseDirectory;
+
         // Guarda información de un nuevo tipo de vehiculo
         public static void guardar_tipo_vehiculo(TipoVehiculo tipo_vehiculo)
         {
+            //Modifico la cadena de conexcion con la ruta en donde se guardo la aplicacion
+            AppDomain.CurrentDomain.SetData("DataDirectory", nuevoDir);
 
             SqlConnection cnn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString);
             SqlCommand cmd = new SqlCommand();
@@ -33,6 +38,9 @@ namespace ClaseBase
         {
            
             List<TipoVehiculo> lista_tv = new List<TipoVehiculo>(); //lista de tipo de vehiculos
+
+            //Modifico la cadena de conexcion con la ruta en donde se guardo la aplicacion
+            AppDomain.CurrentDomain.SetData("DataDirectory", nuevoDir);
 
             using (SqlConnection conexion = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
             {
@@ -64,6 +72,9 @@ namespace ClaseBase
 
         public static void eliminarTipoVehiculo(int id)
         {
+            //Modifico la cadena de conexcion con la ruta en donde se guardo la aplicacion
+            AppDomain.CurrentDomain.SetData("DataDirectory", nuevoDir);
+
             using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
             {
                 cn.Open();
@@ -80,6 +91,9 @@ namespace ClaseBase
 
         public static void editarTipoVehiculo(TipoVehiculo veh)
         {
+            //Modifico la cadena de conexcion con la ruta en donde se guardo la aplicacion
+            AppDomain.CurrentDomain.SetData("DataDirectory", nuevoDir);
+
             using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
             {
                 cn.Open();

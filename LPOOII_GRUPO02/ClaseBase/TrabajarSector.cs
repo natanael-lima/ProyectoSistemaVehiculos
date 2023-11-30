@@ -10,9 +10,16 @@ namespace ClaseBase
 {
     public class TrabajarSector
     {
+        //Ontengo la ruta absoluta en donde se instalo la aplicacion
+        private static string nuevoDir = AppDomain.CurrentDomain.BaseDirectory;
+
         public static Sector traerSector(string cod)
         {
-            Sector sec = new Sector(); ;
+            Sector sec = new Sector();
+
+            //Modifico la cadena de conexcion con la ruta en donde se guardo la aplicacion
+            AppDomain.CurrentDomain.SetData("DataDirectory", nuevoDir);
+
             using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
             {
                 cn.Open();
@@ -41,6 +48,9 @@ namespace ClaseBase
         }
         public static void estadoSector(Sector sector)
         {
+            //Modifico la cadena de conexcion con la ruta en donde se guardo la aplicacion
+            AppDomain.CurrentDomain.SetData("DataDirectory", nuevoDir);
+
             using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
             {
                 cn.Open();
@@ -54,6 +64,9 @@ namespace ClaseBase
         public static ObservableCollection<Sector> traerSectores()
         {
             ObservableCollection<Sector> listaSectores = new ObservableCollection<Sector>();
+
+            //Modifico la cadena de conexcion con la ruta en donde se guardo la aplicacion
+            AppDomain.CurrentDomain.SetData("DataDirectory", nuevoDir);
 
             using (SqlConnection cn = new SqlConnection(ClaseBase.Properties.Settings.Default.playaConnectionString))
             {
