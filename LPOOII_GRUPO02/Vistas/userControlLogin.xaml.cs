@@ -15,13 +15,23 @@ using System.Windows.Shapes;
 namespace Vistas
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for userControlLogin.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class userControlLogin : UserControl
     {
-        public MainWindow()
+
+        public event RoutedEventHandler botonClick;
+
+        public userControlLogin()
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            botonClick.Invoke(this, e);
+        }
+
+
     }
 }

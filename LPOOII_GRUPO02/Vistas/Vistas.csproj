@@ -55,7 +55,75 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Compile Include="EstadoSector.xaml.cs">
+      <DependentUpon>EstadoSector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormAcercaDe.xaml.cs">
+      <DependentUpon>FormAcercaDe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormClienteNuevo.xaml.cs">
+      <DependentUpon>FormClienteNuevo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormSectores.xaml.cs">
+      <DependentUpon>FormSectores.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormUsuario.xaml.cs">
+      <DependentUpon>FormUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormUsuarioNuevo.xaml.cs">
+      <DependentUpon>FormUsuarioNuevo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormVehiculoNuevo.xaml.cs">
+      <DependentUpon>FormVehiculoNuevo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormVentas.xaml.cs">
+      <DependentUpon>FormVentas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImprimirEntrada.xaml.cs">
+      <DependentUpon>ImprimirEntrada.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImprimirFlow.xaml.cs">
+      <DependentUpon>ImprimirFlow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImprimirSalida.xaml.cs">
+      <DependentUpon>ImprimirSalida.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImprimirSectoresOcup.xaml.cs">
+      <DependentUpon>ImprimirSectoresOcup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImprimirVentas.xaml.cs">
+      <DependentUpon>ImprimirVentas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion.xaml.cs">
+      <DependentUpon>Presentacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarEntrada.xaml.cs">
+      <DependentUpon>RegistrarEntrada.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="userControlLogin.xaml.cs">
+      <DependentUpon>userControlLogin.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Estacionamiento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EstadoSector.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormAcercaDe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormClienteNuevo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormLogin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -63,12 +131,84 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="Estacionamiento.xaml.cs">
+      <DependentUpon>Estacionamiento.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormCliente.xaml.cs">
+      <DependentUpon>FormCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.xaml.cs">
+      <DependentUpon>FormLogin.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="FormMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormSectores.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormUsuarioNuevo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormVehiculo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormVehiculoNuevo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormVentas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImprimirEntrada.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImprimirFlow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ImprimirSalida.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImprimirSectoresOcup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImprimirVentas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegistrarEntrada.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="userControlLogin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormMain.xaml.cs">
+      <DependentUpon>FormMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FormVehiculo.xaml.cs">
+      <DependentUpon>FormVehiculo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -91,6 +231,66 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="recursos\actualizar.png" />
+    <Resource Include="recursos\buscar.png" />
+    <Resource Include="recursos\editar.png" />
+    <Resource Include="recursos\eliminar.png" />
+    <Resource Include="recursos\fondo1.jpg" />
+    <Resource Include="recursos\fondo2.jpg" />
+    <Resource Include="recursos\fondo3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="recursos\logotipo-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="recursos\llave.png" />
+    <Resource Include="recursos\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="recursos\menu-auto.png" />
+    <Resource Include="recursos\menu-clientes.png" />
+    <Resource Include="recursos\menu-estacionamiento.png" />
+    <Resource Include="recursos\menu-estadistica.png" />
+    <Resource Include="recursos\menu-salir.png" />
+    <Resource Include="recursos\menu-sector.png" />
+    <Resource Include="recursos\menu-usuario.png" />
+    <Resource Include="recursos\user-login.png" />
+    <Resource Include="recursos\user-login2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClaseBase\ClaseBase.csproj">
+      <Project>{E82B26AC-6713-4DA8-9914-39AB673680C4}</Project>
+      <Name>ClaseBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LibreriaRecursos\LibreriaRecursos.csproj">
+      <Project>{155F9922-F6B1-4736-BA8E-066C519A17E1}</Project>
+      <Name>LibreriaRecursos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="recursos\agregar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="recursos\logo-ico.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="recursos\anterior-final.png" />
+    <Resource Include="recursos\anterior.png" />
+    <Resource Include="recursos\siguiente-final.png" />
+    <Resource Include="recursos\siguiente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="recursos\menu-acerca.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\bienvenida.mp3" />
+    <Content Include="recursos\bienvenida.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="recursos\video.mp4" />
+    <Resource Include="recursos\logo-black.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
