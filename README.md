@@ -37,7 +37,7 @@ Accede a la aplicación en tu entorno de desarrollo local.
 
 ## Vista Previa
 
-Puedes ver una vista previa del proyecto desplegado en ![Visualizar]([https://tu-url-de-previsualizacion](https://i.postimg.cc/jj0MvQt9/project-optica.png)).
+Puedes ver una vista previa del proyecto desplegado en ![Vista previa de la aplicación](https://i.postimg.cc/jj0MvQt9/project-optica.png).
 
 ## Contacto
 
