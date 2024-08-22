@@ -37,7 +37,7 @@ Accede a la aplicación en tu entorno de desarrollo local.
 
 ## Vista Previa
 
-Puedes ver una vista previa del proyecto. [![project-optica.png](https://i.postimg.cc/jj0MvQt9/project-optica.png)](https://postimg.cc/bZg0wnGH)
+Puedes ver una vista previa del proyecto. [![project-playa.png](https://i.postimg.cc/KzLFw5MM/project-playa.png)](https://postimg.cc/R6MjnKGS)
 
 ## Contacto
 
