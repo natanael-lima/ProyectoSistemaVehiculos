@@ -31,13 +31,13 @@ Puedes encontrar el código fuente del proyecto en el siguiente repositorio de G
  - Abre el proyecto en Visual Studio.
  - Compila y ejecuta el proyecto desde Visual Studio.
 
-## 4. Acceso a la Aplicación
+4. **Acceso a la Aplicación**
 
 Accede a la aplicación en tu entorno de desarrollo local.
 
 ## Vista Previa
 
-Puedes ver una vista previa del proyecto desplegado en [https://tu-url-de-previsualizacion]([https://tu-url-de-previsualizacion](https://i.postimg.cc/jj0MvQt9/project-optica.png)).
+Puedes ver una vista previa del proyecto desplegado en ![Visualizar]([https://tu-url-de-previsualizacion](https://i.postimg.cc/jj0MvQt9/project-optica.png)).
 
 ## Contacto
 
