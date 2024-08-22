@@ -47,5 +47,7 @@ Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto.
 
 - [Natanael Lima](https://github.com/natanael-lima)
 - [Raquel Virreyra](https://github.com/raquelvirreyra)
-- [Maxi](https://github.com/maxi1103)
-- [Lucas Mateo](https://github.com/LMateo42)
+- [Maximiliano Gaitan](https://github.com/maxi1103)
+- [Mateo Loto](https://github.com/LMateo42)
+- [Marianella Machicado](https://github.com/MarianellaMachicado)
+- [Joaquin Gallardo](https://github.com/Joako-G)
